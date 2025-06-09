@@ -27,17 +27,22 @@ def generate_launch_description():
      	'view.rviz'
      	)
 
+    namespace = 'ti5_controller'
+
     return LaunchDescription([
         Node(
             package='joint_state_publisher_gui',
             executable='joint_state_publisher_gui',
             name='joint_state_publisher_gui',
+            namespace=namespace,
             output='screen',
         ),
 
         Node(
             package='robot_state_publisher',
             executable='robot_state_publisher',
+            namespace=namespace,
+            name='robot_state_publisher',
             output='screen',
             parameters=[{'robot_description': robot_des}]
         ),
@@ -48,6 +53,7 @@ def generate_launch_description():
             executable='rviz2',
             name='rviz2',
             output='screen',
-            arguments=['-d', rviz_config_file]
+            arguments=['-d', rviz_config_file],
+            namespace=namespace,
         )
     ])

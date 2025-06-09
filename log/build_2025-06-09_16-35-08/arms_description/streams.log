@@ -1,0 +1,68 @@
+[0.006s] Invoking command in '/home/astra/Ti5_controller/build/arms_description': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake /home/astra/Ti5_controller/src/arms_description -DCMAKE_INSTALL_PREFIX=/home/astra/Ti5_controller/install/arms_description
+[0.058s] -- The C compiler identification is GNU 11.4.0
+[0.117s] -- The CXX compiler identification is GNU 11.4.0
+[0.122s] -- Detecting C compiler ABI info
+[0.212s] -- Detecting C compiler ABI info - done
+[0.218s] -- Check for working C compiler: /usr/bin/cc - skipped
+[0.219s] -- Detecting C compile features
+[0.219s] -- Detecting C compile features - done
+[0.221s] -- Detecting CXX compiler ABI info
+[0.289s] -- Detecting CXX compiler ABI info - done
+[0.294s] -- Check for working CXX compiler: /usr/bin/c++ - skipped
+[0.295s] -- Detecting CXX compile features
+[0.295s] -- Detecting CXX compile features - done
+[0.297s] -- Found ament_cmake: 1.3.10 (/opt/ros/humble/share/ament_cmake/cmake)
+[0.424s] -- Found Python3: /usr/bin/python3 (found version "3.10.12") found components: Interpreter 
+[0.481s] -- Found ament_lint_auto: 0.12.11 (/opt/ros/humble/share/ament_lint_auto/cmake)
+[0.532s] -- Added test 'flake8' to check Python code syntax and style conventions
+[0.532s] -- Added test 'lint_cmake' to check CMake code style
+[0.532s] -- Added test 'pep257' to check Python code against some of the docstring style conventions in PEP 257
+[0.533s] -- Added test 'xmllint' to check XML markup files
+[0.534s] -- Configuring done
+[0.535s] -- Generating done
+[0.535s] -- Build files have been written to: /home/astra/Ti5_controller/build/arms_description
+[0.539s] Invoked command in '/home/astra/Ti5_controller/build/arms_description' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake /home/astra/Ti5_controller/src/arms_description -DCMAKE_INSTALL_PREFIX=/home/astra/Ti5_controller/install/arms_description
+[0.539s] Invoking command in '/home/astra/Ti5_controller/build/arms_description': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/astra/Ti5_controller/build/arms_description -- -j24 -l24
+[0.563s] Invoked command in '/home/astra/Ti5_controller/build/arms_description' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/astra/Ti5_controller/build/arms_description -- -j24 -l24
+[0.600s] Invoking command in '/home/astra/Ti5_controller/build/arms_description': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --install /home/astra/Ti5_controller/build/arms_description
+[0.610s] -- Install configuration: ""
+[0.610s] -- Installing: /home/astra/Ti5_controller/install/arms_description/share/arms_description/launch
+[0.610s] -- Installing: /home/astra/Ti5_controller/install/arms_description/share/arms_description/launch/display.launch.py
+[0.610s] -- Installing: /home/astra/Ti5_controller/install/arms_description/share/arms_description/urdf
+[0.610s] -- Installing: /home/astra/Ti5_controller/install/arms_description/share/arms_description/urdf/T170_ARMS.urdf
+[0.610s] -- Installing: /home/astra/Ti5_controller/install/arms_description/share/arms_description/urdf/T170_ARMS.csv
+[0.610s] -- Installing: /home/astra/Ti5_controller/install/arms_description/share/arms_description/meshes
+[0.610s] -- Installing: /home/astra/Ti5_controller/install/arms_description/share/arms_description/meshes/L_ELBOW_R_S.STL
+[0.611s] -- Installing: /home/astra/Ti5_controller/install/arms_description/share/arms_description/meshes/NECK_R_S.STL
+[0.611s] -- Installing: /home/astra/Ti5_controller/install/arms_description/share/arms_description/meshes/NECK_Y_S.STL
+[0.614s] -- Installing: /home/astra/Ti5_controller/install/arms_description/share/arms_description/meshes/L_WRIST_R_S.STL
+[0.616s] -- Installing: /home/astra/Ti5_controller/install/arms_description/share/arms_description/meshes/L_WRIST_P_S.STL
+[0.619s] -- Installing: /home/astra/Ti5_controller/install/arms_description/share/arms_description/meshes/R_SHOULDER_R_S.STL
+[0.620s] -- Installing: /home/astra/Ti5_controller/install/arms_description/share/arms_description/meshes/L_SHOULDER_P_S.STL
+[0.621s] -- Installing: /home/astra/Ti5_controller/install/arms_description/share/arms_description/meshes/R_SHOULDER_P_S.STL
+[0.622s] -- Installing: /home/astra/Ti5_controller/install/arms_description/share/arms_description/meshes/PELVIS_S.STL
+[0.626s] -- Installing: /home/astra/Ti5_controller/install/arms_description/share/arms_description/meshes/R_ELBOW_R_S.STL
+[0.627s] -- Installing: /home/astra/Ti5_controller/install/arms_description/share/arms_description/meshes/R_WRIST_Y_S.STL
+[0.628s] -- Installing: /home/astra/Ti5_controller/install/arms_description/share/arms_description/meshes/L_SHOULDER_Y_S.STL
+[0.629s] -- Installing: /home/astra/Ti5_controller/install/arms_description/share/arms_description/meshes/L_SHOULDER_R_S.STL
+[0.631s] -- Installing: /home/astra/Ti5_controller/install/arms_description/share/arms_description/meshes/R_WRIST_R_S.STL
+[0.640s] -- Installing: /home/astra/Ti5_controller/install/arms_description/share/arms_description/meshes/NECK_P_S.STL
+[0.640s] -- Installing: /home/astra/Ti5_controller/install/arms_description/share/arms_description/meshes/R_WRIST_P_S.STL
+[0.643s] -- Installing: /home/astra/Ti5_controller/install/arms_description/share/arms_description/meshes/R_SHOULDER_Y_S.STL
+[0.644s] -- Installing: /home/astra/Ti5_controller/install/arms_description/share/arms_description/meshes/L_WRIST_Y_S.STL
+[0.645s] -- Installing: /home/astra/Ti5_controller/install/arms_description/share/ament_index/resource_index/package_run_dependencies/arms_description
+[0.645s] -- Installing: /home/astra/Ti5_controller/install/arms_description/share/ament_index/resource_index/parent_prefix_path/arms_description
+[0.645s] -- Installing: /home/astra/Ti5_controller/install/arms_description/share/arms_description/environment/ament_prefix_path.sh
+[0.645s] -- Installing: /home/astra/Ti5_controller/install/arms_description/share/arms_description/environment/ament_prefix_path.dsv
+[0.645s] -- Installing: /home/astra/Ti5_controller/install/arms_description/share/arms_description/environment/path.sh
+[0.645s] -- Installing: /home/astra/Ti5_controller/install/arms_description/share/arms_description/environment/path.dsv
+[0.645s] -- Installing: /home/astra/Ti5_controller/install/arms_description/share/arms_description/local_setup.bash
+[0.645s] -- Installing: /home/astra/Ti5_controller/install/arms_description/share/arms_description/local_setup.sh
+[0.645s] -- Installing: /home/astra/Ti5_controller/install/arms_description/share/arms_description/local_setup.zsh
+[0.645s] -- Installing: /home/astra/Ti5_controller/install/arms_description/share/arms_description/local_setup.dsv
+[0.646s] -- Installing: /home/astra/Ti5_controller/install/arms_description/share/arms_description/package.dsv
+[0.646s] -- Installing: /home/astra/Ti5_controller/install/arms_description/share/ament_index/resource_index/packages/arms_description
+[0.646s] -- Installing: /home/astra/Ti5_controller/install/arms_description/share/arms_description/cmake/arms_descriptionConfig.cmake
+[0.646s] -- Installing: /home/astra/Ti5_controller/install/arms_description/share/arms_description/cmake/arms_descriptionConfig-version.cmake
+[0.646s] -- Installing: /home/astra/Ti5_controller/install/arms_description/share/arms_description/package.xml
+[0.647s] Invoked command in '/home/astra/Ti5_controller/build/arms_description' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --install /home/astra/Ti5_controller/build/arms_description
