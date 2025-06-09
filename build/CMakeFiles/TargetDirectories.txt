@@ -1,0 +1,9 @@
+/home/astra/Ti5_controller/build/CMakeFiles/uninstall.dir
+/home/astra/Ti5_controller/build/CMakeFiles/arms_description_uninstall.dir
+/home/astra/Ti5_controller/build/CMakeFiles/test.dir
+/home/astra/Ti5_controller/build/CMakeFiles/edit_cache.dir
+/home/astra/Ti5_controller/build/CMakeFiles/rebuild_cache.dir
+/home/astra/Ti5_controller/build/CMakeFiles/list_install_components.dir
+/home/astra/Ti5_controller/build/CMakeFiles/install.dir
+/home/astra/Ti5_controller/build/CMakeFiles/install/local.dir
+/home/astra/Ti5_controller/build/CMakeFiles/install/strip.dir

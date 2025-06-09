@@ -43,7 +43,11 @@ if(NOT DEFINED CMAKE_OBJDUMP)
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/arms_description" TYPE DIRECTORY FILES "/home/astra/Ti5_controller/src/arms_description/launch")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/arms_description" TYPE DIRECTORY FILES
+    "/home/astra/Ti5_controller/src/arms_description/launch"
+    "/home/astra/Ti5_controller/src/arms_description/urdf"
+    "/home/astra/Ti5_controller/src/arms_description/meshes"
+    )
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
