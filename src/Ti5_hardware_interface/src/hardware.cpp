@@ -30,8 +30,14 @@ hardware_interface::CallbackReturn hardware::on_init(
   }
 
   // TODO(anyone): read parameters and initialize the hardware
-  hw_states_.resize(info_.joints.size(), std::numeric_limits<double>::quiet_NaN());
-  hw_commands_.resize(info_.joints.size(), std::numeric_limits<double>::quiet_NaN());
+
+  joint_data_.resize(info_.joints.size());
+  motor_pos_feedback_.resize(info_.joints.size());
+  motor_vel_feedback_.resize(info_.joints.size());
+  motor_torque_feedback_.resize(info_.joints.size());
+
+  node_ = rclcpp::Node::make_shared("ti5_hardware_interface");
+  RCLCPP_INFO(node_->get_logger(), "Ti5 hardware interface initialized");
 
   return CallbackReturn::SUCCESS;
 }
@@ -40,6 +46,21 @@ hardware_interface::CallbackReturn hardware::on_configure(
   const rclcpp_lifecycle::State & /*previous_state*/)
 {
   // TODO(anyone): prepare the robot to be ready for read calls and write calls of some interfaces
+  
+  int cnt=3;
+  while(cnt--)
+  {
+    if(init_can())
+    {
+      RCLCPP_INFO(get_logger(), "CAN initialized successfully");
+      break;
+    }
+  }
+  if(cnt==0)  
+  {
+    RCLCPP_ERROR(get_logger(), "CAN initialization failed");
+    return CallbackReturn::ERROR;
+  }
 
   return CallbackReturn::SUCCESS;
 }
@@ -49,9 +70,11 @@ std::vector<hardware_interface::StateInterface> hardware::export_state_interface
   std::vector<hardware_interface::StateInterface> state_interfaces;
   for (size_t i = 0; i < info_.joints.size(); ++i)
   {
-    state_interfaces.emplace_back(hardware_interface::StateInterface(
-      // TODO(anyone): insert correct interfaces
-      info_.joints[i].name, hardware_interface::HW_IF_POSITION, &hw_states_[i]));
+
+    RCLCPP_INFO(node_->get_logger(), "Exporting state interface for joint %s", info_.joints[i].name.c_str())
+    state_interfaces.emplace_back(info_.joints[i].name, "position", &joint_data_[i].pos_);
+    state_interfaces.emplace_back(info_.joints[i].name, "velocity", &joint_data_[i].vel_);
+    state_interfaces.emplace_back(info_.joints[i].name, "effort", &joint_data_[i].eff_);
   }
 
   return state_interfaces;
@@ -62,9 +85,9 @@ std::vector<hardware_interface::CommandInterface> hardware::export_command_inter
   std::vector<hardware_interface::CommandInterface> command_interfaces;
   for (size_t i = 0; i < info_.joints.size(); ++i)
   {
-    command_interfaces.emplace_back(hardware_interface::CommandInterface(
-      // TODO(anyone): insert correct interfaces
-      info_.joints[i].name, hardware_interface::HW_IF_POSITION, &hw_commands_[i]));
+    command_interfaces.emplace_back(info_.joints[i].name, "position", &joint_data_[i].pos_cmd_);
+    command_interfaces.emplace_back(info_.joints[i].name, "velocity", &joint_data_[i].vel_cmd_);
+    command_interfaces.emplace_back(info_.joints[i].name, "effort", &joint_data_[i].eff_cmd_);
   }
 
   return command_interfaces;
@@ -86,18 +109,24 @@ hardware_interface::CallbackReturn hardware::on_deactivate(
   return CallbackReturn::SUCCESS;
 }
 
-hardware_interface::return_type hardware::read(
-  const rclcpp::Time & /*time*/, const rclcpp::Duration & /*period*/)
+hardware_interface::return_type hardware::read(const rclcpp::Time & , const rclcpp::Duration & )
 {
-  // TODO(anyone): read robot states
+  for(size_t i=0; i<info_.joints.size(); i++)
+  {
+    joint_data_[i].pos_ = motor_pos_feedback_[i];
+    joint_data_[i].vel_ = motor_vel_feedback_[i];
+    joint_data_[i].eff_ = motor_torque_feedback_[i];
+  }
 
   return hardware_interface::return_type::OK;
 }
 
-hardware_interface::return_type hardware::write(
-  const rclcpp::Time & /*time*/, const rclcpp::Duration & /*period*/)
+hardware_interface::return_type hardware::write(const rclcpp::Time & , const rclcpp::Duration & )
 {
-  // TODO(anyone): write robot's commands'
+  for(size_t i=0; i<info_.joints.size(); i++)
+  {
+    sendcancommand(i, joint_data_[i].pos_cmd_, joint_data_[i].vel_cmd_, joint_data_[i].eff_cmd_);
+  }
 
   return hardware_interface::return_type::OK;
 }

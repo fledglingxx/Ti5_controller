@@ -1,0 +1,17 @@
+/home/astra/Ti5_controller/install/bringup/share/bringup/launch/Ti5.launch.py
+/home/astra/Ti5_controller/install/bringup/share/bringup/config/Ti5_controller.yaml
+/home/astra/Ti5_controller/install/bringup/share/ament_index/resource_index/package_run_dependencies/bringup
+/home/astra/Ti5_controller/install/bringup/share/ament_index/resource_index/parent_prefix_path/bringup
+/home/astra/Ti5_controller/install/bringup/share/bringup/environment/ament_prefix_path.sh
+/home/astra/Ti5_controller/install/bringup/share/bringup/environment/ament_prefix_path.dsv
+/home/astra/Ti5_controller/install/bringup/share/bringup/environment/path.sh
+/home/astra/Ti5_controller/install/bringup/share/bringup/environment/path.dsv
+/home/astra/Ti5_controller/install/bringup/share/bringup/local_setup.bash
+/home/astra/Ti5_controller/install/bringup/share/bringup/local_setup.sh
+/home/astra/Ti5_controller/install/bringup/share/bringup/local_setup.zsh
+/home/astra/Ti5_controller/install/bringup/share/bringup/local_setup.dsv
+/home/astra/Ti5_controller/install/bringup/share/bringup/package.dsv
+/home/astra/Ti5_controller/install/bringup/share/ament_index/resource_index/packages/bringup
+/home/astra/Ti5_controller/install/bringup/share/bringup/cmake/bringupConfig.cmake
+/home/astra/Ti5_controller/install/bringup/share/bringup/cmake/bringupConfig-version.cmake
+/home/astra/Ti5_controller/install/bringup/share/bringup/package.xml
