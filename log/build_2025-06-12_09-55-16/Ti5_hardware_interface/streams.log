@@ -1,0 +1,196 @@
+[0.010s] Invoking command in '/home/astra/Ti5_controller/build/Ti5_hardware_interface': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/astra/Ti5_controller/build/Ti5_hardware_interface -- -j24 -l24
+[0.025s] -- Found ament_cmake: 1.3.10 (/opt/ros/humble/share/ament_cmake/cmake)
+[0.106s] -- Found hardware_interface: 2.43.1 (/opt/ros/humble/share/hardware_interface/cmake)
+[0.122s] -- Found rosidl_generator_c: 3.1.5 (/opt/ros/humble/share/rosidl_generator_c/cmake)
+[0.123s] -- Found rosidl_adapter: 3.1.5 (/opt/ros/humble/share/rosidl_adapter/cmake)
+[0.127s] -- Found rosidl_generator_cpp: 3.1.5 (/opt/ros/humble/share/rosidl_generator_cpp/cmake)
+[0.132s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[0.140s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[0.239s] -- Found rmw_implementation_cmake: 6.1.2 (/opt/ros/humble/share/rmw_implementation_cmake/cmake)
+[0.240s] -- Found rmw_cyclonedds_cpp: 1.3.4 (/opt/ros/humble/share/rmw_cyclonedds_cpp/cmake)
+[0.251s] -- Using RMW implementation 'rmw_cyclonedds_cpp' as default
+[0.280s] -- Found ament_lint_auto: 0.12.11 (/opt/ros/humble/share/ament_lint_auto/cmake)
+[0.314s] WARNING: Package name "Ti5_hardware_interface" does not follow the naming conventions. It should start with a lower case letter and only contain lower case letters, digits, underscores, and dashes.
+[0.322s] -- Found gmock sources under '/opt/ros/humble/src/gmock_vendor': C++ tests using 'Google Mock' will be built
+[0.323s] -- Found ament_cmake_gtest: 1.3.10 (/opt/ros/humble/share/ament_cmake_gtest/cmake)
+[0.323s] -- Found gtest sources under '/opt/ros/humble/src/gtest_vendor': C++ tests using 'Google Test' will be built
+[0.330s] -- Added test 'cppcheck' to perform static code analysis on C / C++ code
+[0.330s] -- Configured cppcheck include dirs: /home/astra/Ti5_controller/src/Ti5_hardware_interface/include;/home/astra/Ti5_controller/src/Ti5_hardware_interface/can_control/include
+[0.330s] -- Configured cppcheck exclude dirs and/or files: 
+[0.330s] -- Added test 'lint_cmake' to check CMake code style
+[0.331s] -- Added test 'uncrustify' to check C / C++ code style
+[0.331s] -- Configured uncrustify additional arguments: 
+[0.331s] -- Added test 'xmllint' to check XML markup files
+[0.332s] -- Configuring done
+[0.354s] -- Generating done
+[0.355s] -- Build files have been written to: /home/astra/Ti5_controller/build/Ti5_hardware_interface
+[0.372s] [35m[1mConsolidate compiler generated dependencies of target Ti5_hardware_interface[0m
+[0.372s] [35m[1mConsolidate compiler generated dependencies of target gmock_main[0m
+[0.372s] [35m[1mConsolidate compiler generated dependencies of target gmock[0m
+[0.380s] [ 22%] Built target gmock_main
+[0.381s] [ 55%] Built target gmock
+[0.383s] [ 66%] [32mBuilding CXX object CMakeFiles/Ti5_hardware_interface.dir/src/hardware.cpp.o[0m
+[0.387s] [35m[1mConsolidate compiler generated dependencies of target test_hardware[0m
+[0.396s] [ 88%] Built target test_hardware
+[0.513s] In file included from [01m[K/home/astra/Ti5_controller/src/Ti5_hardware_interface/include/Ti5_hardware_interface/hardware.hpp:30[m[K,
+[0.513s]                  from [01m[K/home/astra/Ti5_controller/src/Ti5_hardware_interface/src/hardware.cpp:18[m[K:
+[0.513s] [01m[K/home/astra/Ti5_controller/src/Ti5_hardware_interface/can_control/include/can_hw.h:1:[m[K [01;31m[Kerror: [m[Kunterminated #ifndef
+[0.514s]     1 | #ifndef CAN_HW_H
+[0.514s]       | 
+[1.080s] In file included from [01m[K/home/astra/Ti5_controller/src/Ti5_hardware_interface/src/hardware.cpp:18[m[K:
+[1.080s] [01m[K/home/astra/Ti5_controller/src/Ti5_hardware_interface/include/Ti5_hardware_interface/hardware.hpp:[m[K In function ‘[01m[Kstd_msgs::msg::Float64MultiArray Ti5_hardware_interface::createFloat64MultiArrayFromVector(const vector_t&)[m[K’:
+[1.080s] [01m[K/home/astra/Ti5_controller/src/Ti5_hardware_interface/include/Ti5_hardware_interface/hardware.hpp:46:60:[m[K [01;31m[Kerror: [m[Kexpected ‘[01m[K;[m[K’ before ‘[01m[Kreturn[m[K’
+[1.080s]    46 |     msg.data.assign(data.data(), data.data() + data.size())
+[1.080s]       |                                                            [01;31m[K^[m[K
+[1.080s]       |                                                            [32m[K;[m[K
+[1.080s]    47 |     [32m[Kreturn[m[K msg;
+[1.080s]       |     [32m[K~~~~~~[m[K                                                  
+[1.080s] [01m[K/home/astra/Ti5_controller/src/Ti5_hardware_interface/include/Ti5_hardware_interface/hardware.hpp:48:3:[m[K [01;35m[Kwarning: [m[Kno return statement in function returning non-void [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wreturn-type-Wreturn-type]8;;[m[K]
+[1.080s]    48 |   [01;35m[K}[m[K
+[1.080s]       |   [01;35m[K^[m[K
+[1.081s] [01m[K/home/astra/Ti5_controller/src/Ti5_hardware_interface/include/Ti5_hardware_interface/hardware.hpp:[m[K At global scope:
+[1.081s] [01m[K/home/astra/Ti5_controller/src/Ti5_hardware_interface/include/Ti5_hardware_interface/hardware.hpp:90:11:[m[K [01;31m[Kerror: [m[K‘[01m[KNode[m[K’ in namespace ‘[01m[Krclcpp[m[K’ does not name a type
+[1.081s]    90 |   rclcpp::[01;31m[KNode[m[K::SharedPtr node_;
+[1.081s]       |           [01;31m[K^~~~[m[K
+[1.081s] [01m[K/home/astra/Ti5_controller/src/Ti5_hardware_interface/include/Ti5_hardware_interface/hardware.hpp:91:11:[m[K [01;31m[Kerror: [m[K‘[01m[KSubscription[m[K’ in namespace ‘[01m[Krclcpp[m[K’ does not name a template type
+[1.081s]    91 |   rclcpp::[01;31m[KSubscription[m[K<std_msgs::msg::Float64MultiArray>::SharedPtr motor_pos_sub_;
+[1.081s]       |           [01;31m[K^~~~~~~~~~~~[m[K
+[1.081s] [01m[K/home/astra/Ti5_controller/src/Ti5_hardware_interface/include/Ti5_hardware_interface/hardware.hpp:92:11:[m[K [01;31m[Kerror: [m[K‘[01m[KSubscription[m[K’ in namespace ‘[01m[Krclcpp[m[K’ does not name a template type
+[1.081s]    92 |   rclcpp::[01;31m[KSubscription[m[K<std_msgs::msg::Float64MultiArray>::SharedPtr motor_vel_sub_;
+[1.081s]       |           [01;31m[K^~~~~~~~~~~~[m[K
+[1.081s] [01m[K/home/astra/Ti5_controller/src/Ti5_hardware_interface/include/Ti5_hardware_interface/hardware.hpp:93:11:[m[K [01;31m[Kerror: [m[K‘[01m[KSubscription[m[K’ in namespace ‘[01m[Krclcpp[m[K’ does not name a template type
+[1.081s]    93 |   rclcpp::[01;31m[KSubscription[m[K<std_msgs::msg::Float64MultiArray>::SharedPtr motor_torque_sub_;
+[1.082s]       |           [01;31m[K^~~~~~~~~~~~[m[K
+[1.082s] [01m[K/home/astra/Ti5_controller/src/Ti5_hardware_interface/include/Ti5_hardware_interface/hardware.hpp:95:11:[m[K [01;31m[Kerror: [m[K‘[01m[KPublisher[m[K’ in namespace ‘[01m[Krclcpp[m[K’ does not name a template type
+[1.082s]    95 |   rclcpp::[01;31m[KPublisher[m[K<std_msgs::msg::Float64MultiArray>::SharedPtr motor_pos_pub_;
+[1.082s]       |           [01;31m[K^~~~~~~~~[m[K
+[1.082s] [01m[K/home/astra/Ti5_controller/src/Ti5_hardware_interface/include/Ti5_hardware_interface/hardware.hpp:96:11:[m[K [01;31m[Kerror: [m[K‘[01m[KPublisher[m[K’ in namespace ‘[01m[Krclcpp[m[K’ does not name a template type
+[1.082s]    96 |   rclcpp::[01;31m[KPublisher[m[K<std_msgs::msg::Float64MultiArray>::SharedPtr motor_vel_pub_;
+[1.082s]       |           [01;31m[K^~~~~~~~~[m[K
+[1.082s] [01m[K/home/astra/Ti5_controller/src/Ti5_hardware_interface/include/Ti5_hardware_interface/hardware.hpp:97:11:[m[K [01;31m[Kerror: [m[K‘[01m[KPublisher[m[K’ in namespace ‘[01m[Krclcpp[m[K’ does not name a template type
+[1.082s]    97 |   rclcpp::[01;31m[KPublisher[m[K<std_msgs::msg::Float64MultiArray>::SharedPtr motor_torque_pub_;
+[1.082s]       |           [01;31m[K^~~~~~~~~[m[K
+[1.947s] [01m[K/home/astra/Ti5_controller/src/Ti5_hardware_interface/src/hardware.cpp:[m[K In member function ‘[01m[Kvirtual hardware_interface::CallbackReturn Ti5_hardware_interface::hardware::on_init(const hardware_interface::HardwareInfo&)[m[K’:
+[1.947s] [01m[K/home/astra/Ti5_controller/src/Ti5_hardware_interface/src/hardware.cpp:38:3:[m[K [01;31m[Kerror: [m[K‘[01m[Knode_[m[K’ was not declared in this scope; did you mean ‘[01m[Kmode_t[m[K’?
+[1.947s]    38 |   [01;31m[Knode_[m[K = rclcpp::Node::make_shared("ti5_hardware_interface");
+[1.947s]       |   [01;31m[K^~~~~[m[K
+[1.947s]       |   [32m[Kmode_t[m[K
+[1.953s] [01m[K/home/astra/Ti5_controller/src/Ti5_hardware_interface/src/hardware.cpp:39:3:[m[K [01;31m[Kerror: [m[K‘[01m[Kmotor_pos_sub_[m[K’ was not declared in this scope; did you mean ‘[01m[Kmotor_pos_feedback_[m[K’?
+[1.953s]    39 |   [01;31m[Kmotor_pos_sub_[m[K = node_->create_subscription<std_msgs::msg::Float64MultiArray>("data_analysis/motor_pos",1);
+[1.953s]       |   [01;31m[K^~~~~~~~~~~~~~[m[K
+[1.953s]       |   [32m[Kmotor_pos_feedback_[m[K
+[1.953s] [01m[K/home/astra/Ti5_controller/src/Ti5_hardware_interface/src/hardware.cpp:39:79:[m[K [01;31m[Kerror: [m[Kexpected primary-expression before ‘[01m[K>[m[K’ token
+[1.953s]    39 |   motor_pos_sub_ = node_->create_subscription<std_msgs::msg::Float64MultiArray[01;31m[K>[m[K("data_analysis/motor_pos",1);
+[1.953s]       |                                                                               [01;31m[K^[m[K
+[1.953s] [01m[K/home/astra/Ti5_controller/src/Ti5_hardware_interface/src/hardware.cpp:39:81:[m[K [01;35m[Kwarning: [m[Kleft operand of comma operator has no effect [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-value-Wunused-value]8;;[m[K]
+[1.953s]    39 |   motor_pos_sub_ = node_->create_subscription<std_msgs::msg::Float64MultiArray>([01;35m[K"data_analysis/motor_pos"[m[K,1);
+[1.953s]       |                                                                                 [01;35m[K^~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+[1.959s] [01m[K/home/astra/Ti5_controller/src/Ti5_hardware_interface/src/hardware.cpp:40:3:[m[K [01;31m[Kerror: [m[K‘[01m[Kmotor_vel_sub_[m[K’ was not declared in this scope; did you mean ‘[01m[Kmotor_vel_feedback_[m[K’?
+[1.959s]    40 |   [01;31m[Kmotor_vel_sub_[m[K = node_->create_subscription<std_msgs::msg::Float64MultiArray>("data_analysis/motor_vel",1);
+[1.959s]       |   [01;31m[K^~~~~~~~~~~~~~[m[K
+[1.959s]       |   [32m[Kmotor_vel_feedback_[m[K
+[1.959s] [01m[K/home/astra/Ti5_controller/src/Ti5_hardware_interface/src/hardware.cpp:40:79:[m[K [01;31m[Kerror: [m[Kexpected primary-expression before ‘[01m[K>[m[K’ token
+[1.959s]    40 |   motor_vel_sub_ = node_->create_subscription<std_msgs::msg::Float64MultiArray[01;31m[K>[m[K("data_analysis/motor_vel",1);
+[1.959s]       |                                                                               [01;31m[K^[m[K
+[1.959s] [01m[K/home/astra/Ti5_controller/src/Ti5_hardware_interface/src/hardware.cpp:40:81:[m[K [01;35m[Kwarning: [m[Kleft operand of comma operator has no effect [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-value-Wunused-value]8;;[m[K]
+[1.959s]    40 |   motor_vel_sub_ = node_->create_subscription<std_msgs::msg::Float64MultiArray>([01;35m[K"data_analysis/motor_vel"[m[K,1);
+[1.959s]       |                                                                                 [01;35m[K^~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+[1.966s] [01m[K/home/astra/Ti5_controller/src/Ti5_hardware_interface/src/hardware.cpp:41:3:[m[K [01;31m[Kerror: [m[K‘[01m[Kmotor_torque_sub_[m[K’ was not declared in this scope
+[1.966s]    41 |   [01;31m[Kmotor_torque_sub_[m[K = node_->create_subscription<std_msgs::msg::Float64MultiArray>("data_analysis/motor_torque",1);
+[1.966s]       |   [01;31m[K^~~~~~~~~~~~~~~~~[m[K
+[1.966s] [01m[K/home/astra/Ti5_controller/src/Ti5_hardware_interface/src/hardware.cpp:41:82:[m[K [01;31m[Kerror: [m[Kexpected primary-expression before ‘[01m[K>[m[K’ token
+[1.966s]    41 |   motor_torque_sub_ = node_->create_subscription<std_msgs::msg::Float64MultiArray[01;31m[K>[m[K("data_analysis/motor_torque",1);
+[1.966s]       |                                                                                  [01;31m[K^[m[K
+[1.966s] [01m[K/home/astra/Ti5_controller/src/Ti5_hardware_interface/src/hardware.cpp:41:84:[m[K [01;35m[Kwarning: [m[Kleft operand of comma operator has no effect [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-value-Wunused-value]8;;[m[K]
+[1.966s]    41 |   motor_torque_sub_ = node_->create_subscription<std_msgs::msg::Float64MultiArray>([01;35m[K"data_analysis/motor_torque"[m[K,1);
+[1.966s]       |                                                                                    [01;35m[K^~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+[1.966s] In file included from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/client.hpp:40[m[K,
+[1.966s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/callback_group.hpp:24[m[K,
+[1.966s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/any_executable.hpp:20[m[K,
+[1.966s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/memory_strategy.hpp:25[m[K,
+[1.966s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/memory_strategies.hpp:18[m[K,
+[1.966s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executor_options.hpp:20[m[K,
+[1.966s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executor.hpp:37[m[K,
+[1.966s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executors/multi_threaded_executor.hpp:25[m[K,
+[1.966s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executors.hpp:21[m[K,
+[1.966s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/rclcpp.hpp:155[m[K,
+[1.966s]                  from [01m[K/home/astra/Ti5_controller/src/Ti5_hardware_interface/src/hardware.cpp:20[m[K:
+[1.966s] [01m[K/home/astra/Ti5_controller/src/Ti5_hardware_interface/src/hardware.cpp:42:3:[m[K [01;31m[Kerror: [m[Ktemplate argument 1 is invalid
+[1.966s]    42 |   [01;31m[KRCLCPP_INFO[m[K(node_->get_logger(), "Ti5 hardware interface initialized");
+[1.966s]       |   [01;31m[K^~~~~~~~~~~[m[K
+[1.967s] [01m[K/home/astra/Ti5_controller/src/Ti5_hardware_interface/src/hardware.cpp:42:3:[m[K [01;31m[Kerror: [m[Ktemplate argument 1 is invalid
+[1.967s]    42 |   [01;31m[KRCLCPP_INFO[m[K(node_->get_logger(), "Ti5 hardware interface initialized");
+[1.967s]       |   [01;31m[K^~~~~~~~~~~[m[K
+[1.967s] [01m[K/home/astra/Ti5_controller/src/Ti5_hardware_interface/src/hardware.cpp:42:3:[m[K [01;31m[Kerror: [m[Ktemplate argument 1 is invalid
+[1.967s]    42 |   [01;31m[KRCLCPP_INFO[m[K(node_->get_logger(), "Ti5 hardware interface initialized");
+[1.967s]       |   [01;31m[K^~~~~~~~~~~[m[K
+[1.969s] [01m[K/home/astra/Ti5_controller/src/Ti5_hardware_interface/src/hardware.cpp:[m[K In member function ‘[01m[Kvirtual hardware_interface::CallbackReturn Ti5_hardware_interface::hardware::on_configure(const rclcpp_lifecycle::State&)[m[K’:
+[1.969s] [01m[K/home/astra/Ti5_controller/src/Ti5_hardware_interface/src/hardware.cpp:57:19:[m[K [01;31m[Kerror: [m[K‘[01m[Knode_[m[K’ was not declared in this scope; did you mean ‘[01m[Kmode_t[m[K’?
+[1.969s]    57 |       RCLCPP_INFO([01;31m[Knode_[m[K->get_logger(), "CAN initialized successfully");
+[1.970s]       |                   [01;31m[K^~~~~[m[K
+[1.970s] [01m[K/home/astra/Ti5_controller/src/Ti5_hardware_interface/src/hardware.cpp:57:7:[m[K [01;31m[Kerror: [m[Ktemplate argument 1 is invalid
+[1.970s]    57 |       [01;31m[KRCLCPP_INFO[m[K(node_->get_logger(), "CAN initialized successfully");
+[1.970s]       |       [01;31m[K^~~~~~~~~~~[m[K
+[1.970s] [01m[K/home/astra/Ti5_controller/src/Ti5_hardware_interface/src/hardware.cpp:57:7:[m[K [01;31m[Kerror: [m[Ktemplate argument 1 is invalid
+[1.970s]    57 |       [01;31m[KRCLCPP_INFO[m[K(node_->get_logger(), "CAN initialized successfully");
+[1.970s]       |       [01;31m[K^~~~~~~~~~~[m[K
+[1.970s] [01m[K/home/astra/Ti5_controller/src/Ti5_hardware_interface/src/hardware.cpp:57:7:[m[K [01;31m[Kerror: [m[Ktemplate argument 1 is invalid
+[1.970s]    57 |       [01;31m[KRCLCPP_INFO[m[K(node_->get_logger(), "CAN initialized successfully");
+[1.970s]       |       [01;31m[K^~~~~~~~~~~[m[K
+[1.973s] [01m[K/home/astra/Ti5_controller/src/Ti5_hardware_interface/src/hardware.cpp:63:18:[m[K [01;31m[Kerror: [m[K‘[01m[Knode_[m[K’ was not declared in this scope; did you mean ‘[01m[Kmode_t[m[K’?
+[1.973s]    63 |     RCLCPP_ERROR([01;31m[Knode_[m[K->get_logger(), "CAN initialization failed");
+[1.973s]       |                  [01;31m[K^~~~~[m[K
+[1.973s] [01m[K/home/astra/Ti5_controller/src/Ti5_hardware_interface/src/hardware.cpp:63:5:[m[K [01;31m[Kerror: [m[Ktemplate argument 1 is invalid
+[1.973s]    63 |     [01;31m[KRCLCPP_ERROR[m[K(node_->get_logger(), "CAN initialization failed");
+[1.973s]       |     [01;31m[K^~~~~~~~~~~~[m[K
+[1.973s] [01m[K/home/astra/Ti5_controller/src/Ti5_hardware_interface/src/hardware.cpp:63:5:[m[K [01;31m[Kerror: [m[Ktemplate argument 1 is invalid
+[1.973s]    63 |     [01;31m[KRCLCPP_ERROR[m[K(node_->get_logger(), "CAN initialization failed");
+[1.973s]       |     [01;31m[K^~~~~~~~~~~~[m[K
+[1.973s] [01m[K/home/astra/Ti5_controller/src/Ti5_hardware_interface/src/hardware.cpp:63:5:[m[K [01;31m[Kerror: [m[Ktemplate argument 1 is invalid
+[1.973s]    63 |     [01;31m[KRCLCPP_ERROR[m[K(node_->get_logger(), "CAN initialization failed");
+[1.973s]       |     [01;31m[K^~~~~~~~~~~~[m[K
+[1.978s] [01m[K/home/astra/Ti5_controller/src/Ti5_hardware_interface/src/hardware.cpp:[m[K In member function ‘[01m[Kvirtual std::vector<hardware_interface::StateInterface> Ti5_hardware_interface::hardware::export_state_interfaces()[m[K’:
+[1.978s] [01m[K/home/astra/Ti5_controller/src/Ti5_hardware_interface/src/hardware.cpp:76:17:[m[K [01;31m[Kerror: [m[K‘[01m[Knode_[m[K’ was not declared in this scope; did you mean ‘[01m[Kmode_t[m[K’?
+[1.978s]    76 |     RCLCPP_INFO([01;31m[Knode_[m[K->get_logger(), "Exporting state interface for joint %s", info_.joints[i].name.c_str())
+[1.978s]       |                 [01;31m[K^~~~~[m[K
+[1.978s] [01m[K/home/astra/Ti5_controller/src/Ti5_hardware_interface/src/hardware.cpp:76:5:[m[K [01;31m[Kerror: [m[Ktemplate argument 1 is invalid
+[1.978s]    76 |     [01;31m[KRCLCPP_INFO[m[K(node_->get_logger(), "Exporting state interface for joint %s", info_.joints[i].name.c_str())
+[1.978s]       |     [01;31m[K^~~~~~~~~~~[m[K
+[1.978s] [01m[K/home/astra/Ti5_controller/src/Ti5_hardware_interface/src/hardware.cpp:76:5:[m[K [01;31m[Kerror: [m[Ktemplate argument 1 is invalid
+[1.978s]    76 |     [01;31m[KRCLCPP_INFO[m[K(node_->get_logger(), "Exporting state interface for joint %s", info_.joints[i].name.c_str())
+[1.978s]       |     [01;31m[K^~~~~~~~~~~[m[K
+[1.978s] [01m[K/home/astra/Ti5_controller/src/Ti5_hardware_interface/src/hardware.cpp:76:5:[m[K [01;31m[Kerror: [m[Ktemplate argument 1 is invalid
+[1.978s]    76 |     [01;31m[KRCLCPP_INFO[m[K(node_->get_logger(), "Exporting state interface for joint %s", info_.joints[i].name.c_str())
+[1.978s]       |     [01;31m[K^~~~~~~~~~~[m[K
+[1.979s] [01m[K/home/astra/Ti5_controller/src/Ti5_hardware_interface/src/hardware.cpp:77:5:[m[K [01;31m[Kerror: [m[Kexpected ‘[01m[K;[m[K’ before ‘[01m[Kstate_interfaces[m[K’
+[1.979s]    77 |     [01;31m[Kstate_interfaces[m[K.emplace_back(info_.joints[i].name, "position", &joint_data_[i].pos_);
+[1.979s]       |     [01;31m[K^~~~~~~~~~~~~~~~[m[K
+[1.987s] [01m[K/home/astra/Ti5_controller/src/Ti5_hardware_interface/src/hardware.cpp:[m[K In member function ‘[01m[Kvirtual hardware_interface::return_type Ti5_hardware_interface::hardware::read(const rclcpp::Time&, const rclcpp::Duration&)[m[K’:
+[1.987s] [01m[K/home/astra/Ti5_controller/src/Ti5_hardware_interface/src/hardware.cpp:127:3:[m[K [01;31m[Kerror: [m[K‘[01m[Kmotor_pos_pub_[m[K’ was not declared in this scope; did you mean ‘[01m[Kmotor_pos_feedback_[m[K’?
+[1.987s]   127 |   [01;31m[Kmotor_pos_pub_[m[K->publish(createFloa64MultiArrayMsg(motor_pos_feedback_));
+[1.987s]       |   [01;31m[K^~~~~~~~~~~~~~[m[K
+[1.987s]       |   [32m[Kmotor_pos_feedback_[m[K
+[1.996s] [01m[K/home/astra/Ti5_controller/src/Ti5_hardware_interface/src/hardware.cpp:127:27:[m[K [01;31m[Kerror: [m[K‘[01m[KcreateFloa64MultiArrayMsg[m[K’ was not declared in this scope; did you mean ‘[01m[KcreateFloat64MultiArrayFromVector[m[K’?
+[1.996s]   127 |   motor_pos_pub_->publish([01;31m[KcreateFloa64MultiArrayMsg[m[K(motor_pos_feedback_));
+[1.996s]       |                           [01;31m[K^~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+[1.996s]       |                           [32m[KcreateFloat64MultiArrayFromVector[m[K
+[2.002s] [01m[K/home/astra/Ti5_controller/src/Ti5_hardware_interface/src/hardware.cpp:128:3:[m[K [01;31m[Kerror: [m[K‘[01m[Kmotor_vel_pub_[m[K’ was not declared in this scope; did you mean ‘[01m[Kmotor_vel_feedback_[m[K’?
+[2.002s]   128 |   [01;31m[Kmotor_vel_pub_[m[K->publish(createFloa64MultiArrayMsg(motor_vel_feedback_));
+[2.002s]       |   [01;31m[K^~~~~~~~~~~~~~[m[K
+[2.002s]       |   [32m[Kmotor_vel_feedback_[m[K
+[2.009s] [01m[K/home/astra/Ti5_controller/src/Ti5_hardware_interface/src/hardware.cpp:129:3:[m[K [01;31m[Kerror: [m[K‘[01m[Kmotor_torque_pub_[m[K’ was not declared in this scope
+[2.009s]   129 |   [01;31m[Kmotor_torque_pub_[m[K->publish(createFloa64MultiArrayMsg(motor_eff_feedback_));
+[2.009s]       |   [01;31m[K^~~~~~~~~~~~~~~~~[m[K
+[2.009s] [01m[K/home/astra/Ti5_controller/src/Ti5_hardware_interface/src/hardware.cpp:[m[K In member function ‘[01m[Kvirtual hardware_interface::return_type Ti5_hardware_interface::hardware::write(const rclcpp::Time&, const rclcpp::Duration&)[m[K’:
+[2.009s] [01m[K/home/astra/Ti5_controller/src/Ti5_hardware_interface/src/hardware.cpp:136:17:[m[K [01;31m[Kerror: [m[Ktoo few arguments to function ‘[01m[Kvoid sendCanCommand(uint8_t, uint8_t*, uint8_t*, uint32_t*, int)[m[K’
+[2.009s]   136 |   [01;31m[KsendCanCommand()[m[K;
+[2.009s]       |   [01;31m[K~~~~~~~~~~~~~~^~[m[K
+[2.009s] In file included from [01m[K/home/astra/Ti5_controller/src/Ti5_hardware_interface/include/Ti5_hardware_interface/hardware.hpp:30[m[K,
+[2.009s]                  from [01m[K/home/astra/Ti5_controller/src/Ti5_hardware_interface/src/hardware.cpp:18[m[K:
+[2.009s] [01m[K/home/astra/Ti5_controller/src/Ti5_hardware_interface/can_control/include/can_hw.h:22:6:[m[K [01;36m[Knote: [m[Kdeclared here
+[2.009s]    22 | void [01;36m[KsendCanCommand[m[K(uint8_t numOfActuator, uint8_t *canIdList, uint8_t *commandList, uint32_t *parameterList,int CANInd);
+[2.009s]       |      [01;36m[K^~~~~~~~~~~~~~[m[K
+[2.559s] gmake[2]: *** [CMakeFiles/Ti5_hardware_interface.dir/build.make:76：CMakeFiles/Ti5_hardware_interface.dir/src/hardware.cpp.o] 错误 1
+[2.559s] gmake[1]: *** [CMakeFiles/Makefile2:176：CMakeFiles/Ti5_hardware_interface.dir/all] 错误 2
+[2.559s] gmake: *** [Makefile:146：all] 错误 2
+[2.562s] Invoked command in '/home/astra/Ti5_controller/build/Ti5_hardware_interface' returned '2': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/astra/Ti5_controller/build/Ti5_hardware_interface -- -j24 -l24

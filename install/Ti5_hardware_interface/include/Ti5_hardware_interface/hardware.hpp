@@ -17,7 +17,7 @@
 
 #include <string>
 #include <vector>
-
+#include <Eigen/Dense>
 #include "Ti5_hardware_interface/visibility_control.h"
 #include "hardware_interface/system_interface.hpp"
 #include "hardware_interface/handle.hpp"
@@ -25,9 +25,29 @@
 #include "hardware_interface/types/hardware_interface_return_values.hpp"
 #include "rclcpp/macros.hpp"
 #include "rclcpp_lifecycle/state.hpp"
+#include "std_msgs/msg/float64_multi_array.hpp"
+
+#include <rclcpp/rclcpp.hpp>
+
+#include "can_hw.h"
+
+using vector_t = Eigen::Matrix<double, Eigen::Dynamic, 1>;
+
+
+struct Ti5MotorData{
+  double pos_, vel_, eff_;
+  double pos_cmd_, vel_cmd_, eff_cmd_;
+};
+
 
 namespace Ti5_hardware_interface
 {
+  inline std_msgs::msg::Float64MultiArray createFloat64MultiArrayFromVector(const vector_t& data)
+  {
+    std_msgs::msg::Float64MultiArray msg;
+    msg.data.assign(data.data(), data.data() + data.size());
+    return msg;
+  }
 class hardware : public hardware_interface::SystemInterface
 {
 public:
@@ -62,8 +82,18 @@ public:
     const rclcpp::Time & time, const rclcpp::Duration & period) override;
 
 private:
-  std::vector<double> hw_commands_;
-  std::vector<double> hw_states_;
+  hardware_interface::HardwareInfo info_;
+  std::vector<Ti5MotorData> joint_data_;
+
+  vector_t motor_pos_feedback_;
+  vector_t motor_vel_feedback_;
+  vector_t motor_eff_feedback_;
+
+  rclcpp::Node::SharedPtr node_;
+
+  rclcpp::Publisher<std_msgs::msg::Float64MultiArray>::SharedPtr motor_pos_pub_;
+  rclcpp::Publisher<std_msgs::msg::Float64MultiArray>::SharedPtr motor_vel_pub_;
+  rclcpp::Publisher<std_msgs::msg::Float64MultiArray>::SharedPtr motor_torque_pub_;
 };
 
 }  // namespace Ti5_hardware_interface

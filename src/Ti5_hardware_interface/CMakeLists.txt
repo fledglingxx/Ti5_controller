@@ -59,6 +59,7 @@ if(BUILD_TESTING)
   ament_lint_auto_find_test_dependencies()
   find_package(ament_cmake_gmock REQUIRED)
   find_package(ros2_control_test_assets REQUIRED)
+  find_package(Eigen3 REQUIRED)
 
   ament_add_gmock(test_hardware test/test_hardware.cpp)
   target_include_directories(test_hardware PRIVATE include)
@@ -67,8 +68,19 @@ if(BUILD_TESTING)
     hardware_interface
     pluginlib
     ros2_control_test_assets
+    Eigen3
   )
 endif()
+
+
+target_include_directories(${PROJECT_NAME}
+  PUBLIC
+    include
+    ${CMAKE_CURRENT_SOURCE_DIR}/can_control/include
+)
+
+
+include_directories(${EIGEN3_INCLUDE_DIRS})
 
 ament_export_include_directories(
   include

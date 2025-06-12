@@ -25,18 +25,20 @@ hardware_interface::CallbackReturn hardware::on_init(
   const hardware_interface::HardwareInfo & info)
 {
   if (hardware_interface::SystemInterface::on_init(info) != CallbackReturn::SUCCESS)
-  {
     return CallbackReturn::ERROR;
-  }
 
   // TODO(anyone): read parameters and initialize the hardware
+  info_ = info;
 
   joint_data_.resize(info_.joints.size());
   motor_pos_feedback_.resize(info_.joints.size());
   motor_vel_feedback_.resize(info_.joints.size());
-  motor_torque_feedback_.resize(info_.joints.size());
+  motor_eff_feedback_.resize(info_.joints.size());
 
-  node_ = rclcpp::Node::make_shared("ti5_hardware_interface");
+  node_ = rclcpp::Node::make_shared("robot_system_hw");
+  motor_pos_pub_ = node_->create_publisher<std_msgs::msg::Float64MultiArray>("data_analysis/motor_pos",1);
+  motor_vel_pub_ = node_->create_publisher<std_msgs::msg::Float64MultiArray>("data_analysis/motor_vel",1);
+  motor_torque_pub_ = node_->create_publisher<std_msgs::msg::Float64MultiArray>("data_analysis/motor_torque",1);
   RCLCPP_INFO(node_->get_logger(), "Ti5 hardware interface initialized");
 
   return CallbackReturn::SUCCESS;
@@ -52,13 +54,13 @@ hardware_interface::CallbackReturn hardware::on_configure(
   {
     if(init_can())
     {
-      RCLCPP_INFO(get_logger(), "CAN initialized successfully");
+      RCLCPP_INFO(node_->get_logger(), "CAN initialized successfully");
       break;
     }
   }
   if(cnt==0)  
   {
-    RCLCPP_ERROR(get_logger(), "CAN initialization failed");
+    RCLCPP_ERROR(node_->get_logger(), "CAN initialization failed");
     return CallbackReturn::ERROR;
   }
 
@@ -71,7 +73,7 @@ std::vector<hardware_interface::StateInterface> hardware::export_state_interface
   for (size_t i = 0; i < info_.joints.size(); ++i)
   {
 
-    RCLCPP_INFO(node_->get_logger(), "Exporting state interface for joint %s", info_.joints[i].name.c_str())
+    RCLCPP_INFO(node_->get_logger(), "Exporting state interface for joint %s", info_.joints[i].name.c_str());
     state_interfaces.emplace_back(info_.joints[i].name, "position", &joint_data_[i].pos_);
     state_interfaces.emplace_back(info_.joints[i].name, "velocity", &joint_data_[i].vel_);
     state_interfaces.emplace_back(info_.joints[i].name, "effort", &joint_data_[i].eff_);
@@ -113,20 +115,25 @@ hardware_interface::return_type hardware::read(const rclcpp::Time & , const rclc
 {
   for(size_t i=0; i<info_.joints.size(); i++)
   {
-    joint_data_[i].pos_ = motor_pos_feedback_[i];
-    joint_data_[i].vel_ = motor_vel_feedback_[i];
-    joint_data_[i].eff_ = motor_torque_feedback_[i];
+    joint_data_[i].pos_ = rv_motor_msg[i].position;
+    joint_data_[i].vel_ = rv_motor_msg[i].velocity;
+    joint_data_[i].eff_ = rv_motor_msg[i].torque;
+
+    motor_pos_feedback_(i) = joint_data_[i].pos_;
+    motor_vel_feedback_(i) = joint_data_[i].vel_;
+    motor_eff_feedback_(i) = joint_data_[i].eff_;
   }
+  
+  motor_pos_pub_->publish(createFloat64MultiArrayFromVector(motor_pos_feedback_));
+  motor_vel_pub_->publish(createFloat64MultiArrayFromVector(motor_vel_feedback_));
+  motor_torque_pub_->publish(createFloat64MultiArrayFromVector(motor_eff_feedback_));
 
   return hardware_interface::return_type::OK;
 }
 
 hardware_interface::return_type hardware::write(const rclcpp::Time & , const rclcpp::Duration & )
 {
-  for(size_t i=0; i<info_.joints.size(); i++)
-  {
-    sendcancommand(i, joint_data_[i].pos_cmd_, joint_data_[i].vel_cmd_, joint_data_[i].eff_cmd_);
-  }
+  ////////////sendCanCommand();
 
   return hardware_interface::return_type::OK;
 }
