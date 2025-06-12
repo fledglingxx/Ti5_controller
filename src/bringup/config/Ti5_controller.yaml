@@ -9,6 +9,9 @@ controller_manager:
     joint_state_broadcaster:
       type: joint_state_broadcaster/JointStateBroadcaster
 
+    Ti5_controller:
+      type: Ti5_arms_controller/Ti5ArmsController
+
 
 Ti5_controller:
   ros__parameters:
