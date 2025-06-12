@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="Ti5_arms_controller" tests="1" failures="0" time="0.000" errors="1" skipped="0">
+  <testcase classname="Ti5_arms_controller" name="test_Ti5_arms_controller.gtest.missing_result" time="0.000">
+    <error message="The test did not generate a result file:&#10;&#10;[Errno 2] No such file or directory: '/home/astra/Ti5_controller/build/Ti5_arms_controller/test_Ti5_arms_controller'"/>
+  </testcase>
+</testsuite>

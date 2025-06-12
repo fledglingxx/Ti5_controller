@@ -1,0 +1,4 @@
+source;share/Ti5_arms_controller/local_setup.bash
+source;share/Ti5_arms_controller/local_setup.dsv
+source;share/Ti5_arms_controller/local_setup.sh
+source;share/Ti5_arms_controller/local_setup.zsh

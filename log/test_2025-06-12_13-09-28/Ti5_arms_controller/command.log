@@ -1,0 +1,2 @@
+Invoking command in '/home/astra/Ti5_controller/build/Ti5_arms_controller': /usr/bin/ctest -C RelWithDebInfo -D ExperimentalTest --no-compress-output -V --force-new-ctest-process
+Invoked command in '/home/astra/Ti5_controller/build/Ti5_arms_controller' returned '8': /usr/bin/ctest -C RelWithDebInfo -D ExperimentalTest --no-compress-output -V --force-new-ctest-process

@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Site BuildName="(empty)"
+	BuildStamp="20250612-0509-Experimental"
+	Name="astra"
+	Generator="ctest-3.22.1"
+	CompilerName="/usr/bin/c++"
+	CompilerVersion="11.4.0"
+	OSName="Linux"
+	Hostname="astra"
+	OSRelease="6.8.0-59-generic"
+	OSVersion="#61~22.04.1-Ubuntu SMP PREEMPT_DYNAMIC Tue Apr 15 17:03:15 UTC 2"
+	OSPlatform="x86_64"
+	Is64Bits="1"
+	VendorString="GenuineIntel"
+	VendorID="Intel Corporation"
+	FamilyID="6"
+	ModelID="183"
+	ProcessorCacheSize="30720"
+	NumberOfLogicalCPU="24"
+	NumberOfPhysicalCPU="16"
+	TotalVirtualMemory="2047"
+	TotalPhysicalMemory="31756"
+	LogicalProcessorsPerPhysical="1"
+	ProcessorClockFrequency="800.225"
+	>
+	<Testing>
+		<StartDateTime>Jun 12 13:09 CST</StartDateTime>
+		<StartTestTime>1749704968</StartTestTime>
+		<TestList>
+			<Test>./test_load_Ti5_arms_controller</Test>
+			<Test>./test_Ti5_arms_controller</Test>
+			<Test>./test_Ti5_arms_controller_preceeding</Test>
+		</TestList>
+		<Test Status="notrun">
+			<Name>test_load_Ti5_arms_controller</Name>
+			<Path>.</Path>
+			<FullName>./test_load_Ti5_arms_controller</FullName>
+			<FullCommandLine></FullCommandLine>
+			<Results>
+				<NamedMeasurement type="numeric/double" name="Processors">
+					<Value>1</Value>
+				</NamedMeasurement>
+				<NamedMeasurement type="text/string" name="Completion Status">
+					<Value>Required Files Missing</Value>
+				</NamedMeasurement>
+				<NamedMeasurement type="text/string" name="Command Line">
+					<Value></Value>
+				</NamedMeasurement>
+				<NamedMeasurement type="text/string" name="Environment">
+					<Value></Value>
+				</NamedMeasurement>
+				<Measurement>
+					<Value>Unable to find required file: /home/astra/Ti5_controller/build/Ti5_arms_controller/test_load_Ti5_arms_controller</Value>
+				</Measurement>
+			</Results>
+			<Labels>
+				<Label>gmock</Label>
+			</Labels>
+		</Test>
+		<Test Status="failed">
+			<Name>test_Ti5_arms_controller</Name>
+			<Path>.</Path>
+			<FullName>./test_Ti5_arms_controller</FullName>
+			<FullCommandLine>/usr/bin/python3 "-u" "/opt/ros/humble/share/ament_cmake_test/cmake/run_test.py" "/home/astra/Ti5_controller/build/Ti5_arms_controller/test_results/Ti5_arms_controller/test_Ti5_arms_controller.gtest.xml" "--package-name" "Ti5_arms_controller" "--output-file" "/home/astra/Ti5_controller/build/Ti5_arms_controller/test_results/Ti5_arms_controller/test_Ti5_arms_controller.txt" "--command" "/home/astra/Ti5_controller/build/Ti5_arms_controller/test_Ti5_arms_controller" "--ros-args" "--params-file" "/home/astra/Ti5_controller/src/Ti5_arms_controller/test/Ti5_arms_controller_params.yaml" "--" "--gtest_output=xml:/home/astra/Ti5_controller/build/Ti5_arms_controller/test_results/Ti5_arms_controller/test_Ti5_arms_controller.gtest.xml"</FullCommandLine>
+			<Results>
+				<NamedMeasurement type="text/string" name="Exit Code">
+					<Value>Failed</Value>
+				</NamedMeasurement>
+				<NamedMeasurement type="text/string" name="Exit Value">
+					<Value>1</Value>
+				</NamedMeasurement>
+				<NamedMeasurement type="numeric/double" name="Execution Time">
+					<Value>0.0487457</Value>
+				</NamedMeasurement>
+				<NamedMeasurement type="numeric/double" name="Processors">
+					<Value>1</Value>
+				</NamedMeasurement>
+				<NamedMeasurement type="text/string" name="Completion Status">
+					<Value>Completed</Value>
+				</NamedMeasurement>
+				<NamedMeasurement type="text/string" name="Command Line">
+					<Value>/usr/bin/python3 "-u" "/opt/ros/humble/share/ament_cmake_test/cmake/run_test.py" "/home/astra/Ti5_controller/build/Ti5_arms_controller/test_results/Ti5_arms_controller/test_Ti5_arms_controller.gtest.xml" "--package-name" "Ti5_arms_controller" "--output-file" "/home/astra/Ti5_controller/build/Ti5_arms_controller/test_results/Ti5_arms_controller/test_Ti5_arms_controller.txt" "--command" "/home/astra/Ti5_controller/build/Ti5_arms_controller/test_Ti5_arms_controller" "--ros-args" "--params-file" "/home/astra/Ti5_controller/src/Ti5_arms_controller/test/Ti5_arms_controller_params.yaml" "--" "--gtest_output=xml:/home/astra/Ti5_controller/build/Ti5_arms_controller/test_results/Ti5_arms_controller/test_Ti5_arms_controller.gtest.xml"</Value>
+				</NamedMeasurement>
+				<NamedMeasurement type="text/string" name="Environment">
+					<Value>#CTEST_RESOURCE_GROUP_COUNT=</Value>
+				</NamedMeasurement>
+				<Measurement>
+					<Value>-- run_test.py: invoking following command in '/home/astra/Ti5_controller/build/Ti5_arms_controller':
+ - /home/astra/Ti5_controller/build/Ti5_arms_controller/test_Ti5_arms_controller --ros-args --params-file /home/astra/Ti5_controller/src/Ti5_arms_controller/test/Ti5_arms_controller_params.yaml -- --gtest_output=xml:/home/astra/Ti5_controller/build/Ti5_arms_controller/test_results/Ti5_arms_controller/test_Ti5_arms_controller.gtest.xml
+-- run_test.py: invocation failed: [Errno 2] No such file or directory: '/home/astra/Ti5_controller/build/Ti5_arms_controller/test_Ti5_arms_controller'
+-- run_test.py: generate result file '/home/astra/Ti5_controller/build/Ti5_arms_controller/test_results/Ti5_arms_controller/test_Ti5_arms_controller.gtest.xml' with failed test
+-- run_test.py: verify result file '/home/astra/Ti5_controller/build/Ti5_arms_controller/test_results/Ti5_arms_controller/test_Ti5_arms_controller.gtest.xml'
+</Value>
+				</Measurement>
+			</Results>
+		</Test>
+		<Test Status="failed">
+			<Name>test_Ti5_arms_controller_preceeding</Name>
+			<Path>.</Path>
+			<FullName>./test_Ti5_arms_controller_preceeding</FullName>
+			<FullCommandLine>/usr/bin/python3 "-u" "/opt/ros/humble/share/ament_cmake_test/cmake/run_test.py" "/home/astra/Ti5_controller/build/Ti5_arms_controller/test_results/Ti5_arms_controller/test_Ti5_arms_controller_preceeding.gtest.xml" "--package-name" "Ti5_arms_controller" "--output-file" "/home/astra/Ti5_controller/build/Ti5_arms_controller/test_results/Ti5_arms_controller/test_Ti5_arms_controller_preceeding.txt" "--command" "/home/astra/Ti5_controller/build/Ti5_arms_controller/test_Ti5_arms_controller_preceeding" "--ros-args" "--params-file" "/home/astra/Ti5_controller/src/Ti5_arms_controller/test/Ti5_arms_controller_preceeding_params.yaml" "--" "--gtest_output=xml:/home/astra/Ti5_controller/build/Ti5_arms_controller/test_results/Ti5_arms_controller/test_Ti5_arms_controller_preceeding.gtest.xml"</FullCommandLine>
+			<Results>
+				<NamedMeasurement type="text/string" name="Exit Code">
+					<Value>Failed</Value>
+				</NamedMeasurement>
+				<NamedMeasurement type="text/string" name="Exit Value">
+					<Value>1</Value>
+				</NamedMeasurement>
+				<NamedMeasurement type="numeric/double" name="Execution Time">
+					<Value>0.0441962</Value>
+				</NamedMeasurement>
+				<NamedMeasurement type="numeric/double" name="Processors">
+					<Value>1</Value>
+				</NamedMeasurement>
+				<NamedMeasurement type="text/string" name="Completion Status">
+					<Value>Completed</Value>
+				</NamedMeasurement>
+				<NamedMeasurement type="text/string" name="Command Line">
+					<Value>/usr/bin/python3 "-u" "/opt/ros/humble/share/ament_cmake_test/cmake/run_test.py" "/home/astra/Ti5_controller/build/Ti5_arms_controller/test_results/Ti5_arms_controller/test_Ti5_arms_controller_preceeding.gtest.xml" "--package-name" "Ti5_arms_controller" "--output-file" "/home/astra/Ti5_controller/build/Ti5_arms_controller/test_results/Ti5_arms_controller/test_Ti5_arms_controller_preceeding.txt" "--command" "/home/astra/Ti5_controller/build/Ti5_arms_controller/test_Ti5_arms_controller_preceeding" "--ros-args" "--params-file" "/home/astra/Ti5_controller/src/Ti5_arms_controller/test/Ti5_arms_controller_preceeding_params.yaml" "--" "--gtest_output=xml:/home/astra/Ti5_controller/build/Ti5_arms_controller/test_results/Ti5_arms_controller/test_Ti5_arms_controller_preceeding.gtest.xml"</Value>
+				</NamedMeasurement>
+				<NamedMeasurement type="text/string" name="Environment">
+					<Value>#CTEST_RESOURCE_GROUP_COUNT=</Value>
+				</NamedMeasurement>
+				<Measurement>
+					<Value>-- run_test.py: invoking following command in '/home/astra/Ti5_controller/build/Ti5_arms_controller':
+ - /home/astra/Ti5_controller/build/Ti5_arms_controller/test_Ti5_arms_controller_preceeding --ros-args --params-file /home/astra/Ti5_controller/src/Ti5_arms_controller/test/Ti5_arms_controller_preceeding_params.yaml -- --gtest_output=xml:/home/astra/Ti5_controller/build/Ti5_arms_controller/test_results/Ti5_arms_controller/test_Ti5_arms_controller_preceeding.gtest.xml
+-- run_test.py: invocation failed: [Errno 2] No such file or directory: '/home/astra/Ti5_controller/build/Ti5_arms_controller/test_Ti5_arms_controller_preceeding'
+-- run_test.py: generate result file '/home/astra/Ti5_controller/build/Ti5_arms_controller/test_results/Ti5_arms_controller/test_Ti5_arms_controller_preceeding.gtest.xml' with failed test
+-- run_test.py: verify result file '/home/astra/Ti5_controller/build/Ti5_arms_controller/test_results/Ti5_arms_controller/test_Ti5_arms_controller_preceeding.gtest.xml'
+</Value>
+				</Measurement>
+			</Results>
+		</Test>
+		<EndDateTime>Jun 12 13:09 CST</EndDateTime>
+		<EndTestTime>1749704968</EndTestTime>
+		<ElapsedMinutes>0</ElapsedMinutes>
+	</Testing>
+</Site>

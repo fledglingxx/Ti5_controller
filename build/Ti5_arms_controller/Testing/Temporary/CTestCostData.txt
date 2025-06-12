@@ -1,0 +1,7 @@
+test_load_Ti5_arms_controller 0 0
+test_Ti5_arms_controller 0 0
+test_Ti5_arms_controller_preceeding 0 0
+---
+test_load_Ti5_arms_controller
+test_Ti5_arms_controller
+test_Ti5_arms_controller_preceeding

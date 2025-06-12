@@ -1,0 +1,62 @@
+Start testing: Jun 12 13:09 CST
+----------------------------------------------------------
+Unable to find required file: /home/astra/Ti5_controller/build/Ti5_arms_controller/test_load_Ti5_arms_controller
+1/3 Testing: test_load_Ti5_arms_controller
+1/3 Test: test_load_Ti5_arms_controller
+Command: "/usr/bin/python3" "-u" "/opt/ros/humble/share/ament_cmake_test/cmake/run_test.py" "/home/astra/Ti5_controller/build/Ti5_arms_controller/test_results/Ti5_arms_controller/test_load_Ti5_arms_controller.gtest.xml" "--package-name" "Ti5_arms_controller" "--output-file" "/home/astra/Ti5_controller/build/Ti5_arms_controller/ament_cmake_gmock/test_load_Ti5_arms_controller.txt" "--command" "/home/astra/Ti5_controller/build/Ti5_arms_controller/test_load_Ti5_arms_controller" "--gtest_output=xml:/home/astra/Ti5_controller/build/Ti5_arms_controller/test_results/Ti5_arms_controller/test_load_Ti5_arms_controller.gtest.xml"
+Directory: /home/astra/Ti5_controller/build/Ti5_arms_controller
+"test_load_Ti5_arms_controller" start time: 
+Output:
+----------------------------------------------------------
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"test_load_Ti5_arms_controller" end time: Jun 12 13:09 CST
+"test_load_Ti5_arms_controller" time elapsed: 00:00:00
+----------------------------------------------------------
+
+2/3 Testing: test_Ti5_arms_controller
+2/3 Test: test_Ti5_arms_controller
+Command: "/usr/bin/python3" "-u" "/opt/ros/humble/share/ament_cmake_test/cmake/run_test.py" "/home/astra/Ti5_controller/build/Ti5_arms_controller/test_results/Ti5_arms_controller/test_Ti5_arms_controller.gtest.xml" "--package-name" "Ti5_arms_controller" "--output-file" "/home/astra/Ti5_controller/build/Ti5_arms_controller/test_results/Ti5_arms_controller/test_Ti5_arms_controller.txt" "--command" "/home/astra/Ti5_controller/build/Ti5_arms_controller/test_Ti5_arms_controller" "--ros-args" "--params-file" "/home/astra/Ti5_controller/src/Ti5_arms_controller/test/Ti5_arms_controller_params.yaml" "--" "--gtest_output=xml:/home/astra/Ti5_controller/build/Ti5_arms_controller/test_results/Ti5_arms_controller/test_Ti5_arms_controller.gtest.xml"
+Directory: /home/astra/Ti5_controller/build/Ti5_arms_controller
+"test_Ti5_arms_controller" start time: Jun 12 13:09 CST
+Output:
+----------------------------------------------------------
+-- run_test.py: invoking following command in '/home/astra/Ti5_controller/build/Ti5_arms_controller':
+ - /home/astra/Ti5_controller/build/Ti5_arms_controller/test_Ti5_arms_controller --ros-args --params-file /home/astra/Ti5_controller/src/Ti5_arms_controller/test/Ti5_arms_controller_params.yaml -- --gtest_output=xml:/home/astra/Ti5_controller/build/Ti5_arms_controller/test_results/Ti5_arms_controller/test_Ti5_arms_controller.gtest.xml
+-- run_test.py: invocation failed: [Errno 2] No such file or directory: '/home/astra/Ti5_controller/build/Ti5_arms_controller/test_Ti5_arms_controller'
+-- run_test.py: generate result file '/home/astra/Ti5_controller/build/Ti5_arms_controller/test_results/Ti5_arms_controller/test_Ti5_arms_controller.gtest.xml' with failed test
+-- run_test.py: verify result file '/home/astra/Ti5_controller/build/Ti5_arms_controller/test_results/Ti5_arms_controller/test_Ti5_arms_controller.gtest.xml'
+<end of output>
+Test time =   0.05 sec
+----------------------------------------------------------
+Test Failed.
+"test_Ti5_arms_controller" end time: Jun 12 13:09 CST
+"test_Ti5_arms_controller" time elapsed: 00:00:00
+----------------------------------------------------------
+
+3/3 Testing: test_Ti5_arms_controller_preceeding
+3/3 Test: test_Ti5_arms_controller_preceeding
+Command: "/usr/bin/python3" "-u" "/opt/ros/humble/share/ament_cmake_test/cmake/run_test.py" "/home/astra/Ti5_controller/build/Ti5_arms_controller/test_results/Ti5_arms_controller/test_Ti5_arms_controller_preceeding.gtest.xml" "--package-name" "Ti5_arms_controller" "--output-file" "/home/astra/Ti5_controller/build/Ti5_arms_controller/test_results/Ti5_arms_controller/test_Ti5_arms_controller_preceeding.txt" "--command" "/home/astra/Ti5_controller/build/Ti5_arms_controller/test_Ti5_arms_controller_preceeding" "--ros-args" "--params-file" "/home/astra/Ti5_controller/src/Ti5_arms_controller/test/Ti5_arms_controller_preceeding_params.yaml" "--" "--gtest_output=xml:/home/astra/Ti5_controller/build/Ti5_arms_controller/test_results/Ti5_arms_controller/test_Ti5_arms_controller_preceeding.gtest.xml"
+Directory: /home/astra/Ti5_controller/build/Ti5_arms_controller
+"test_Ti5_arms_controller_preceeding" start time: Jun 12 13:09 CST
+Output:
+----------------------------------------------------------
+-- run_test.py: invoking following command in '/home/astra/Ti5_controller/build/Ti5_arms_controller':
+ - /home/astra/Ti5_controller/build/Ti5_arms_controller/test_Ti5_arms_controller_preceeding --ros-args --params-file /home/astra/Ti5_controller/src/Ti5_arms_controller/test/Ti5_arms_controller_preceeding_params.yaml -- --gtest_output=xml:/home/astra/Ti5_controller/build/Ti5_arms_controller/test_results/Ti5_arms_controller/test_Ti5_arms_controller_preceeding.gtest.xml
+-- run_test.py: invocation failed: [Errno 2] No such file or directory: '/home/astra/Ti5_controller/build/Ti5_arms_controller/test_Ti5_arms_controller_preceeding'
+-- run_test.py: generate result file '/home/astra/Ti5_controller/build/Ti5_arms_controller/test_results/Ti5_arms_controller/test_Ti5_arms_controller_preceeding.gtest.xml' with failed test
+-- run_test.py: verify result file '/home/astra/Ti5_controller/build/Ti5_arms_controller/test_results/Ti5_arms_controller/test_Ti5_arms_controller_preceeding.gtest.xml'
+<end of output>
+Test time =   0.04 sec
+----------------------------------------------------------
+Test Failed.
+"test_Ti5_arms_controller_preceeding" end time: Jun 12 13:09 CST
+"test_Ti5_arms_controller_preceeding" time elapsed: 00:00:00
+----------------------------------------------------------
+
+End testing: Jun 12 13:09 CST
+
+gmock =   0.00 sec*proc
+
