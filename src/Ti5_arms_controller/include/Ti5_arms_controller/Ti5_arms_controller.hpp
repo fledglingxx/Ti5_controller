@@ -99,7 +99,7 @@ protected:
   realtime_tools::RealtimeBuffer<std::shared_ptr<ControllerReferenceMsg>> input_ref_;
 
   rclcpp::Service<ControllerModeSrvType>::SharedPtr set_slow_control_mode_service_;
-  realtime_tools::RealtimeBuffer<control_mode_type> control_mode_;
+
 
   using ControllerStatePublisher = realtime_tools::RealtimePublisher<ControllerStateMsg>;
 
@@ -107,6 +107,12 @@ protected:
   std::unique_ptr<ControllerStatePublisher> state_publisher_;
 
 private:
+  std::vector<std::string> joint_names_;
+  std::vector<std::string> command_interfaces_;
+  std::vector<std::string> state_interfaces_;
+
+
+
   // callback for topic interface
   TI5_ARMS_CONTROLLER__VISIBILITY_LOCAL
   void reference_callback(const std::shared_ptr<ControllerReferenceMsg> msg);
