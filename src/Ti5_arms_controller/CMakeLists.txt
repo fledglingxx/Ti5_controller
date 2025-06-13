@@ -60,6 +60,13 @@ install(
   DESTINATION include/${PROJECT_NAME}
 )
 
+install(FILES
+  ../../bringup/config/Ti5_controller.yaml
+  DESTINATION share/${PROJECT_NAME}/config
+)
+
+
+
 if(BUILD_TESTING)
   find_package(ament_lint_auto REQUIRED)
   set(ament_cmake_copyright_FOUND TRUE)
@@ -71,10 +78,13 @@ ament_export_include_directories(
   include
 )
 ament_export_dependencies(
+  controller_interface
   ${THIS_PACKAGE_INCLUDE_DEPENDS}
 )
 ament_export_libraries(
   Ti5_arms_controller
 )
+
+
 
 ament_package()

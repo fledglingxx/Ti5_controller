@@ -1,0 +1,36 @@
+[0.013s] Invoking command in '/home/astra/Ti5_controller/build/Ti5_arms_controller': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/astra/Ti5_controller/build/Ti5_arms_controller -- -j24 -l24
+[0.047s] [ 50%] Built target Ti5_arms_controller_parameters
+[0.065s] [100%] Built target Ti5_arms_controller
+[0.071s] Invoked command in '/home/astra/Ti5_controller/build/Ti5_arms_controller' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/astra/Ti5_controller/build/Ti5_arms_controller -- -j24 -l24
+[0.112s] Invoking command in '/home/astra/Ti5_controller/build/Ti5_arms_controller': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --install /home/astra/Ti5_controller/build/Ti5_arms_controller
+[0.123s] -- Install configuration: "RelWithDebInfo"
+[0.123s] -- Execute custom install script
+[0.124s] -- Up-to-date symlink: /home/astra/Ti5_controller/install/Ti5_arms_controller/include/Ti5_arms_controller_parameters/Ti5_arms_controller_parameters.hpp
+[0.124s] -- Up-to-date symlink: /home/astra/Ti5_controller/install/Ti5_arms_controller/include/Ti5_arms_controller_parameters/validate_Ti5_arms_controller_parameters.hpp
+[0.124s] -- Up-to-date symlink: /home/astra/Ti5_controller/install/Ti5_arms_controller/share/Ti5_arms_controller//Ti5_arms_controller.xml
+[0.124s] -- Up-to-date symlink: /home/astra/Ti5_controller/install/Ti5_arms_controller/include/Ti5_arms_controller/Ti5_arms_controller/Ti5_arms_controller.hpp
+[0.124s] -- Up-to-date symlink: /home/astra/Ti5_controller/install/Ti5_arms_controller/include/Ti5_arms_controller/Ti5_arms_controller/validate_Ti5_arms_controller_parameters.hpp
+[0.124s] -- Up-to-date symlink: /home/astra/Ti5_controller/install/Ti5_arms_controller/include/Ti5_arms_controller/Ti5_arms_controller/visibility_control.h
+[0.125s] -- Up-to-date symlink: /home/astra/Ti5_controller/install/Ti5_arms_controller/share/Ti5_arms_controller/environment/library_path.sh
+[0.125s] -- Up-to-date symlink: /home/astra/Ti5_controller/install/Ti5_arms_controller/share/Ti5_arms_controller/environment/library_path.dsv
+[0.125s] -- Up-to-date symlink: /home/astra/Ti5_controller/install/Ti5_arms_controller/share/ament_index/resource_index/package_run_dependencies/Ti5_arms_controller
+[0.125s] -- Up-to-date symlink: /home/astra/Ti5_controller/install/Ti5_arms_controller/share/ament_index/resource_index/parent_prefix_path/Ti5_arms_controller
+[0.126s] -- Up-to-date symlink: /home/astra/Ti5_controller/install/Ti5_arms_controller/share/Ti5_arms_controller/environment/ament_prefix_path.sh
+[0.126s] -- Up-to-date symlink: /home/astra/Ti5_controller/install/Ti5_arms_controller/share/Ti5_arms_controller/environment/ament_prefix_path.dsv
+[0.126s] -- Up-to-date symlink: /home/astra/Ti5_controller/install/Ti5_arms_controller/share/Ti5_arms_controller/environment/path.sh
+[0.126s] -- Up-to-date symlink: /home/astra/Ti5_controller/install/Ti5_arms_controller/share/Ti5_arms_controller/environment/path.dsv
+[0.126s] -- Up-to-date symlink: /home/astra/Ti5_controller/install/Ti5_arms_controller/share/Ti5_arms_controller/local_setup.bash
+[0.126s] -- Up-to-date symlink: /home/astra/Ti5_controller/install/Ti5_arms_controller/share/Ti5_arms_controller/local_setup.sh
+[0.126s] -- Up-to-date symlink: /home/astra/Ti5_controller/install/Ti5_arms_controller/share/Ti5_arms_controller/local_setup.zsh
+[0.126s] -- Up-to-date symlink: /home/astra/Ti5_controller/install/Ti5_arms_controller/share/Ti5_arms_controller/local_setup.dsv
+[0.126s] -- Symlinking: /home/astra/Ti5_controller/install/Ti5_arms_controller/share/Ti5_arms_controller/package.dsv
+[0.135s] -- Up-to-date symlink: /home/astra/Ti5_controller/install/Ti5_arms_controller/share/ament_index/resource_index/packages/Ti5_arms_controller
+[0.135s] -- Up-to-date symlink: /home/astra/Ti5_controller/install/Ti5_arms_controller/share/ament_index/resource_index/controller_interface__pluginlib__plugin/Ti5_arms_controller
+[0.135s] -- Up-to-date symlink: /home/astra/Ti5_controller/install/Ti5_arms_controller/share/Ti5_arms_controller/cmake/ament_cmake_export_include_directories-extras.cmake
+[0.135s] -- Up-to-date symlink: /home/astra/Ti5_controller/install/Ti5_arms_controller/share/Ti5_arms_controller/cmake/ament_cmake_export_dependencies-extras.cmake
+[0.135s] -- Up-to-date symlink: /home/astra/Ti5_controller/install/Ti5_arms_controller/share/Ti5_arms_controller/cmake/ament_cmake_export_libraries-extras.cmake
+[0.135s] -- Up-to-date symlink: /home/astra/Ti5_controller/install/Ti5_arms_controller/share/Ti5_arms_controller/cmake/Ti5_arms_controllerConfig.cmake
+[0.135s] -- Up-to-date symlink: /home/astra/Ti5_controller/install/Ti5_arms_controller/share/Ti5_arms_controller/cmake/Ti5_arms_controllerConfig-version.cmake
+[0.135s] -- Up-to-date symlink: /home/astra/Ti5_controller/install/Ti5_arms_controller/share/Ti5_arms_controller/package.xml
+[0.136s] -- Up-to-date: /home/astra/Ti5_controller/install/Ti5_arms_controller/lib/libTi5_arms_controller.so
+[0.143s] Invoked command in '/home/astra/Ti5_controller/build/Ti5_arms_controller' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --install /home/astra/Ti5_controller/build/Ti5_arms_controller

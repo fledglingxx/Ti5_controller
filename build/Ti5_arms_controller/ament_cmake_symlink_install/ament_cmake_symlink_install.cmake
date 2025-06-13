@@ -319,6 +319,9 @@ ament_cmake_symlink_install_files("/home/astra/Ti5_controller/src/Ti5_arms_contr
 # install(DIRECTORY "include/" "DESTINATION" "include/Ti5_arms_controller")
 ament_cmake_symlink_install_directory("/home/astra/Ti5_controller/src/Ti5_arms_controller" DIRECTORY "include/" "DESTINATION" "include/Ti5_arms_controller")
 
+# install(FILES "../../bringup/config/Ti5_controller.yaml" "DESTINATION" "share/Ti5_arms_controller/config")
+ament_cmake_symlink_install_files("/home/astra/Ti5_controller/src/Ti5_arms_controller" FILES "../../bringup/config/Ti5_controller.yaml" "DESTINATION" "share/Ti5_arms_controller/config")
+
 # install(FILES "/opt/ros/humble/lib/python3.10/site-packages/ament_package/template/environment_hook/library_path.sh" "DESTINATION" "share/Ti5_arms_controller/environment")
 ament_cmake_symlink_install_files("/home/astra/Ti5_controller/src/Ti5_arms_controller" FILES "/opt/ros/humble/lib/python3.10/site-packages/ament_package/template/environment_hook/library_path.sh" "DESTINATION" "share/Ti5_arms_controller/environment")
 

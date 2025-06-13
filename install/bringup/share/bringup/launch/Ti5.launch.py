@@ -8,8 +8,18 @@ from launch.substitutions import LaunchConfiguration, PathJoinSubstitution
 from launch_ros.actions import Node
 
 
+def load_urdf(pkg_name,urdf_file):
+    pkg_path = get_package_share_directory(pkg_name)
+    urdf_path = os.path.join(pkg_path, 'urdf', urdf_file)
+    with open(urdf_path, 'r') as f:
+    	return f.read()
+
+
 def generate_launch_description():
     package_name = 'arms_description'
+
+    robot_description = load_urdf('arms_description', 'T170_ARMS.urdf')
+
 
     arms = IncludeLaunchDescription(
             PythonLaunchDescriptionSource([os.path.join(
@@ -17,13 +27,18 @@ def generate_launch_description():
             )]),launch_arguments={'namespace': 'arms', 'use_sim_time': 'true'}.items()
     )
 
-    Ti5ArmsController_spawner = Node(
-    package='controller_manager',
-    executable='spawner',
-    arguments=['ti5_arms_controller', '--controller-manager', '/controller_manager'],
-    parameters=[os.path.join(get_package_share_directory('Ti5_controller'), 'config', 'ti5_arms_controller.yaml')],
-    output='screen'
-)
+    #robot_controllers = PathJoinSubstitution([FindPackageShare("Ti5_arms_controller"), 'config', 'ti5_controller.yaml'])
+
+    control_node = Node(
+        package='controller_manager',
+        executable='ros2_control_node',
+        parameters=[robot_description  ,robot_controllers],
+        output='screen'
+    )
+    
+    
+
+    
 
     joint_broad_spawner = Node(
         package='controller_manager',
@@ -32,15 +47,17 @@ def generate_launch_description():
         output='screen'
     )
 
-    # Ti5_controller = Node(
-    #     package='Ti5_controller',
-    #     executable='Ti5_controller_node',
-    #     output='screen'
-    # )
+    robot_controller_spawner = Node(
+        package='controller_manager',
+        executable='spawner',
+        arguments=['Ti5_controller', "-c", '/controller_manager'],
+        output='screen'
+    )
 
     return LaunchDescription([
         arms,
+        control_node,
         joint_broad_spawner,
-        Ti5ArmsController_spawner,
-        #Ti5_controller,
-    ])
+        robot_controller_spawner,
+    ])  
+  
