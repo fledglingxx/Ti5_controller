@@ -4,22 +4,26 @@
 #include <cstring>
 #include <iostream>
 
+#include  "controlcan.h"
 
-typedef struct {
-    float position;
-    float velocity;
-    float torque;
-}OD_Motor_State;
+class CANMotorInterface
+{
+public:
+    CANMotorInterface();
+    ~CANMotorInterface();
+
+    int32_t convertHexArrayToDecimal(const std::uint8_t hexArray[4]);
+    void toIntArray(int number, int *res, int size);
+
+    bool initCAN();
+    int32_t sendSimpleCanCommand(uint8_t motor_id, uint8_t command);
+    void sendCanCommand(uint8_t motor_id, uint8_t command, uint32_t parameter);
 
 
-extern OD_Motor_State rv_motor_msg[20];
-
-
-
-int32_t convertHexArrayToDecimal(const std::uint8_t hexArray[4]);
-void toIntArray(int number, int *res, int size);
-void sendSimpleCanCommand(uint8_t numOfActuator, uint8_t *canIdList, uint8_t *commandList, int CANInd);
-void sendCanCommand(uint8_t numOfActuator, uint8_t *canIdList, uint8_t *commandList, uint32_t *parameterList,int CANInd);
-bool init_can();
+private:
+    int DeviceType = VCI_USBCAN2;
+    int DeviceIndex = 0;
+    int CANInd = 0;
+};
 
 #endif //CAN_HW_H

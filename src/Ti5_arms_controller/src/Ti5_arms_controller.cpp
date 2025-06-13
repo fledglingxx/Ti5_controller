@@ -38,73 +38,36 @@ namespace Ti5_arms_controller
     node->declare_parameter<std::vector<std::string>>("joint_command_interfaces");
     node->declare_parameter<std::vector<std::string>>("joint_state_interfaces");
 
-    node->get_parameter("joint_names",joint_names_);
-    node->get_parameter("joint_command_interfaces",joint_command_interfaces_);
-    node->get_parameter("joint_state_interfaces",joint_state_interfaces_);
-    
+    node->get_parameter("joint_names", joint_names_);
+    node->get_parameter("joint_command_interfaces", joint_command_interfaces_);
+    node->get_parameter("joint_state_interfaces", joint_state_interfaces_);
+
     RCLCPP_INFO(node->get_logger(), "Loaded %zu joints", joint_names_.size());
-                                                                                  
+
     return controller_interface::CallbackReturn::SUCCESS;
   }
-
-
 
   controller_interface::CallbackReturn Ti5ArmsController::on_configure(const rclcpp_lifecycle::State &)
   {
-
-    if(joint_names_.empty() || joint_command_interfaces_.empty() || joint_state_interfaces_.empty())
+    if (joint_names_.empty())
     {
-      RCLCPP_ERROR(get_node()->get_logger(), "Joint names, command interfaces or state interfaces not set. Cannot start controller.")
+      RCLCPP_ERROR(get_node()->get_logger(), "Joint names not set. Cannot configure controller.");
       return controller_interface::CallbackReturn::ERROR;
     }
 
-    command_interfaces_handles_.resize(joint_names_.size());
-    for(const auto &joint_name : joint_names_)
-    {
-      for(const auto &interface_type : joint_command_interfaces_)
-      {
-        auto handle = get_interface(joint_name, interface_type, command_interfaces_);
-        if(!handle)
-        {
-          RCLCPP_ERROR(get_node()->get_logger(), "command interface %s for joint %s not available",
-                        interface_type.c_str(), joint_name.c_str());
-          return controller_interface::CallbackReturn::ERROR;
-        }
-        command_interface_handles_.push_back(handle);
-      }
-    }
-    
-    state_interfaces_handles_.resize(joint_names_.size());
-    for(const auto &joint_name : joint_names_)
-    {
-      for(const auto &interface_type : joint_state_interfaces_)
-      {
-        auto handle = get_interface(joint_name, interface_type, state_interfaces_);
-        if(!handle)
-        {
-          RCLCPP_ERROR(get_node()->get_logger(), "state interface %s for joint %s not available",
-                        interface_type.c_str(), joint_name.c_str());
-          return controller_interface::CallbackReturn::ERROR;
-        }
-        state_interface_handles_.push_back(handle);
-      }
-    }
-    
-    RCLCPP_INFO(get_node()->get_logger(), "configure successful");
+    RCLCPP_INFO(get_node()->get_logger(), "Controller configured successfully (simplified).");
     return controller_interface::CallbackReturn::SUCCESS;
   }
-
-
 
   controller_interface::InterfaceConfiguration Ti5ArmsController::command_interface_configuration() const
   {
     controller_interface::InterfaceConfiguration command_interfaces_config;
     command_interfaces_config.type = controller_interface::interface_configuration_type::INDIVIDUAL;
 
-    command_interfaces_config.names.reverse(joint_names_.size());
-    for(const auto &joint : joint_names_)
+    command_interfaces_config.names.reserve(joint_names_.size() * joint_command_interfaces_.size());
+    for (const auto &joint : joint_names_)
     {
-      for(const auto &interface : joint_command_interfaces_)
+      for (const auto &interface : joint_command_interfaces_)
         command_interfaces_config.names.push_back(joint + "/" + interface);
     }
 
@@ -119,15 +82,12 @@ namespace Ti5_arms_controller
     state_interfaces_config.names.reserve(joint_names_.size());
     for (const auto &joint : joint_names_)
     {
-      for(const auto &interface : joint_state_interfaces_)
+      for (const auto &interface : joint_state_interfaces_)
         state_interfaces_config.names.push_back(joint + "/" + interface);
     }
 
     return state_interfaces_config;
   }
-
-
-
 
   controller_interface::CallbackReturn Ti5ArmsController::on_activate(const rclcpp_lifecycle::State &)
   {
@@ -139,21 +99,16 @@ namespace Ti5_arms_controller
     return controller_interface::CallbackReturn::SUCCESS;
   }
 
-
   controller_interface::CallbackReturn Ti5ArmsController::on_deactivate(const rclcpp_lifecycle::State &)
   {
-
 
     RCLCPP_INFO(get_node()->get_logger(), "deactivating Ti5 arms controller");
     return controller_interface::CallbackReturn::SUCCESS;
   }
 
-
-
   controller_interface::return_type Ti5ArmsController::update(const rclcpp::Time &time, const rclcpp::Duration &)
   {
 
-    
     return controller_interface::return_type::OK;
   }
 

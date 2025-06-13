@@ -17,6 +17,14 @@ def generate_launch_description():
             )]),launch_arguments={'namespace': 'arms', 'use_sim_time': 'true'}.items()
     )
 
+    Ti5ArmsController_spawner = Node(
+    package='controller_manager',
+    executable='spawner',
+    arguments=['ti5_arms_controller', '--controller-manager', '/controller_manager'],
+    parameters=[os.path.join(get_package_share_directory('Ti5_controller'), 'config', 'ti5_arms_controller.yaml')],
+    output='screen'
+)
+
     joint_broad_spawner = Node(
         package='controller_manager',
         executable='spawner',
@@ -24,14 +32,15 @@ def generate_launch_description():
         output='screen'
     )
 
-    Ti5_controller = Node(
-        package='Ti5_controller',
-        executable='Ti5_controller_node',
-        output='screen'
-    )
+    # Ti5_controller = Node(
+    #     package='Ti5_controller',
+    #     executable='Ti5_controller_node',
+    #     output='screen'
+    # )
 
     return LaunchDescription([
         arms,
         joint_broad_spawner,
-        Ti5_controller,
+        Ti5ArmsController_spawner,
+        #Ti5_controller,
     ])

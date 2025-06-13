@@ -32,6 +32,7 @@
 #include "realtime_tools/realtime_buffer.h"
 #include "realtime_tools/realtime_publisher.h"
 #include "std_srvs/srv/set_bool.hpp"
+#include "controller_interface/helpers.hpp"
 
 // TODO(anyone): Replace with controller specific messages
 #include "control_msgs/msg/joint_controller_state.hpp"
@@ -39,85 +40,66 @@
 
 namespace Ti5_arms_controller
 {
-// name constants for state interfaces
-static constexpr size_t STATE_MY_ITFS = 0;
 
-// name constants for command interfaces
-static constexpr size_t CMD_MY_ITFS = 0;
+  class Ti5ArmsController : public controller_interface::ControllerInterface
+  {
+  public:
+    TI5_ARMS_CONTROLLER__VISIBILITY_PUBLIC
+    Ti5ArmsController();
 
-// TODO(anyone: example setup for control mode (usually you will use some enums defined in messages)
-enum class control_mode_type : std::uint8_t
-{
-  FAST = 0,
-  SLOW = 1,
-};
+    TI5_ARMS_CONTROLLER__VISIBILITY_PUBLIC
+    controller_interface::CallbackReturn on_init() override;
 
-class Ti5ArmsController : public controller_interface::ControllerInterface
-{
-public:
-  TI5_ARMS_CONTROLLER__VISIBILITY_PUBLIC
-  Ti5ArmsController();
+    TI5_ARMS_CONTROLLER__VISIBILITY_PUBLIC
+    controller_interface::InterfaceConfiguration command_interface_configuration() const override;
 
-  TI5_ARMS_CONTROLLER__VISIBILITY_PUBLIC
-  controller_interface::CallbackReturn on_init() override;
+    TI5_ARMS_CONTROLLER__VISIBILITY_PUBLIC
+    controller_interface::InterfaceConfiguration state_interface_configuration() const override;
 
-  TI5_ARMS_CONTROLLER__VISIBILITY_PUBLIC
-  controller_interface::InterfaceConfiguration command_interface_configuration() const override;
+    TI5_ARMS_CONTROLLER__VISIBILITY_PUBLIC
+    controller_interface::CallbackReturn on_configure(const rclcpp_lifecycle::State &previous_state) override;
 
-  TI5_ARMS_CONTROLLER__VISIBILITY_PUBLIC
-  controller_interface::InterfaceConfiguration state_interface_configuration() const override;
+    TI5_ARMS_CONTROLLER__VISIBILITY_PUBLIC
+    controller_interface::CallbackReturn on_activate(const rclcpp_lifecycle::State &previous_state) override;
 
-  TI5_ARMS_CONTROLLER__VISIBILITY_PUBLIC
-  controller_interface::CallbackReturn on_configure(
-    const rclcpp_lifecycle::State & previous_state) override;
+    TI5_ARMS_CONTROLLER__VISIBILITY_PUBLIC
+    controller_interface::CallbackReturn on_deactivate(const rclcpp_lifecycle::State &previous_state) override;
 
-  TI5_ARMS_CONTROLLER__VISIBILITY_PUBLIC
-  controller_interface::CallbackReturn on_activate(
-    const rclcpp_lifecycle::State & previous_state) override;
+    TI5_ARMS_CONTROLLER__VISIBILITY_PUBLIC
+    controller_interface::return_type update(const rclcpp::Time &time, const rclcpp::Duration &period) override;
 
-  TI5_ARMS_CONTROLLER__VISIBILITY_PUBLIC
-  controller_interface::CallbackReturn on_deactivate(
-    const rclcpp_lifecycle::State & previous_state) override;
-
-  TI5_ARMS_CONTROLLER__VISIBILITY_PUBLIC
-  controller_interface::return_type update(
-    const rclcpp::Time & time, const rclcpp::Duration & period) override;
-
-  // TODO(anyone): replace the state and command message types
-  using ControllerReferenceMsg = control_msgs::msg::JointJog;
-  using ControllerModeSrvType = std_srvs::srv::SetBool;
-  using ControllerStateMsg = control_msgs::msg::JointControllerState;
-
-protected:
-  std::shared_ptr<Ti5_arms_controller::ParamListener> param_listener_;
-  Ti5_arms_controller::Params params_;
-
-  std::vector<std::string> state_joints_;
-
-  // Command subscribers and Controller State publisher
-  rclcpp::Subscription<ControllerReferenceMsg>::SharedPtr ref_subscriber_ = nullptr;
-  realtime_tools::RealtimeBuffer<std::shared_ptr<ControllerReferenceMsg>> input_ref_;
-
-  rclcpp::Service<ControllerModeSrvType>::SharedPtr set_slow_control_mode_service_;
-
-
-  using ControllerStatePublisher = realtime_tools::RealtimePublisher<ControllerStateMsg>;
-
-  rclcpp::Publisher<ControllerStateMsg>::SharedPtr s_publisher_;
-  std::unique_ptr<ControllerStatePublisher> state_publisher_;
+    // TODO(anyone): replace the state and command message types
+    using ControllerReferenceMsg = control_msgs::msg::JointJog;
+    using ControllerModeSrvType = std_srvs::srv::SetBool;
+    using ControllerStateMsg = control_msgs::msg::JointControllerState;
 
 private:
-  std::vector<std::string> joint_names_;
-  std::vector<std::string> command_interfaces_;
-  std::vector<std::string> state_interfaces_;
+    std::shared_ptr<Ti5_arms_controller::ParamListener> param_listener_;
+    Ti5_arms_controller::Params params_;
+  
+    std::vector<std::string> joint_command_interfaces_;
+    std::vector<std::string> joint_state_interfaces_;
 
 
+    std::vector<std::string> joint_names_;
+    std::vector<std::string> command_interfaces_;
+    std::vector<std::string> state_interfaces_;
 
-  // callback for topic interface
-  TI5_ARMS_CONTROLLER__VISIBILITY_LOCAL
-  void reference_callback(const std::shared_ptr<ControllerReferenceMsg> msg);
-};
+    std::vector<hardware_interface::LoanedCommandInterface> command_interface_handles_;
+    std::vector<hardware_interface::LoanedStateInterface> state_interface_handles_;
 
-}  // namespace Ti5_arms_controller
+    // Command subscribers and Controller State publisher
+    rclcpp::Subscription<ControllerReferenceMsg>::SharedPtr ref_subscriber_ = nullptr;
+    realtime_tools::RealtimeBuffer<std::shared_ptr<ControllerReferenceMsg>> input_ref_;
 
-#endif  // TI5_ARMS_CONTROLLER__TI5_ARMS_CONTROLLER_HPP_
+    rclcpp::Service<ControllerModeSrvType>::SharedPtr set_slow_control_mode_service_;
+
+    using ControllerStatePublisher = realtime_tools::RealtimePublisher<ControllerStateMsg>;
+
+    rclcpp::Publisher<ControllerStateMsg>::SharedPtr s_publisher_;
+    std::unique_ptr<ControllerStatePublisher> state_publisher_;
+  };
+
+} // namespace Ti5_arms_controller
+
+#endif // TI5_ARMS_CONTROLLER__TI5_ARMS_CONTROLLER_HPP_

@@ -31,26 +31,10 @@
 
 #include "can_hw.h"
 
-using vector_t = Eigen::Matrix<double, Eigen::Dynamic, 1>;
 
-struct Ti5MotorData
-{
-  double pos_, vel_, eff_;
-  double pos_cmd_, vel_cmd_, eff_cmd_;
-};
 
 namespace Ti5_hardware_interface
 {
-
-
-  inline std_msgs::msg::Float64MultiArray createFloat64MultiArrayFromVector(const vector_t &data)
-  {
-    std_msgs::msg::Float64MultiArray msg;
-    msg.data.assign(data.data(), data.data() + data.size());
-    return msg;
-  }
-
-
 
   class hardware : public hardware_interface::SystemInterface
   {
@@ -80,6 +64,8 @@ namespace Ti5_hardware_interface
     hardware_interface::return_type write(const rclcpp::Time &time, const rclcpp::Duration &period) override;
 
   private:
+
+    std::shared_ptr<CANMotorInterface> can_motor_interface;
     size_t num_joints_;
     std::vector<std::string> joint_names_;
     std::vector<double> pos_cmd_, vel_cmd_, eff_cmd_;

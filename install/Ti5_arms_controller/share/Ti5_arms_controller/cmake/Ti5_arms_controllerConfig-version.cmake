@@ -1,0 +1,1 @@
+/home/astra/Ti5_controller/build/Ti5_arms_controller/ament_cmake_core/Ti5_arms_controllerConfig-version.cmake

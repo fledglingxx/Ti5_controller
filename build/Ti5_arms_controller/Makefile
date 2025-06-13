@@ -223,97 +223,6 @@ Ti5_arms_controller/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Ti5_arms_controller.dir/build.make CMakeFiles/Ti5_arms_controller.dir/build
 .PHONY : Ti5_arms_controller/fast
 
-#=============================================================================
-# Target rules for targets named test_load_Ti5_arms_controller
-
-# Build rule for target.
-test_load_Ti5_arms_controller: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test_load_Ti5_arms_controller
-.PHONY : test_load_Ti5_arms_controller
-
-# fast build rule for target.
-test_load_Ti5_arms_controller/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_load_Ti5_arms_controller.dir/build.make CMakeFiles/test_load_Ti5_arms_controller.dir/build
-.PHONY : test_load_Ti5_arms_controller/fast
-
-#=============================================================================
-# Target rules for targets named test_Ti5_arms_controller
-
-# Build rule for target.
-test_Ti5_arms_controller: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test_Ti5_arms_controller
-.PHONY : test_Ti5_arms_controller
-
-# fast build rule for target.
-test_Ti5_arms_controller/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_Ti5_arms_controller.dir/build.make CMakeFiles/test_Ti5_arms_controller.dir/build
-.PHONY : test_Ti5_arms_controller/fast
-
-#=============================================================================
-# Target rules for targets named test_Ti5_arms_controller_preceeding
-
-# Build rule for target.
-test_Ti5_arms_controller_preceeding: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test_Ti5_arms_controller_preceeding
-.PHONY : test_Ti5_arms_controller_preceeding
-
-# fast build rule for target.
-test_Ti5_arms_controller_preceeding/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_Ti5_arms_controller_preceeding.dir/build.make CMakeFiles/test_Ti5_arms_controller_preceeding.dir/build
-.PHONY : test_Ti5_arms_controller_preceeding/fast
-
-#=============================================================================
-# Target rules for targets named gmock
-
-# Build rule for target.
-gmock: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 gmock
-.PHONY : gmock
-
-# fast build rule for target.
-gmock/fast:
-	$(MAKE) $(MAKESILENT) -f gmock/CMakeFiles/gmock.dir/build.make gmock/CMakeFiles/gmock.dir/build
-.PHONY : gmock/fast
-
-#=============================================================================
-# Target rules for targets named gmock_main
-
-# Build rule for target.
-gmock_main: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 gmock_main
-.PHONY : gmock_main
-
-# fast build rule for target.
-gmock_main/fast:
-	$(MAKE) $(MAKESILENT) -f gmock/CMakeFiles/gmock_main.dir/build.make gmock/CMakeFiles/gmock_main.dir/build
-.PHONY : gmock_main/fast
-
-#=============================================================================
-# Target rules for targets named gtest
-
-# Build rule for target.
-gtest: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 gtest
-.PHONY : gtest
-
-# fast build rule for target.
-gtest/fast:
-	$(MAKE) $(MAKESILENT) -f gtest/CMakeFiles/gtest.dir/build.make gtest/CMakeFiles/gtest.dir/build
-.PHONY : gtest/fast
-
-#=============================================================================
-# Target rules for targets named gtest_main
-
-# Build rule for target.
-gtest_main: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 gtest_main
-.PHONY : gtest_main
-
-# fast build rule for target.
-gtest_main/fast:
-	$(MAKE) $(MAKESILENT) -f gtest/CMakeFiles/gtest_main.dir/build.make gtest/CMakeFiles/gtest_main.dir/build
-.PHONY : gtest_main/fast
-
 src/Ti5_arms_controller.o: src/Ti5_arms_controller.cpp.o
 .PHONY : src/Ti5_arms_controller.o
 
@@ -338,78 +247,6 @@ src/Ti5_arms_controller.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Ti5_arms_controller.dir/build.make CMakeFiles/Ti5_arms_controller.dir/src/Ti5_arms_controller.cpp.s
 .PHONY : src/Ti5_arms_controller.cpp.s
 
-test/test_Ti5_arms_controller.o: test/test_Ti5_arms_controller.cpp.o
-.PHONY : test/test_Ti5_arms_controller.o
-
-# target to build an object file
-test/test_Ti5_arms_controller.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_Ti5_arms_controller.dir/build.make CMakeFiles/test_Ti5_arms_controller.dir/test/test_Ti5_arms_controller.cpp.o
-.PHONY : test/test_Ti5_arms_controller.cpp.o
-
-test/test_Ti5_arms_controller.i: test/test_Ti5_arms_controller.cpp.i
-.PHONY : test/test_Ti5_arms_controller.i
-
-# target to preprocess a source file
-test/test_Ti5_arms_controller.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_Ti5_arms_controller.dir/build.make CMakeFiles/test_Ti5_arms_controller.dir/test/test_Ti5_arms_controller.cpp.i
-.PHONY : test/test_Ti5_arms_controller.cpp.i
-
-test/test_Ti5_arms_controller.s: test/test_Ti5_arms_controller.cpp.s
-.PHONY : test/test_Ti5_arms_controller.s
-
-# target to generate assembly for a file
-test/test_Ti5_arms_controller.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_Ti5_arms_controller.dir/build.make CMakeFiles/test_Ti5_arms_controller.dir/test/test_Ti5_arms_controller.cpp.s
-.PHONY : test/test_Ti5_arms_controller.cpp.s
-
-test/test_Ti5_arms_controller_preceeding.o: test/test_Ti5_arms_controller_preceeding.cpp.o
-.PHONY : test/test_Ti5_arms_controller_preceeding.o
-
-# target to build an object file
-test/test_Ti5_arms_controller_preceeding.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_Ti5_arms_controller_preceeding.dir/build.make CMakeFiles/test_Ti5_arms_controller_preceeding.dir/test/test_Ti5_arms_controller_preceeding.cpp.o
-.PHONY : test/test_Ti5_arms_controller_preceeding.cpp.o
-
-test/test_Ti5_arms_controller_preceeding.i: test/test_Ti5_arms_controller_preceeding.cpp.i
-.PHONY : test/test_Ti5_arms_controller_preceeding.i
-
-# target to preprocess a source file
-test/test_Ti5_arms_controller_preceeding.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_Ti5_arms_controller_preceeding.dir/build.make CMakeFiles/test_Ti5_arms_controller_preceeding.dir/test/test_Ti5_arms_controller_preceeding.cpp.i
-.PHONY : test/test_Ti5_arms_controller_preceeding.cpp.i
-
-test/test_Ti5_arms_controller_preceeding.s: test/test_Ti5_arms_controller_preceeding.cpp.s
-.PHONY : test/test_Ti5_arms_controller_preceeding.s
-
-# target to generate assembly for a file
-test/test_Ti5_arms_controller_preceeding.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_Ti5_arms_controller_preceeding.dir/build.make CMakeFiles/test_Ti5_arms_controller_preceeding.dir/test/test_Ti5_arms_controller_preceeding.cpp.s
-.PHONY : test/test_Ti5_arms_controller_preceeding.cpp.s
-
-test/test_load_Ti5_arms_controller.o: test/test_load_Ti5_arms_controller.cpp.o
-.PHONY : test/test_load_Ti5_arms_controller.o
-
-# target to build an object file
-test/test_load_Ti5_arms_controller.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_load_Ti5_arms_controller.dir/build.make CMakeFiles/test_load_Ti5_arms_controller.dir/test/test_load_Ti5_arms_controller.cpp.o
-.PHONY : test/test_load_Ti5_arms_controller.cpp.o
-
-test/test_load_Ti5_arms_controller.i: test/test_load_Ti5_arms_controller.cpp.i
-.PHONY : test/test_load_Ti5_arms_controller.i
-
-# target to preprocess a source file
-test/test_load_Ti5_arms_controller.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_load_Ti5_arms_controller.dir/build.make CMakeFiles/test_load_Ti5_arms_controller.dir/test/test_load_Ti5_arms_controller.cpp.i
-.PHONY : test/test_load_Ti5_arms_controller.cpp.i
-
-test/test_load_Ti5_arms_controller.s: test/test_load_Ti5_arms_controller.cpp.s
-.PHONY : test/test_load_Ti5_arms_controller.s
-
-# target to generate assembly for a file
-test/test_load_Ti5_arms_controller.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_load_Ti5_arms_controller.dir/build.make CMakeFiles/test_load_Ti5_arms_controller.dir/test/test_load_Ti5_arms_controller.cpp.s
-.PHONY : test/test_load_Ti5_arms_controller.cpp.s
-
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -427,25 +264,9 @@ help:
 	@echo "... uninstall"
 	@echo "... Ti5_arms_controller"
 	@echo "... Ti5_arms_controller_parameters"
-	@echo "... gmock"
-	@echo "... gmock_main"
-	@echo "... gtest"
-	@echo "... gtest_main"
-	@echo "... test_Ti5_arms_controller"
-	@echo "... test_Ti5_arms_controller_preceeding"
-	@echo "... test_load_Ti5_arms_controller"
 	@echo "... src/Ti5_arms_controller.o"
 	@echo "... src/Ti5_arms_controller.i"
 	@echo "... src/Ti5_arms_controller.s"
-	@echo "... test/test_Ti5_arms_controller.o"
-	@echo "... test/test_Ti5_arms_controller.i"
-	@echo "... test/test_Ti5_arms_controller.s"
-	@echo "... test/test_Ti5_arms_controller_preceeding.o"
-	@echo "... test/test_Ti5_arms_controller_preceeding.i"
-	@echo "... test/test_Ti5_arms_controller_preceeding.s"
-	@echo "... test/test_load_Ti5_arms_controller.o"
-	@echo "... test/test_load_Ti5_arms_controller.i"
-	@echo "... test/test_load_Ti5_arms_controller.s"
 .PHONY : help
 
 

@@ -1,0 +1,114 @@
+[ 13%] Built target Ti5_arms_controller_parameters
+[ 26%] Built target gmock_main
+[ 46%] Built target gmock
+[35m[1mConsolidate compiler generated dependencies of target Ti5_arms_controller[0m
+[35m[1mConsolidate compiler generated dependencies of target test_load_Ti5_arms_controller[0m
+[ 53%] [32mBuilding CXX object CMakeFiles/Ti5_arms_controller.dir/src/Ti5_arms_controller.cpp.o[0m
+[ 60%] [32mBuilding CXX object CMakeFiles/test_load_Ti5_arms_controller.dir/test/test_load_Ti5_arms_controller.cpp.o[0m
+In file included from [01m[K/home/astra/Ti5_controller/build/Ti5_arms_controller/Ti5_arms_controller_parameters/include/Ti5_arms_controller_parameters.hpp:29[m[K,
+                 from [01m[K/home/astra/Ti5_controller/src/Ti5_arms_controller/include/Ti5_arms_controller/Ti5_arms_controller.hpp:28[m[K,
+                 from [01m[K/home/astra/Ti5_controller/src/Ti5_arms_controller/src/Ti5_arms_controller.cpp:20[m[K:
+[01m[K/home/astra/Ti5_controller/build/Ti5_arms_controller/Ti5_arms_controller_parameters/include/validate_Ti5_arms_controller_parameters.hpp:29:75:[m[K [01;35m[Kwarning: [m[K‘[01m[Kusing Result = class tl::expected<void, std::__cxx11::basic_string<char> >[m[K’ is deprecated: Use tl::expected<void, std::string> for return instead. `#include <tl_expected/expected.hpp>`. [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wdeprecated-declarations-Wdeprecated-declarations]8;;[m[K]
+   29 | Result forbidden_interface_name_prefix(rclcpp::Parameter const & parameter[01;35m[K)[m[K
+      |                                                                           [01;35m[K^[m[K
+In file included from [01m[K/home/astra/Ti5_controller/build/Ti5_arms_controller/Ti5_arms_controller_parameters/include/Ti5_arms_controller_parameters.hpp:23[m[K,
+                 from [01m[K/home/astra/Ti5_controller/src/Ti5_arms_controller/include/Ti5_arms_controller/Ti5_arms_controller.hpp:28[m[K,
+                 from [01m[K/home/astra/Ti5_controller/src/Ti5_arms_controller/src/Ti5_arms_controller.cpp:20[m[K:
+[01m[K/opt/ros/humble/include/parameter_traits/parameter_traits/parameter_traits.hpp:37:7:[m[K [01;36m[Knote: [m[Kdeclared here
+   37 | using [01;36m[KResult[m[K
+      |       [01;36m[K^~~~~~[m[K
+In file included from [01m[K/home/astra/Ti5_controller/build/Ti5_arms_controller/Ti5_arms_controller_parameters/include/Ti5_arms_controller_parameters.hpp:29[m[K,
+                 from [01m[K/home/astra/Ti5_controller/src/Ti5_arms_controller/include/Ti5_arms_controller/Ti5_arms_controller.hpp:28[m[K,
+                 from [01m[K/home/astra/Ti5_controller/src/Ti5_arms_controller/src/Ti5_arms_controller.cpp:20[m[K:
+[01m[K/home/astra/Ti5_controller/build/Ti5_arms_controller/Ti5_arms_controller_parameters/include/validate_Ti5_arms_controller_parameters.hpp:[m[K In function ‘[01m[Kparameter_traits::Result parameter_traits::forbidden_interface_name_prefix(const rclcpp::Parameter&)[m[K’:
+[01m[K/home/astra/Ti5_controller/build/Ti5_arms_controller/Ti5_arms_controller_parameters/include/validate_Ti5_arms_controller_parameters.hpp:35:17:[m[K [01;35m[Kwarning: [m[K‘[01m[Ktl::expected<void, std::__cxx11::basic_string<char> > parameter_traits::ERROR(const string&, Args ...) [with Args = {}; std::string = std::__cxx11::basic_string<char>][m[K’ is deprecated: When returning tl::expected<void, std::string> you can call fmt::format directly. [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wdeprecated-declarations-Wdeprecated-declarations]8;;[m[K]
+   35 |     return [01;35m[KERROR("'interface_name' parameter can not start with 'blup_'")[m[K;
+      |            [01;35m[K~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+In file included from [01m[K/home/astra/Ti5_controller/build/Ti5_arms_controller/Ti5_arms_controller_parameters/include/Ti5_arms_controller_parameters.hpp:23[m[K,
+                 from [01m[K/home/astra/Ti5_controller/src/Ti5_arms_controller/include/Ti5_arms_controller/Ti5_arms_controller.hpp:28[m[K,
+                 from [01m[K/home/astra/Ti5_controller/src/Ti5_arms_controller/src/Ti5_arms_controller.cpp:20[m[K:
+[01m[K/opt/ros/humble/include/parameter_traits/parameter_traits/parameter_traits.hpp:46:1:[m[K [01;36m[Knote: [m[Kdeclared here
+   46 | [01;36m[KERROR[m[K(const std::string& format, Args... args)
+      | [01;36m[K^~~~~[m[K
+In file included from [01m[K/home/astra/Ti5_controller/build/Ti5_arms_controller/Ti5_arms_controller_parameters/include/Ti5_arms_controller_parameters.hpp:29[m[K,
+                 from [01m[K/home/astra/Ti5_controller/src/Ti5_arms_controller/include/Ti5_arms_controller/Ti5_arms_controller.hpp:28[m[K,
+                 from [01m[K/home/astra/Ti5_controller/src/Ti5_arms_controller/src/Ti5_arms_controller.cpp:20[m[K:
+[01m[K/home/astra/Ti5_controller/build/Ti5_arms_controller/Ti5_arms_controller_parameters/include/validate_Ti5_arms_controller_parameters.hpp:38:10:[m[K [01;35m[Kwarning: [m[K‘[01m[Kparameter_traits::OK[m[K’ is deprecated: When returning tl::expected<void, std::string> default construct for OK with `{}`. [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wdeprecated-declarations-Wdeprecated-declarations]8;;[m[K]
+   38 |   return [01;35m[KOK[m[K;
+      |          [01;35m[K^~[m[K
+In file included from [01m[K/home/astra/Ti5_controller/build/Ti5_arms_controller/Ti5_arms_controller_parameters/include/Ti5_arms_controller_parameters.hpp:23[m[K,
+                 from [01m[K/home/astra/Ti5_controller/src/Ti5_arms_controller/include/Ti5_arms_controller/Ti5_arms_controller.hpp:28[m[K,
+                 from [01m[K/home/astra/Ti5_controller/src/Ti5_arms_controller/src/Ti5_arms_controller.cpp:20[m[K:
+[01m[K/opt/ros/humble/include/parameter_traits/parameter_traits/parameter_traits.hpp:51:13:[m[K [01;36m[Knote: [m[Kdeclared here
+   51 | auto static [01;36m[KOK[m[K
+      |             [01;36m[K^~[m[K
+[01m[K/home/astra/Ti5_controller/src/Ti5_arms_controller/src/Ti5_arms_controller.cpp:[m[K In member function ‘[01m[Kvirtual controller_interface::CallbackReturn Ti5_arms_controller::Ti5ArmsController::on_init()[m[K’:
+[01m[K/home/astra/Ti5_controller/src/Ti5_arms_controller/src/Ti5_arms_controller.cpp:42:52:[m[K [01;31m[Kerror: [m[K‘[01m[Kjoint_command_interfaces_[m[K’ was not declared in this scope; did you mean ‘[01m[Kcommand_interfaces_[m[K’?
+   42 |     node->get_parameter("joint_command_interfaces",[01;31m[Kjoint_command_interfaces_[m[K);
+      |                                                    [01;31m[K^~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+      |                                                    [32m[Kcommand_interfaces_[m[K
+[01m[K/home/astra/Ti5_controller/src/Ti5_arms_controller/src/Ti5_arms_controller.cpp:43:50:[m[K [01;31m[Kerror: [m[K‘[01m[Kjoint_state_interfaces_[m[K’ was not declared in this scope; did you mean ‘[01m[Kstate_interfaces_[m[K’?
+   43 |     node->get_parameter("joint_state_interfaces",[01;31m[Kjoint_state_interfaces_[m[K);
+      |                                                  [01;31m[K^~~~~~~~~~~~~~~~~~~~~~~[m[K
+      |                                                  [32m[Kstate_interfaces_[m[K
+[01m[K/home/astra/Ti5_controller/src/Ti5_arms_controller/src/Ti5_arms_controller.cpp:[m[K In member function ‘[01m[Kvirtual controller_interface::CallbackReturn Ti5_arms_controller::Ti5ArmsController::on_configure(const rclcpp_lifecycle::State&)[m[K’:
+[01m[K/home/astra/Ti5_controller/src/Ti5_arms_controller/src/Ti5_arms_controller.cpp:55:32:[m[K [01;31m[Kerror: [m[K‘[01m[Kjoint_command_interfaces_[m[K’ was not declared in this scope; did you mean ‘[01m[Kcommand_interfaces_[m[K’?
+   55 |     if(joint_names_.empty() || [01;31m[Kjoint_command_interfaces_[m[K.empty() || joint_state_interfaces_.empty())
+      |                                [01;31m[K^~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+      |                                [32m[Kcommand_interfaces_[m[K
+[01m[K/home/astra/Ti5_controller/src/Ti5_arms_controller/src/Ti5_arms_controller.cpp:55:69:[m[K [01;31m[Kerror: [m[K‘[01m[Kjoint_state_interfaces_[m[K’ was not declared in this scope; did you mean ‘[01m[Kstate_interfaces_[m[K’?
+   55 |     if(joint_names_.empty() || joint_command_interfaces_.empty() || [01;31m[Kjoint_state_interfaces_[m[K.empty())
+      |                                                                     [01;31m[K^~~~~~~~~~~~~~~~~~~~~~~[m[K
+      |                                                                     [32m[Kstate_interfaces_[m[K
+[01m[K/home/astra/Ti5_controller/src/Ti5_arms_controller/src/Ti5_arms_controller.cpp:58:7:[m[K [01;31m[Kerror: [m[Kexpected ‘[01m[K;[m[K’ before ‘[01m[Kreturn[m[K’
+   58 |       [01;31m[Kreturn[m[K controller_interface::CallbackReturn::ERROR;
+      |       [01;31m[K^~~~~~[m[K
+[01m[K/home/astra/Ti5_controller/src/Ti5_arms_controller/src/Ti5_arms_controller.cpp:65:23:[m[K [01;31m[Kerror: [m[K‘[01m[Kget_interface[m[K’ was not declared in this scope; did you mean ‘[01m[Krcl_interfaces[m[K’?
+   65 |         auto handle = [01;31m[Kget_interface[m[K(joint, interface, command_interfaces_);
+      |                       [01;31m[K^~~~~~~~~~~~~[m[K
+      |                       [32m[Krcl_interfaces[m[K
+[01m[K/home/astra/Ti5_controller/src/Ti5_arms_controller/src/Ti5_arms_controller.cpp:78:35:[m[K [01;31m[Kerror: [m[K‘[01m[Kjoint_state_interfaces_[m[K’ was not declared in this scope; did you mean ‘[01m[Kstate_interfaces_[m[K’?
+   78 |       for(const auto &interface : [01;31m[Kjoint_state_interfaces_[m[K)
+      |                                   [01;31m[K^~~~~~~~~~~~~~~~~~~~~~~[m[K
+      |                                   [32m[Kstate_interfaces_[m[K
+[01m[K/home/astra/Ti5_controller/src/Ti5_arms_controller/src/Ti5_arms_controller.cpp:80:23:[m[K [01;31m[Kerror: [m[K‘[01m[Kget_interface[m[K’ was not declared in this scope; did you mean ‘[01m[Krcl_interfaces[m[K’?
+   80 |         auto handle = [01;31m[Kget_interface[m[K(joint, interface, state_interfaces_);
+      |                       [01;31m[K^~~~~~~~~~~~~[m[K
+      |                       [32m[Krcl_interfaces[m[K
+[01m[K/home/astra/Ti5_controller/src/Ti5_arms_controller/src/Ti5_arms_controller.cpp:[m[K In member function ‘[01m[Kvirtual controller_interface::InterfaceConfiguration Ti5_arms_controller::Ti5ArmsController::command_interface_configuration() const[m[K’:
+[01m[K/home/astra/Ti5_controller/src/Ti5_arms_controller/src/Ti5_arms_controller.cpp:102:67:[m[K [01;31m[Kerror: [m[K‘[01m[Kjoint_command_interfaces_[m[K’ was not declared in this scope; did you mean ‘[01m[Kcommand_interfaces_[m[K’?
+  102 |     command_interfaces_config.names.reserve(joint_names_.size() * [01;31m[Kjoint_command_interfaces_[m[K.size());
+      |                                                                   [01;31m[K^~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+      |                                                                   [32m[Kcommand_interfaces_[m[K
+[01m[K/home/astra/Ti5_controller/src/Ti5_arms_controller/src/Ti5_arms_controller.cpp:[m[K In member function ‘[01m[Kvirtual controller_interface::InterfaceConfiguration Ti5_arms_controller::Ti5ArmsController::state_interface_configuration() const[m[K’:
+[01m[K/home/astra/Ti5_controller/src/Ti5_arms_controller/src/Ti5_arms_controller.cpp:120:35:[m[K [01;31m[Kerror: [m[K‘[01m[Kjoint_state_interfaces_[m[K’ was not declared in this scope; did you mean ‘[01m[Kstate_interfaces_[m[K’?
+  120 |       for(const auto &interface : [01;31m[Kjoint_state_interfaces_[m[K)
+      |                                   [01;31m[K^~~~~~~~~~~~~~~~~~~~~~~[m[K
+      |                                   [32m[Kstate_interfaces_[m[K
+[01m[K/home/astra/Ti5_controller/src/Ti5_arms_controller/src/Ti5_arms_controller.cpp:[m[K In member function ‘[01m[Kvirtual controller_interface::return_type Ti5_arms_controller::Ti5ArmsController::update(const rclcpp::Time&, const rclcpp::Duration&)[m[K’:
+[01m[K/home/astra/Ti5_controller/src/Ti5_arms_controller/src/Ti5_arms_controller.cpp:151:83:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[Ktime[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-parameter-Wunused-parameter]8;;[m[K]
+  151 |   controller_interface::return_type Ti5ArmsController::update([01;35m[Kconst rclcpp::Time &time[m[K, const rclcpp::Duration &)
+      |                                                               [01;35m[K~~~~~~~~~~~~~~~~~~~~^~~~[m[K
+gmake[2]: *** [CMakeFiles/Ti5_arms_controller.dir/build.make:76：CMakeFiles/Ti5_arms_controller.dir/src/Ti5_arms_controller.cpp.o] 错误 1
+gmake[1]: *** [CMakeFiles/Makefile2:208：CMakeFiles/Ti5_arms_controller.dir/all] 错误 2
+gmake[1]: *** 正在等待未完成的任务....
+[01m[K/home/astra/Ti5_controller/src/Ti5_arms_controller/test/test_load_Ti5_arms_controller.cpp:[m[K In member function ‘[01m[Kvirtual void TestLoadTi5ArmsController_load_controller_Test::TestBody()[m[K’:
+[01m[K/home/astra/Ti5_controller/src/Ti5_arms_controller/test/test_load_Ti5_arms_controller.cpp:38:92:[m[K [01;31m[Kerror: [m[Kno matching function for call to ‘[01m[Kcontroller_manager::ControllerManager::ControllerManager(std::shared_ptr<rclcpp::Executor>&, const std::__cxx11::basic_string<char>&, bool, const char [24])[m[K’
+   38 |     executor, ros2_control_test_assets::minimal_robot_urdf, true, "test_controller_manager"[01;31m[K)[m[K;
+      |                                                                                            [01;31m[K^[m[K
+In file included from [01m[K/home/astra/Ti5_controller/src/Ti5_arms_controller/test/test_load_Ti5_arms_controller.cpp:23[m[K:
+[01m[K/opt/ros/humble/include/controller_manager/controller_manager.hpp:77:3:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Kcontroller_manager::ControllerManager::ControllerManager(std::shared_ptr<rclcpp::Executor>, const string&, const string&, const rclcpp::NodeOptions&)[m[K’
+   77 |   [01;36m[KControllerManager[m[K(
+      |   [01;36m[K^~~~~~~~~~~~~~~~~[m[K
+[01m[K/opt/ros/humble/include/controller_manager/controller_manager.hpp:80:25:[m[K [01;36m[Knote: [m[K  no known conversion for argument 3 from ‘[01m[Kbool[m[K’ to ‘[01m[Kconst string&[m[K’ {aka ‘[01m[Kconst std::__cxx11::basic_string<char>&[m[K’}
+   80 |     [01;36m[Kconst std::string & namespace_ = ""[m[K,
+      |     [01;36m[K~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~[m[K
+[01m[K/opt/ros/humble/include/controller_manager/controller_manager.hpp:69:3:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Kcontroller_manager::ControllerManager::ControllerManager(std::unique_ptr<hardware_interface::ResourceManager>, std::shared_ptr<rclcpp::Executor>, const string&, const string&, const rclcpp::NodeOptions&)[m[K’
+   69 |   [01;36m[KControllerManager[m[K(
+      |   [01;36m[K^~~~~~~~~~~~~~~~~[m[K
+[01m[K/opt/ros/humble/include/controller_manager/controller_manager.hpp:70:58:[m[K [01;36m[Knote: [m[K  no known conversion for argument 1 from ‘[01m[Kstd::shared_ptr<rclcpp::Executor>[m[K’ to ‘[01m[Kstd::unique_ptr<hardware_interface::ResourceManager>[m[K’
+   70 |     [01;36m[Kstd::unique_ptr<hardware_interface::ResourceManager> resource_manager[m[K,
+      |     [01;36m[K~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~[m[K
+gmake[2]: *** [CMakeFiles/test_load_Ti5_arms_controller.dir/build.make:76：CMakeFiles/test_load_Ti5_arms_controller.dir/test/test_load_Ti5_arms_controller.cpp.o] 错误 1
+gmake[1]: *** [CMakeFiles/Makefile2:235：CMakeFiles/test_load_Ti5_arms_controller.dir/all] 错误 2
+gmake: *** [Makefile:146：all] 错误 2

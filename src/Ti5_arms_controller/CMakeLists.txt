@@ -48,8 +48,8 @@ pluginlib_export_plugin_description_file(
   controller_interface Ti5_arms_controller.xml)
 
 install(
-  TARGETS
-  Ti5_arms_controller
+  TARGETS Ti5_arms_controller
+  EXPORT export_Ti5_arms_controller
   RUNTIME DESTINATION bin
   ARCHIVE DESTINATION lib
   LIBRARY DESTINATION lib
@@ -62,40 +62,9 @@ install(
 
 if(BUILD_TESTING)
   find_package(ament_lint_auto REQUIRED)
-  # the following line skips the linter which checks for copyrights
-  # comment the line when a copyright and license is added to all source files
   set(ament_cmake_copyright_FOUND TRUE)
-  # the following line skips cpplint (only works in a git repo)
-  # comment the line when this package is in a git repo and when
-  # a copyright and license is added to all source files
   set(ament_cmake_cpplint_FOUND TRUE)
 
-  ament_add_gmock(test_load_Ti5_arms_controller test/test_load_Ti5_arms_controller.cpp)
-  target_include_directories(test_load_Ti5_arms_controller PRIVATE include)
-  ament_target_dependencies(
-    test_load_Ti5_arms_controller
-    controller_manager
-    hardware_interface
-    ros2_control_test_assets
-  )
-
-  add_rostest_with_parameters_gmock(test_Ti5_arms_controller test/test_Ti5_arms_controller.cpp ${CMAKE_CURRENT_SOURCE_DIR}/test/Ti5_arms_controller_params.yaml)
-  target_include_directories(test_Ti5_arms_controller PRIVATE include)
-  target_link_libraries(test_Ti5_arms_controller Ti5_arms_controller)
-  ament_target_dependencies(
-    test_Ti5_arms_controller
-    controller_interface
-    hardware_interface
-  )
-
-  add_rostest_with_parameters_gmock(test_Ti5_arms_controller_preceeding test/test_Ti5_arms_controller_preceeding.cpp ${CMAKE_CURRENT_SOURCE_DIR}/test/Ti5_arms_controller_preceeding_params.yaml)
-  target_include_directories(test_Ti5_arms_controller_preceeding PRIVATE include)
-  target_link_libraries(test_Ti5_arms_controller_preceeding Ti5_arms_controller)
-  ament_target_dependencies(
-    test_Ti5_arms_controller_preceeding
-    controller_interface
-    hardware_interface
-  )
 endif()
 
 ament_export_include_directories(

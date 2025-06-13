@@ -1,0 +1,7 @@
+[ 13%] Built target Ti5_arms_controller_parameters
+[ 26%] Built target gmock_main
+[ 46%] Built target gmock
+[ 60%] Built target Ti5_arms_controller
+[ 66%] [32mBuilding CXX object CMakeFiles/test_load_Ti5_arms_controller.dir/test/test_load_Ti5_arms_controller.cpp.o[0m
+[ 73%] [32mBuilding CXX object CMakeFiles/test_Ti5_arms_controller.dir/test/test_Ti5_arms_controller.cpp.o[0m
+[ 80%] [32mBuilding CXX object CMakeFiles/test_Ti5_arms_controller_preceeding.dir/test/test_Ti5_arms_controller_preceeding.cpp.o[0m

@@ -1,0 +1,6 @@
+[ 13%] Built target Ti5_arms_controller_parameters
+[ 33%] Built target gmock
+[ 46%] Built target gmock_main
+[35m[1mConsolidate compiler generated dependencies of target Ti5_arms_controller[0m
+[ 53%] [32mBuilding CXX object CMakeFiles/Ti5_arms_controller.dir/src/Ti5_arms_controller.cpp.o[0m
+[ 66%] Built target test_load_Ti5_arms_controller

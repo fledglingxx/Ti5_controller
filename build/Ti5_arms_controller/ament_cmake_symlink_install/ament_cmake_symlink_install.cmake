@@ -316,9 +316,6 @@ ament_cmake_symlink_install_directory("/home/astra/Ti5_controller/src/Ti5_arms_c
 # install(FILES "Ti5_arms_controller.xml" "DESTINATION" "share/Ti5_arms_controller/")
 ament_cmake_symlink_install_files("/home/astra/Ti5_controller/src/Ti5_arms_controller" FILES "Ti5_arms_controller.xml" "DESTINATION" "share/Ti5_arms_controller/")
 
-# install("TARGETS" "Ti5_arms_controller" "RUNTIME_DESTINATION" "bin" "ARCHIVE_DESTINATION" "lib" "LIBRARY_DESTINATION" "lib")
-include("/home/astra/Ti5_controller/build/Ti5_arms_controller/ament_cmake_symlink_install_targets_0_${CMAKE_INSTALL_CONFIG_NAME}.cmake")
-
 # install(DIRECTORY "include/" "DESTINATION" "include/Ti5_arms_controller")
 ament_cmake_symlink_install_directory("/home/astra/Ti5_controller/src/Ti5_arms_controller" DIRECTORY "include/" "DESTINATION" "include/Ti5_arms_controller")
 

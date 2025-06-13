@@ -915,6 +915,7 @@ CMakeFiles/Ti5_hardware_interface.dir/src/hardware.cpp.o: /home/astra/Ti5_contro
   /opt/ros/humble/include/rclcpp/rclcpp/wait_set_policies/detail/write_preferring_read_write_lock.hpp \
   /opt/ros/humble/include/rclcpp/rclcpp/wait_set_template.hpp \
   /home/astra/Ti5_controller/src/Ti5_hardware_interface/can_control/include/can_hw.h \
+  /home/astra/Ti5_controller/src/Ti5_hardware_interface/can_control/include/controlcan.h \
   /opt/ros/humble/include/hardware_interface/types/hardware_interface_type_values.hpp \
   /opt/ros/humble/include/pluginlib/pluginlib/class_list_macros.hpp \
   /opt/ros/humble/include/class_loader/class_loader/class_loader.hpp \
@@ -966,6 +967,8 @@ CMakeFiles/Ti5_hardware_interface.dir/src/hardware.cpp.o: /home/astra/Ti5_contro
 /opt/ros/humble/include/rcl_interfaces/rcl_interfaces/srv/detail/get_parameter_types__builder.hpp:
 
 /opt/ros/humble/include/rcl_interfaces/rcl_interfaces/srv/detail/get_parameter_types__struct.hpp:
+
+/home/astra/Ti5_controller/src/Ti5_hardware_interface/can_control/include/controlcan.h:
 
 /opt/ros/humble/include/rcl_interfaces/rcl_interfaces/srv/get_parameter_types.hpp:
 
