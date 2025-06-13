@@ -96,7 +96,6 @@ namespace Ti5_arms_controller
 
 
 
-
   controller_interface::InterfaceConfiguration Ti5ArmsController::command_interface_configuration() const
   {
     controller_interface::InterfaceConfiguration command_interfaces_config;
@@ -130,59 +129,31 @@ namespace Ti5_arms_controller
 
 
 
-  controller_interface::CallbackReturn Ti5ArmsController::on_activate(
-      const rclcpp_lifecycle::State & /*previous_state*/)
+  controller_interface::CallbackReturn Ti5ArmsController::on_activate(const rclcpp_lifecycle::State &)
   {
     // TODO(anyone): if you have to manage multiple interfaces that need to be sorted check
     // `on_activate` method in `JointTrajectoryController` for exemplary use of
     // `controller_interface::get_ordered_interfaces` helper function
 
-    // Set default value in command
-    reset_controller_reference_msg(*(input_ref_.readFromRT)(), params_.joints);
-
+    RCLCPP_INFO(get_node()->get_logger(), "activating Ti5 arms controller");
     return controller_interface::CallbackReturn::SUCCESS;
   }
 
-  controller_interface::CallbackReturn Ti5ArmsController::on_deactivate(
-      const rclcpp_lifecycle::State & /*previous_state*/)
+
+  controller_interface::CallbackReturn Ti5ArmsController::on_deactivate(const rclcpp_lifecycle::State &)
   {
-    // TODO(anyone): depending on number of interfaces, use definitions, e.g., `CMD_MY_ITFS`,
-    // instead of a loop
-    for (size_t i = 0; i < command_interfaces_.size(); ++i)
-    {
-      command_interfaces_[i].set_value(std::numeric_limits<double>::quiet_NaN());
-    }
+
+
+    RCLCPP_INFO(get_node()->get_logger(), "deactivating Ti5 arms controller");
     return controller_interface::CallbackReturn::SUCCESS;
   }
 
-  controller_interface::return_type Ti5ArmsController::update(
-      const rclcpp::Time &time, const rclcpp::Duration & /*period*/)
+
+
+  controller_interface::return_type Ti5ArmsController::update(const rclcpp::Time &time, const rclcpp::Duration &)
   {
-    auto current_ref = input_ref_.readFromRT();
 
-    // TODO(anyone): depending on number of interfaces, use definitions, e.g., `CMD_MY_ITFS`,
-    // instead of a loop
-    for (size_t i = 0; i < command_interfaces_.size(); ++i)
-    {
-      if (!std::isnan((*current_ref)->displacements[i]))
-      {
-        if (*(control_mode_.readFromRT()) == control_mode_type::SLOW)
-        {
-          (*current_ref)->displacements[i] /= 2;
-        }
-        command_interfaces_[i].set_value((*current_ref)->displacements[i]);
-
-        (*current_ref)->displacements[i] = std::numeric_limits<double>::quiet_NaN();
-      }
-    }
-
-    if (state_publisher_ && state_publisher_->trylock())
-    {
-      state_publisher_->msg_.header.stamp = time;
-      state_publisher_->msg_.set_point = command_interfaces_[CMD_MY_ITFS].get_value();
-      state_publisher_->unlockAndPublish();
-    }
-
+    
     return controller_interface::return_type::OK;
   }
 
