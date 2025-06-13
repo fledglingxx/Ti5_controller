@@ -41,6 +41,7 @@ namespace Ti5_hardware_interface
     return CallbackReturn::SUCCESS;
   }
 
+
   hardware_interface::CallbackReturn hardware::on_configure(const rclcpp_lifecycle::State &)
   {
     int cnt = 3;
@@ -61,71 +62,83 @@ namespace Ti5_hardware_interface
     return CallbackReturn::SUCCESS;
   }
 
+
   std::vector<hardware_interface::StateInterface> hardware::export_state_interfaces()
   {
     std::vector<hardware_interface::StateInterface> state_interfaces;
     for (size_t i = 0; i < info_.joints.size(); ++i)
     {
-
-      RCLCPP_INFO(node_->get_logger(), "Exporting state interface for joint %s", info_.joints[i].name.c_str());
-      state_interfaces.emplace_back(info_.joints[i].name, "position", &joint_data_[i].pos_);
-      state_interfaces.emplace_back(info_.joints[i].name, "velocity", &joint_data_[i].vel_);
-      state_interfaces.emplace_back(info_.joints[i].name, "effort", &joint_data_[i].eff_);
+      state_interfaces.emplace_back(joint_names_[i], hardware_interface::HW_IF_POSITION, &pos_state_[i]);
+      state_interfaces.emplace_back(joint_names_[i], hardware_interface::HW_IF_VELOCITY, &vel_state_[i]);
+      state_interfaces.emplace_back(joint_names_[i], hardware_interface::HW_IF_EFFORT, &eff_state_[i]);
     }
-
     return state_interfaces;
   }
+
 
   std::vector<hardware_interface::CommandInterface> hardware::export_command_interfaces()
   {
     std::vector<hardware_interface::CommandInterface> command_interfaces;
-    for (size_t i = 0; i < info_.joints.size(); ++i)
+    for (size_t i = 0; i < num_joints_; ++i)
     {
-      command_interfaces.emplace_back(info_.joints[i].name, "position", &joint_data_[i].pos_cmd_);
-      command_interfaces.emplace_back(info_.joints[i].name, "velocity", &joint_data_[i].vel_cmd_);
-      command_interfaces.emplace_back(info_.joints[i].name, "effort", &joint_data_[i].eff_cmd_);
+      command_interfaces.emplace_back(joint_names_[i], hardware_interface::HW_IF_POSITION, &pos_cmd_[i]);
+      command_interfaces.emplace_back(joint_names_[i], hardware_interface::HW_IF_VELOCITY, &vel_cmd_[i]);
+      command_interfaces.emplace_back(joint_names_[i], hardware_interface::HW_IF_EFFORT, &eff_cmd_[i]);
     }
 
     return command_interfaces;
   }
 
+
   hardware_interface::CallbackReturn hardware::on_activate(const rclcpp_lifecycle::State &)
   {
-    // TODO(anyone): prepare the robot to receive commands
+    RCLCPP_INFO(node_->get_logger(), "Activating hardware interface");
+
+    for(size_t i = 0; i < num_joints_; i++)
+    {
+      pos_sate_[i] = 0.0;
+      vel_state_[i] = 0.0;
+      eff_state_[i] = 0.0;
+
+      pos_cmd_[i] = pos_state_[i];
+      vel_cmd_[i] = 0.0;
+      eff_cmd_[i] = 0.0;
+    }
 
     return CallbackReturn::SUCCESS;
   }
+
 
   hardware_interface::CallbackReturn hardware::on_deactivate(const rclcpp_lifecycle::State &)
   {
-    // TODO(anyone): prepare the robot to stop receiving commands
+    RCLCPP_INFO(node_->get_logger(), "Deactivating hardware interface");
 
     return CallbackReturn::SUCCESS;
   }
 
+
   hardware_interface::return_type hardware::read(const rclcpp::Time &, const rclcpp::Duration &)
   {
-    for (size_t i = 0; i < info_.joints.size(); i++)
+    for(size_t i = 0; i < num_joints_; i++)
     {
-      joint_data_[i].pos_ = rv_motor_msg[i].position;
-      joint_data_[i].vel_ = rv_motor_msg[i].velocity;
-      joint_data_[i].eff_ = rv_motor_msg[i].torque;
-
-      motor_pos_feedback_(i) = joint_data_[i].pos_;
-      motor_vel_feedback_(i) = joint_data_[i].vel_;
-      motor_eff_feedback_(i) = joint_data_[i].eff_;
+      pos_state_[i] = 1.0;
+      vel_state_[i] = 0.0;  
+      eff_state_[i] = 0.0;
     }
-
-    motor_pos_pub_->publish(createFloat64MultiArrayFromVector(motor_pos_feedback_));
-    motor_vel_pub_->publish(createFloat64MultiArrayFromVector(motor_vel_feedback_));
-    motor_torque_pub_->publish(createFloat64MultiArrayFromVector(motor_eff_feedback_));
 
     return hardware_interface::return_type::OK;
   }
 
+
+
   hardware_interface::return_type hardware::write(const rclcpp::Time &, const rclcpp::Duration &)
   {
-    ////////////sendCanCommand();
+    // send can commands
+
+    for(size_t i=0; i<num_joints_; i++)
+    {
+      RCLCPP_DEBUG(node_->get_logger("Ti5_hardware_interface"), "Writing position command for joint %s: %f", 
+              joint_names_[i].c_str(), pos_cmd_[i]);
 
     return hardware_interface::return_type::OK;
   }
