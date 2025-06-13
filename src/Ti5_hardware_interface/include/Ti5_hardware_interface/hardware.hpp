@@ -33,69 +33,60 @@
 
 using vector_t = Eigen::Matrix<double, Eigen::Dynamic, 1>;
 
-
-struct Ti5MotorData{
+struct Ti5MotorData
+{
   double pos_, vel_, eff_;
   double pos_cmd_, vel_cmd_, eff_cmd_;
 };
 
-
 namespace Ti5_hardware_interface
 {
-  inline std_msgs::msg::Float64MultiArray createFloat64MultiArrayFromVector(const vector_t& data)
+
+
+  inline std_msgs::msg::Float64MultiArray createFloat64MultiArrayFromVector(const vector_t &data)
   {
     std_msgs::msg::Float64MultiArray msg;
     msg.data.assign(data.data(), data.data() + data.size());
     return msg;
   }
-class hardware : public hardware_interface::SystemInterface
-{
-public:
-  TEMPLATES__ROS2_CONTROL__VISIBILITY_PUBLIC
-  hardware_interface::CallbackReturn on_init(
-    const hardware_interface::HardwareInfo & info) override;
 
-  TEMPLATES__ROS2_CONTROL__VISIBILITY_PUBLIC
-  hardware_interface::CallbackReturn on_configure(
-    const rclcpp_lifecycle::State & previous_state) override;
 
-  TEMPLATES__ROS2_CONTROL__VISIBILITY_PUBLIC
-  std::vector<hardware_interface::StateInterface> export_state_interfaces() override;
 
-  TEMPLATES__ROS2_CONTROL__VISIBILITY_PUBLIC
-  std::vector<hardware_interface::CommandInterface> export_command_interfaces() override;
+  class hardware : public hardware_interface::SystemInterface
+  {
+  public:
+    TEMPLATES__ROS2_CONTROL__VISIBILITY_PUBLIC
+    hardware_interface::CallbackReturn on_init(const hardware_interface::HardwareInfo &info) override;
 
-  TEMPLATES__ROS2_CONTROL__VISIBILITY_PUBLIC
-  hardware_interface::CallbackReturn on_activate(
-    const rclcpp_lifecycle::State & previous_state) override;
+    TEMPLATES__ROS2_CONTROL__VISIBILITY_PUBLIC
+    hardware_interface::CallbackReturn on_configure(const rclcpp_lifecycle::State &previous_state) override;
 
-  TEMPLATES__ROS2_CONTROL__VISIBILITY_PUBLIC
-  hardware_interface::CallbackReturn on_deactivate(
-    const rclcpp_lifecycle::State & previous_state) override;
+    TEMPLATES__ROS2_CONTROL__VISIBILITY_PUBLIC
+    std::vector<hardware_interface::StateInterface> export_state_interfaces() override;
 
-  TEMPLATES__ROS2_CONTROL__VISIBILITY_PUBLIC
-  hardware_interface::return_type read(
-    const rclcpp::Time & time, const rclcpp::Duration & period) override;
+    TEMPLATES__ROS2_CONTROL__VISIBILITY_PUBLIC
+    std::vector<hardware_interface::CommandInterface> export_command_interfaces() override;
 
-  TEMPLATES__ROS2_CONTROL__VISIBILITY_PUBLIC
-  hardware_interface::return_type write(
-    const rclcpp::Time & time, const rclcpp::Duration & period) override;
+    TEMPLATES__ROS2_CONTROL__VISIBILITY_PUBLIC
+    hardware_interface::CallbackReturn on_activate(const rclcpp_lifecycle::State &previous_state) override;
 
-private:
-  hardware_interface::HardwareInfo info_;
-  std::vector<Ti5MotorData> joint_data_;
+    TEMPLATES__ROS2_CONTROL__VISIBILITY_PUBLIC
+    hardware_interface::CallbackReturn on_deactivate(const rclcpp_lifecycle::State &previous_state) override;
 
-  vector_t motor_pos_feedback_;
-  vector_t motor_vel_feedback_;
-  vector_t motor_eff_feedback_;
+    TEMPLATES__ROS2_CONTROL__VISIBILITY_PUBLIC
+    hardware_interface::return_type read(const rclcpp::Time &time, const rclcpp::Duration &period) override;
 
-  rclcpp::Node::SharedPtr node_;
+    TEMPLATES__ROS2_CONTROL__VISIBILITY_PUBLIC
+    hardware_interface::return_type write(const rclcpp::Time &time, const rclcpp::Duration &period) override;
 
-  rclcpp::Publisher<std_msgs::msg::Float64MultiArray>::SharedPtr motor_pos_pub_;
-  rclcpp::Publisher<std_msgs::msg::Float64MultiArray>::SharedPtr motor_vel_pub_;
-  rclcpp::Publisher<std_msgs::msg::Float64MultiArray>::SharedPtr motor_torque_pub_;
-};
+  private:
+    size_t num_joints_;
+    std::vector<std::string> joint_names_;
+    std::vector<double> pos_cmd_, vel_cmd_, eff_cmd_;
+    std::vector<double> pos_state_, vel_state_, eff_state_;
 
-}  // namespace Ti5_hardware_interface
+  };
 
-#endif  // TI5_HARDWARE_INTERFACE__HARDWARE_HPP_
+} // namespace Ti5_hardware_interface
+
+#endif // TI5_HARDWARE_INTERFACE__HARDWARE_HPP_
