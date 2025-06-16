@@ -1,2 +1,0 @@
-Invoking command in '/home/astra/Ti5_controller/build/Ti5_hardware_interface': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/astra/Ti5_controller/build/Ti5_hardware_interface -- -j24 -l24
-Invoked command in '/home/astra/Ti5_controller/build/Ti5_hardware_interface' returned '2': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/astra/Ti5_controller/build/Ti5_hardware_interface -- -j24 -l24

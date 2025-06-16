@@ -1,0 +1,25 @@
+moveit_setup_assistant_config:
+  urdf:
+    package: arms_description
+    relative_path: urdf/T170_ARMS.urdf
+  srdf:
+    relative_path: config/T170_ARMS.srdf
+  package_settings:
+    author_name: zx
+    author_email: 1234@qq.com
+    generated_timestamp: 1750070421
+  control_xacro:
+    command:
+      - position
+    state:
+      - position
+      - velocity
+  modified_urdf:
+    xacros:
+      - control_xacro
+  control_xacro:
+    command:
+      - position
+    state:
+      - position
+      - velocity

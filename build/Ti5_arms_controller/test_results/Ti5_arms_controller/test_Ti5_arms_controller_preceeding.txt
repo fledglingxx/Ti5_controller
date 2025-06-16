@@ -1,8 +1,0 @@
--- run_test.py: invoking following command in '/home/astra/Ti5_controller/build/Ti5_arms_controller':
- - /home/astra/Ti5_controller/build/Ti5_arms_controller/test_Ti5_arms_controller_preceeding --ros-args --params-file /home/astra/Ti5_controller/src/Ti5_arms_controller/test/Ti5_arms_controller_preceeding_params.yaml -- --gtest_output=xml:/home/astra/Ti5_controller/build/Ti5_arms_controller/test_results/Ti5_arms_controller/test_Ti5_arms_controller_preceeding.gtest.xml
-
-
-
--- run_test.py: invocation failed: [Errno 2] No such file or directory: '/home/astra/Ti5_controller/build/Ti5_arms_controller/test_Ti5_arms_controller_preceeding'
--- run_test.py: generate result file '/home/astra/Ti5_controller/build/Ti5_arms_controller/test_results/Ti5_arms_controller/test_Ti5_arms_controller_preceeding.gtest.xml' with failed test
--- run_test.py: verify result file '/home/astra/Ti5_controller/build/Ti5_arms_controller/test_results/Ti5_arms_controller/test_Ti5_arms_controller_preceeding.gtest.xml'

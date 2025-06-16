@@ -1,1 +1,1 @@
-/home/astra/Ti5_controller/build/Ti5_arms_controller/ament_cmake_environment_hooks/library_path.dsv
+prepend-non-duplicate;LD_LIBRARY_PATH;lib

@@ -1,4 +1,0 @@
-Unable to find required file: /home/astra/Ti5_controller/build/Ti5_arms_controller/test_load_Ti5_arms_controller
-Errors while running CTest
-Output from these tests are in: /home/astra/Ti5_controller/build/Ti5_arms_controller/Testing/Temporary/LastTest.log
-Use "--rerun-failed --output-on-failure" to re-run the failed cases verbosely.

@@ -1,9 +1,0 @@
-WARNING: Package name "Ti5_arms_controller" does not follow the naming conventions. It should start with a lower case letter and only contain lower case letters, digits, underscores, and dashes.
-[31mCMake Error at ament_cmake_symlink_install/ament_cmake_symlink_install.cmake:158 (message):
-  ament_cmake_symlink_install_files() can't find
-  '/home/astra/Ti5_controller/src/Ti5_arms_controller/../../bringup/config/Ti5_controller.yaml'
-Call Stack (most recent call first):
-  ament_cmake_symlink_install/ament_cmake_symlink_install.cmake:323 (ament_cmake_symlink_install_files)
-  cmake_install.cmake:46 (include)
-
-[0m

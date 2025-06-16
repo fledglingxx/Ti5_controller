@@ -8,8 +8,10 @@ int main(int argc, char **argv)
   
   Ti5_moveit_interface::MoveItInterface Ti5(node, "left_arm", "right_arm");
 
+  std::cout<<"hhhhhhhh!!!!!!! Ti5_moveit_interface_node initialized"<<std::endl;
+
   std::vector<double> left_joints = {0.0, -0.5, 1.0, 0.0, 0.7, 0.0, 0.0};
-  Ti5.move_left_arm(left_joints);
+  Ti5.L_move_j(left_joints);
 
   geometry_msgs::msg::Pose pose;
   pose.position.x = 0.5;

@@ -1,1 +1,0 @@
-ament_cmake_symlink_install_targets("TARGET_FILES" "/home/astra/Ti5_controller/build/Ti5_arms_controller/libTi5_arms_controller.so" "TARGETS" "Ti5_arms_controller" "RUNTIME_DESTINATION" "bin" "ARCHIVE_DESTINATION" "lib" "LIBRARY_DESTINATION" "lib")

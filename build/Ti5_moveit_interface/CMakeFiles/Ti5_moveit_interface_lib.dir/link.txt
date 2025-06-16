@@ -1,0 +1,2 @@
+/usr/bin/ar qc libTi5_moveit_interface_lib.a CMakeFiles/Ti5_moveit_interface_lib.dir/src/Ti5_moveit_interface.cpp.o
+/usr/bin/ranlib libTi5_moveit_interface_lib.a

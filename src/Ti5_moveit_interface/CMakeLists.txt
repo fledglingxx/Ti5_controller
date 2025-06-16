@@ -7,44 +7,54 @@ endif()
 
 # find dependencies
 find_package(ament_cmake REQUIRED)
-find_package(moveit_ros_pplanning_interface REQUIRED)
+find_package(moveit_ros_planning_interface REQUIRED)
 find_package(moveit_core REQUIRED)
+find_package(rclcpp REQUIRED)
 find_package(geometry_msgs REQUIRED)
-# uncomment the following section in order to fill in
-# further dependencies manually.
-# find_package(<dependency> REQUIRED)
+
 
 include_directories(include)
 
-add_library(${PROJECT_NAME} src/Ti5_moveit_interface.cpp) 
+add_library(Ti5_moveit_interface_lib src/Ti5_moveit_interface.cpp) 
 
-ament_target_dependencies(${PROJECT_NAME}
+ament_target_dependencies(Ti5_moveit_interface_lib
   rclcpp
   geometry_msgs
   moveit_ros_planning_interface
   moveit_core
 )
+
+target_include_directories(Ti5_moveit_interface_lib PUBLIC
+  $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
+  $<INSTALL_INTERFACE:include>
+)
+
 
 add_executable(Ti5_node src/Ti5_node.cpp)
-target_link_libraries(Ti5_node ${PROJECT_NAME})
+
+
+target_link_libraries(Ti5_node Ti5_moveit_interface_lib)
+
 ament_target_dependencies(Ti5_node
-  ${PROJECT_NAME}
-  rclcpp
-  geometry_msgs
-  moveit_ros_planning_interface
-  moveit_core
+rclcpp
+geometry_msgs
+moveit_ros_planning_interface
+moveit_core
 )
 
-
-install(TARGETS ${PROJECT_NAME} Ti5_node  
-  ARCHIVE DESTINATION lib
-  LIBRARY DESTINATION lib
-  RUNTIME DESTINATION bin
-)
 
 install(DIRECTORY include/
   DESTINATION include/
 )
+
+
+install(TARGETS
+  Ti5_moveit_interface_lib
+  Ti5_node
+  DESTINATION lib/${PROJECT_NAME}
+)
+
+
 
 
 

@@ -1,6 +1,6 @@
-#include "Ti5_moveit_interface/Ti5_moveit_interface.h"
+#include "Ti5_moveit_interface/Ti5_moveit_interface.hpp"
 
-namespace ti5_moveit_interface
+namespace Ti5_moveit_interface
 {
     MoveItInterface::MoveItInterface(const rclcpp::Node::SharedPtr &node,
                                      const std::string &left_group,const std::string &right_group) : node_(node)
@@ -20,9 +20,13 @@ namespace ti5_moveit_interface
 
     bool MoveItInterface::L_move_j(const std::vector<double> &joint_positions)
     {
+
+        std::cout<<"hhhhhhhhhhh!!!!!!!   L_move_j"<<std::endl;
+
+
         L_move_group_->setJointValueTarget(joint_positions);
         moveit::planning_interface::MoveGroupInterface::Plan plan;
-        bool success = (L_move_group_->plan(plan) == moveit::core::MoveitErrorCode::SUCCESS)
+        bool success = (L_move_group_->plan(plan) == moveit::planning_interface::MoveItErrorCode::SUCCESS);
         if(success)
             L_move_group_->execute(plan);
         return success;
@@ -32,7 +36,7 @@ namespace ti5_moveit_interface
     {
         L_move_group_->setPoseTarget(pose);
         moveit::planning_interface::MoveGroupInterface::Plan plan;
-        bool success = (L_move_group_->plan(plan) == moveit::core::MoveitErrorCode::SUCCESS)
+        bool success = (L_move_group_->plan(plan) == moveit::planning_interface::MoveItErrorCode::SUCCESS);
         if(success)
             L_move_group_->execute(plan);
         return success;
@@ -42,7 +46,7 @@ namespace ti5_moveit_interface
     {
         R_move_group_->setJointValueTarget(joint_positions);
         moveit::planning_interface::MoveGroupInterface::Plan plan;
-        bool success = (R_move_group_->plan(plan) == moveit::core::MoveitErrorCode::SUCCESS)
+        bool success = (R_move_group_->plan(plan) == moveit::planning_interface::MoveItErrorCode::SUCCESS);
         if(success)
             R_move_group_->execute(plan);
         return success;
@@ -52,7 +56,7 @@ namespace ti5_moveit_interface
     {
         R_move_group_->setPoseTarget(pose);
         moveit::planning_interface::MoveGroupInterface::Plan plan;
-        bool success = (R_move_group_->plan(plan) == moveit::core::MoveitErrorCode::SUCCESS)
+        bool success = (R_move_group_->plan(plan) == moveit::planning_interface::MoveItErrorCode::SUCCESS);
         if(success)
             R_move_group_->execute(plan);
         return success;

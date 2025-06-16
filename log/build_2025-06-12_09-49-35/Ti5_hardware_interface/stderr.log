@@ -1,8 +1,0 @@
-In file included from [01m[K/home/astra/Ti5_controller/src/Ti5_hardware_interface/src/hardware.cpp:18[m[K:
-[01m[K/home/astra/Ti5_controller/src/Ti5_hardware_interface/include/Ti5_hardware_interface/hardware.hpp:30:10:[m[K [01;31m[Kfatal error: [m[Kcan_hw.h: 没有那个文件或目录
-   30 | #include [01;31m[K"can_hw.h"[m[K
-      |          [01;31m[K^~~~~~~~~~[m[K
-compilation terminated.
-gmake[2]: *** [CMakeFiles/Ti5_hardware_interface.dir/build.make:76：CMakeFiles/Ti5_hardware_interface.dir/src/hardware.cpp.o] 错误 1
-gmake[1]: *** [CMakeFiles/Makefile2:176：CMakeFiles/Ti5_hardware_interface.dir/all] 错误 2
-gmake: *** [Makefile:146：all] 错误 2

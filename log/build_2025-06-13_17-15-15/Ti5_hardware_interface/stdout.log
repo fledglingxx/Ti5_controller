@@ -1,5 +1,0 @@
-[35m[1mConsolidate compiler generated dependencies of target Ti5_hardware_interface[0m
-[ 33%] Built target gmock
-[ 55%] Built target gmock_main
-[ 66%] [32mBuilding CXX object CMakeFiles/Ti5_hardware_interface.dir/src/hardware.cpp.o[0m
-[ 88%] Built target test_hardware

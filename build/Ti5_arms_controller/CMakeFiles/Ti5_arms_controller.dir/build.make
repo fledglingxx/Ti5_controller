@@ -225,10 +225,10 @@ libTi5_arms_controller.so: /opt/ros/humble/lib/libstd_msgs__rosidl_typesupport_i
 libTi5_arms_controller.so: /opt/ros/humble/lib/libgeometry_msgs__rosidl_typesupport_cpp.so
 libTi5_arms_controller.so: /opt/ros/humble/lib/libstd_msgs__rosidl_typesupport_cpp.so
 libTi5_arms_controller.so: /opt/ros/humble/lib/libcontrol_msgs__rosidl_generator_c.so
-libTi5_arms_controller.so: /opt/ros/humble/lib/libsensor_msgs__rosidl_typesupport_c.so
-libTi5_arms_controller.so: /opt/ros/humble/lib/libsensor_msgs__rosidl_generator_c.so
 libTi5_arms_controller.so: /opt/ros/humble/lib/libtrajectory_msgs__rosidl_typesupport_c.so
 libTi5_arms_controller.so: /opt/ros/humble/lib/libtrajectory_msgs__rosidl_generator_c.so
+libTi5_arms_controller.so: /opt/ros/humble/lib/libsensor_msgs__rosidl_typesupport_c.so
+libTi5_arms_controller.so: /opt/ros/humble/lib/libsensor_msgs__rosidl_generator_c.so
 libTi5_arms_controller.so: /opt/ros/humble/lib/libgeometry_msgs__rosidl_generator_py.so
 libTi5_arms_controller.so: /opt/ros/humble/lib/libgeometry_msgs__rosidl_typesupport_c.so
 libTi5_arms_controller.so: /opt/ros/humble/lib/libgeometry_msgs__rosidl_generator_c.so

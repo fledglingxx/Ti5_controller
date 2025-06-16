@@ -24,6 +24,7 @@
 #include <string>
 #include <vector>
 
+#include <trajectory_msgs/msg/joint_trajectory.hpp>
 #include "controller_interface/controller_interface.hpp"
 #include "Ti5_arms_controller_parameters.hpp"
 #include "Ti5_arms_controller/visibility_control.h"
@@ -82,13 +83,11 @@ private:
 
 
     std::vector<std::string> joint_names_;
-    std::vector<std::string> command_interfaces_;
-    std::vector<std::string> state_interfaces_;
+  
+    std::vector<hardware_interface::LoanedCommandInterface> command_interfaces_;
+    std::vector<hardware_interface::LoanedStateInterface> state_interfaces_;
 
-    std::vector<hardware_interface::LoanedCommandInterface> command_interface_handles_;
-    std::vector<hardware_interface::LoanedStateInterface> state_interface_handles_;
-
-    rclcpp::Subscription<trajectory_msgs::msg::JointTrajectory>::SharePtr joint_trajectory_sub_;
+    rclcpp::Subscription<trajectory_msgs::msg::JointTrajectory>::SharedPtr trajectory_sub_;
     std::vector<double> target_positions_;
 
     std::mutex target_mutex_;

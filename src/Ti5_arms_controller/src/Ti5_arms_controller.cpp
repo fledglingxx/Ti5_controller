@@ -24,6 +24,8 @@
 #include <string>
 #include <vector>
 
+#include "trajectory_msgs/msg/joint_trajectory.hpp"
+
 #include "controller_interface/helpers.hpp"
 
 namespace Ti5_arms_controller
@@ -108,7 +110,7 @@ namespace Ti5_arms_controller
         RCLCPP_INFO(get_node()->get_logger(), "Received joint trajectory with %zu positions.", target_positions_.size());
       }
 
-    )
+    );
 
     RCLCPP_INFO(get_node()->get_logger(), "activating Ti5 arms controller");
     return controller_interface::CallbackReturn::SUCCESS;
@@ -140,7 +142,7 @@ namespace Ti5_arms_controller
 
     for(size_t i = 0; i < joint_names_.size(); i++)
     {
-      command_interfaces_[i].get().set_value(target_positions_[i]);
+      command_interfaces_[i].set_value(target_positions_[i]);
     }
     
 

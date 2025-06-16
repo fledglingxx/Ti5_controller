@@ -8,6 +8,7 @@ endif()
 # find dependencies
 set(THIS_PACKAGE_INCLUDE_DEPENDS
   control_msgs
+  trajectory_msgs
   controller_interface
   hardware_interface
   pluginlib
@@ -22,6 +23,7 @@ find_package(generate_parameter_library REQUIRED)
 find_package(ament_cmake_gmock REQUIRED)
 find_package(controller_manager REQUIRED)
 find_package(hardware_interface REQUIRED)
+find_package(trajectory_msgs REQUIRED)
 find_package(ros2_control_test_assets REQUIRED)
 foreach(Dependency IN ITEMS ${THIS_PACKAGE_INCLUDE_DEPENDS})
   find_package(${Dependency} REQUIRED)
@@ -61,7 +63,7 @@ install(
 )
 
 install(FILES
-  ../../bringup/config/Ti5_controller.yaml
+  ../../src/bringup/config/Ti5_controller.yaml
   DESTINATION share/${PROJECT_NAME}/config
 )
 
