@@ -47,6 +47,8 @@ namespace Ti5_arms_controller
     return controller_interface::CallbackReturn::SUCCESS;
   }
 
+
+
   controller_interface::CallbackReturn Ti5ArmsController::on_configure(const rclcpp_lifecycle::State &)
   {
     if (joint_names_.empty())
@@ -58,6 +60,8 @@ namespace Ti5_arms_controller
     RCLCPP_INFO(get_node()->get_logger(), "Controller configured successfully (simplified).");
     return controller_interface::CallbackReturn::SUCCESS;
   }
+
+
 
   controller_interface::InterfaceConfiguration Ti5ArmsController::command_interface_configuration() const
   {
@@ -91,13 +95,26 @@ namespace Ti5_arms_controller
 
   controller_interface::CallbackReturn Ti5ArmsController::on_activate(const rclcpp_lifecycle::State &)
   {
-    // TODO(anyone): if you have to manage multiple interfaces that need to be sorted check
-    // `on_activate` method in `JointTrajectoryController` for exemplary use of
-    // `controller_interface::get_ordered_interfaces` helper function
+    trajectory_sub_ = get_node()->create_subscription<trajectory_msgs::msg::JointTrajectory>(
+      "/joint_trajectory", 10,
+      [this](const trajectory_msgs::msg::JointTrajectory::SharedPtr msg)
+      {
+        std::lock_guard<std::mutex> lock(target_mutex_);
+        if (msg->points.empty()) return;
+
+        const auto& last_point = msg->points.back();
+        target_positions_ = last_point.positions;
+
+        RCLCPP_INFO(get_node()->get_logger(), "Received joint trajectory with %zu positions.", target_positions_.size());
+      }
+
+    )
 
     RCLCPP_INFO(get_node()->get_logger(), "activating Ti5 arms controller");
     return controller_interface::CallbackReturn::SUCCESS;
   }
+
+
 
   controller_interface::CallbackReturn Ti5ArmsController::on_deactivate(const rclcpp_lifecycle::State &)
   {
@@ -106,8 +123,26 @@ namespace Ti5_arms_controller
     return controller_interface::CallbackReturn::SUCCESS;
   }
 
+
+
+
+
+
   controller_interface::return_type Ti5ArmsController::update(const rclcpp::Time &time, const rclcpp::Duration &)
   {
+    std::lock_guard<std::mutex> lock(target_mutex_);
+
+    if(target_positions_.size() != joint_names_.size())
+    {
+      RCLCPP_WARN(get_node()->get_logger(),"Target jolint size mismatch.");
+      return controller_interface::return_type::ERROR;
+    }
+
+    for(size_t i = 0; i < joint_names_.size(); i++)
+    {
+      command_interfaces_[i].get().set_value(target_positions_[i]);
+    }
+    
 
     return controller_interface::return_type::OK;
   }

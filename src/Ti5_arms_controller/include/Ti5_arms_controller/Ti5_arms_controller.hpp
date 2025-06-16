@@ -88,16 +88,11 @@ private:
     std::vector<hardware_interface::LoanedCommandInterface> command_interface_handles_;
     std::vector<hardware_interface::LoanedStateInterface> state_interface_handles_;
 
-    // Command subscribers and Controller State publisher
-    rclcpp::Subscription<ControllerReferenceMsg>::SharedPtr ref_subscriber_ = nullptr;
-    realtime_tools::RealtimeBuffer<std::shared_ptr<ControllerReferenceMsg>> input_ref_;
+    rclcpp::Subscription<trajectory_msgs::msg::JointTrajectory>::SharePtr joint_trajectory_sub_;
+    std::vector<double> target_positions_;
 
-    rclcpp::Service<ControllerModeSrvType>::SharedPtr set_slow_control_mode_service_;
+    std::mutex target_mutex_;
 
-    using ControllerStatePublisher = realtime_tools::RealtimePublisher<ControllerStateMsg>;
-
-    rclcpp::Publisher<ControllerStateMsg>::SharedPtr s_publisher_;
-    std::unique_ptr<ControllerStatePublisher> state_publisher_;
   };
 
 } // namespace Ti5_arms_controller
