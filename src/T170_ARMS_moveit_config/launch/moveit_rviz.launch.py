@@ -3,5 +3,5 @@ from moveit_configs_utils.launches import generate_moveit_rviz_launch
 
 
 def generate_launch_description():
-    moveit_config = MoveItConfigsBuilder("T170_ARMS", package_name="set_ass").to_moveit_configs()
+    moveit_config = MoveItConfigsBuilder("T170_ARMS", package_name="T170_ARMS_moveit_config").to_moveit_configs()
     return generate_moveit_rviz_launch(moveit_config)
