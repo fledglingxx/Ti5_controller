@@ -67,15 +67,17 @@ namespace Ti5_hardware_interface
   }
 
 
+
+
   std::vector<hardware_interface::StateInterface> hardware::export_state_interfaces()
   {
     std::vector<hardware_interface::StateInterface> state_interfaces;
-    for (size_t i = 0; i < info_.joints.size(); ++i)
+    for (size_t i = 0; i < num_joints_; ++i)
     {
       state_interfaces.emplace_back(joint_names_[i], hardware_interface::HW_IF_POSITION, &pos_state_[i]);
       state_interfaces.emplace_back(joint_names_[i], hardware_interface::HW_IF_VELOCITY, &vel_state_[i]);
-      state_interfaces.emplace_back(joint_names_[i], hardware_interface::HW_IF_EFFORT, &eff_state_[i]);
     }
+    
     return state_interfaces;
   }
 
@@ -84,11 +86,7 @@ namespace Ti5_hardware_interface
   {
     std::vector<hardware_interface::CommandInterface> command_interfaces;
     for (size_t i = 0; i < num_joints_; ++i)
-    {
       command_interfaces.emplace_back(joint_names_[i], hardware_interface::HW_IF_POSITION, &pos_cmd_[i]);
-      command_interfaces.emplace_back(joint_names_[i], hardware_interface::HW_IF_VELOCITY, &vel_cmd_[i]);
-      command_interfaces.emplace_back(joint_names_[i], hardware_interface::HW_IF_EFFORT, &eff_cmd_[i]);
-    }
 
     return command_interfaces;
   }
@@ -137,7 +135,6 @@ namespace Ti5_hardware_interface
 
   hardware_interface::return_type hardware::write(const rclcpp::Time &, const rclcpp::Duration &)
   {
-    // send can commands
 
     for(size_t i=0; i<num_joints_; i++)
     {

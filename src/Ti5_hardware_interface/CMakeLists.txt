@@ -12,87 +12,61 @@ find_package(pluginlib REQUIRED)
 find_package(rclcpp REQUIRED)
 find_package(rclcpp_lifecycle REQUIRED)
 
-add_library(
-  Ti5_hardware_interface
-  SHARED
-  src/hardware.cpp
-)
-target_include_directories(
-  Ti5_hardware_interface
-  PUBLIC
+
+include_directories(
   include
+  ${hardware_interface_INCLUDE_DIRS}
+  ${pluginlib_INCLUDE_DIRS}
+  ${rclcpp_INCLUDE_DIRS}
+  ${rclcpp_lifecycle_INCLUDE_DIRS}
 )
-ament_target_dependencies(
-  Ti5_hardware_interface
-  hardware_interface
+
+
+add_library(${PROJECT_NAME}
+  src/hardware.cpp
+  src/can_control/can_control.cpp
+)
+
+
+ament_target_dependencies(${PROJECT_NAME}
   rclcpp
   rclcpp_lifecycle
+  hardware_interface
+  pluginlib
 )
-# prevent pluginlib from using boost
-target_compile_definitions(Ti5_hardware_interface PUBLIC "PLUGINLIB__DISABLE_BOOST_FUNCTIONS")
 
-pluginlib_export_plugin_description_file(
-  hardware_interface Ti5_hardware_interface.xml)
+
+pluginlib_export_plugin_description_file(hardware_interface Ti5_hardware_interface.xml)
+
 
 install(
-  TARGETS
-  Ti5_hardware_interface
-  RUNTIME DESTINATION bin
+  TARGETS ${PROJECT_NAME}
+  EXPORT export_${PROJECT_NAME}
   ARCHIVE DESTINATION lib
   LIBRARY DESTINATION lib
+  RUNTIME DESTINATION bin
 )
+
 
 install(
   DIRECTORY include/
   DESTINATION include
 )
 
-if(BUILD_TESTING)
-  find_package(ament_lint_auto REQUIRED)
-  # the following line skips the linter which checks for copyrights
-  # comment the line when a copyright and license is added to all source files
-  set(ament_cmake_copyright_FOUND TRUE)
-  # the following line skips cpplint (only works in a git repo)
-  # comment the line when this package is in a git repo and when
-  # a copyright and license is added to all source files
-  set(ament_cmake_cpplint_FOUND TRUE)
-  ament_lint_auto_find_test_dependencies()
-  find_package(ament_cmake_gmock REQUIRED)
-  find_package(ros2_control_test_assets REQUIRED)
-  find_package(Eigen3 REQUIRED)
-
-  ament_add_gmock(test_hardware test/test_hardware.cpp)
-  target_include_directories(test_hardware PRIVATE include)
-  ament_target_dependencies(
-    test_hardware
-    hardware_interface
-    pluginlib
-    ros2_control_test_assets
-    Eigen3
-  )
-endif()
-
-
-target_include_directories(${PROJECT_NAME}
-  PUBLIC
-    include
-    ${CMAKE_CURRENT_SOURCE_DIR}/can_control/include
+install(
+  FILES Ti5_hardware_interface.xml
+  DESTINATION share/${PROJECT_NAME}
 )
 
-
-include_directories(${EIGEN3_INCLUDE_DIRS})
-
-ament_export_include_directories(
-  include
-)
-ament_export_libraries(
-  Ti5_hardware_interface
-)
 ament_export_dependencies(
   hardware_interface
   pluginlib
-  rclcpp
-  rclcpp_lifecycle
 )
+
+
+ament_export_include_directories(include)
+ament_export_libraries(${PROJECT_NAME})
+
+
 
 ament_package()

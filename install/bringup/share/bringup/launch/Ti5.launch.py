@@ -74,20 +74,32 @@ def generate_launch_description():
     )
 
 
+    hardware_node = Node(
+        package='Ti5_hardware_interface',
+        executable='ti5_hardware_interface',
+        name='ti5_hardware_interface',
+        parameters=[
+            robot_description,
+            controllers_yaml
+        ],
+        output='screen'
+    )
+
+
     
-    # control_node = Node(
-    #     package = 'Ti5_arms_controller',
-    #     executable = 'Ti5_arms_controller',
-    #     parameters=[
-    #         robot_description_param,
-    #         os.path.join(
-    #             get_package_share_directory('bringup'),
-    #             'config',
-    #             'Ti5_controller.yaml'
-    #         )
-    #     ],
-    #     output='screen'
-    # )
+    control_node = Node(
+        package = 'Ti5_arms_controller',
+        executable = 'Ti5_arms_controller',
+        parameters=[
+            robot_description,
+            os.path.join(
+                get_package_share_directory('bringup'),
+                'config',
+                'Ti5_controller.yaml'
+            )
+        ],
+        output='screen'
+    )
 
 
 
@@ -116,8 +128,9 @@ def generate_launch_description():
     
     return LaunchDescription([
         arms_display,
+        hardware_node,
         move_group_launch,
-        #control_node,
+        control_node,
         joint_broad_spawner,
         robot_controller_spawner,
         ti5_node
