@@ -210,70 +210,29 @@ Ti5_hardware_interface/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Ti5_hardware_interface.dir/build.make CMakeFiles/Ti5_hardware_interface.dir/build
 .PHONY : Ti5_hardware_interface/fast
 
-#=============================================================================
-# Target rules for targets named test_hardware
+can_control/src/can_hw.o: can_control/src/can_hw.cpp.o
+.PHONY : can_control/src/can_hw.o
 
-# Build rule for target.
-test_hardware: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test_hardware
-.PHONY : test_hardware
+# target to build an object file
+can_control/src/can_hw.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Ti5_hardware_interface.dir/build.make CMakeFiles/Ti5_hardware_interface.dir/can_control/src/can_hw.cpp.o
+.PHONY : can_control/src/can_hw.cpp.o
 
-# fast build rule for target.
-test_hardware/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_hardware.dir/build.make CMakeFiles/test_hardware.dir/build
-.PHONY : test_hardware/fast
+can_control/src/can_hw.i: can_control/src/can_hw.cpp.i
+.PHONY : can_control/src/can_hw.i
 
-#=============================================================================
-# Target rules for targets named gmock
+# target to preprocess a source file
+can_control/src/can_hw.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Ti5_hardware_interface.dir/build.make CMakeFiles/Ti5_hardware_interface.dir/can_control/src/can_hw.cpp.i
+.PHONY : can_control/src/can_hw.cpp.i
 
-# Build rule for target.
-gmock: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 gmock
-.PHONY : gmock
+can_control/src/can_hw.s: can_control/src/can_hw.cpp.s
+.PHONY : can_control/src/can_hw.s
 
-# fast build rule for target.
-gmock/fast:
-	$(MAKE) $(MAKESILENT) -f gmock/CMakeFiles/gmock.dir/build.make gmock/CMakeFiles/gmock.dir/build
-.PHONY : gmock/fast
-
-#=============================================================================
-# Target rules for targets named gmock_main
-
-# Build rule for target.
-gmock_main: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 gmock_main
-.PHONY : gmock_main
-
-# fast build rule for target.
-gmock_main/fast:
-	$(MAKE) $(MAKESILENT) -f gmock/CMakeFiles/gmock_main.dir/build.make gmock/CMakeFiles/gmock_main.dir/build
-.PHONY : gmock_main/fast
-
-#=============================================================================
-# Target rules for targets named gtest
-
-# Build rule for target.
-gtest: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 gtest
-.PHONY : gtest
-
-# fast build rule for target.
-gtest/fast:
-	$(MAKE) $(MAKESILENT) -f gtest/CMakeFiles/gtest.dir/build.make gtest/CMakeFiles/gtest.dir/build
-.PHONY : gtest/fast
-
-#=============================================================================
-# Target rules for targets named gtest_main
-
-# Build rule for target.
-gtest_main: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 gtest_main
-.PHONY : gtest_main
-
-# fast build rule for target.
-gtest_main/fast:
-	$(MAKE) $(MAKESILENT) -f gtest/CMakeFiles/gtest_main.dir/build.make gtest/CMakeFiles/gtest_main.dir/build
-.PHONY : gtest_main/fast
+# target to generate assembly for a file
+can_control/src/can_hw.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Ti5_hardware_interface.dir/build.make CMakeFiles/Ti5_hardware_interface.dir/can_control/src/can_hw.cpp.s
+.PHONY : can_control/src/can_hw.cpp.s
 
 src/hardware.o: src/hardware.cpp.o
 .PHONY : src/hardware.o
@@ -299,30 +258,6 @@ src/hardware.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Ti5_hardware_interface.dir/build.make CMakeFiles/Ti5_hardware_interface.dir/src/hardware.cpp.s
 .PHONY : src/hardware.cpp.s
 
-test/test_hardware.o: test/test_hardware.cpp.o
-.PHONY : test/test_hardware.o
-
-# target to build an object file
-test/test_hardware.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_hardware.dir/build.make CMakeFiles/test_hardware.dir/test/test_hardware.cpp.o
-.PHONY : test/test_hardware.cpp.o
-
-test/test_hardware.i: test/test_hardware.cpp.i
-.PHONY : test/test_hardware.i
-
-# target to preprocess a source file
-test/test_hardware.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_hardware.dir/build.make CMakeFiles/test_hardware.dir/test/test_hardware.cpp.i
-.PHONY : test/test_hardware.cpp.i
-
-test/test_hardware.s: test/test_hardware.cpp.s
-.PHONY : test/test_hardware.s
-
-# target to generate assembly for a file
-test/test_hardware.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_hardware.dir/build.make CMakeFiles/test_hardware.dir/test/test_hardware.cpp.s
-.PHONY : test/test_hardware.cpp.s
-
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -339,17 +274,12 @@ help:
 	@echo "... Ti5_hardware_interface_uninstall"
 	@echo "... uninstall"
 	@echo "... Ti5_hardware_interface"
-	@echo "... gmock"
-	@echo "... gmock_main"
-	@echo "... gtest"
-	@echo "... gtest_main"
-	@echo "... test_hardware"
+	@echo "... can_control/src/can_hw.o"
+	@echo "... can_control/src/can_hw.i"
+	@echo "... can_control/src/can_hw.s"
 	@echo "... src/hardware.o"
 	@echo "... src/hardware.i"
 	@echo "... src/hardware.s"
-	@echo "... test/test_hardware.o"
-	@echo "... test/test_hardware.i"
-	@echo "... test/test_hardware.s"
 .PHONY : help
 
 

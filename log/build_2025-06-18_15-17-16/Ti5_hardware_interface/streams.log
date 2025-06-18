@@ -1,0 +1,41 @@
+[0.009s] Invoking command in '/home/astra/Ti5_controller/build/Ti5_hardware_interface': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/astra/Ti5_controller/build/Ti5_hardware_interface -- -j24 -l24
+[0.042s] [ 33%] [32mBuilding CXX object CMakeFiles/Ti5_hardware_interface.dir/can_control/src/can_hw.cpp.o[0m
+[0.043s] [ 66%] [32mBuilding CXX object CMakeFiles/Ti5_hardware_interface.dir/src/hardware.cpp.o[0m
+[0.203s] [01m[K/home/astra/Ti5_controller/src/Ti5_hardware_interface/can_control/src/can_hw.cpp:[m[K In member function ‘[01m[Kvoid CANMotorInterface::sendCanCommand(uint8_t, uint8_t, uint32_t)[m[K’:
+[0.203s] [01m[K/home/astra/Ti5_controller/src/Ti5_hardware_interface/can_control/src/can_hw.cpp:126:26:[m[K [01;35m[Kwarning: [m[Kunused variable ‘[01m[Kreclen[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-variable-Wunused-variable]8;;[m[K]
+[0.203s]   126 |     int res[4], cnt = 2, [01;35m[Kreclen[m[K = 0;
+[0.203s]       |                          [01;35m[K^~~~~~[m[K
+[1.948s] [100%] [32m[1mLinking CXX static library libTi5_hardware_interface.a[0m
+[1.983s] [100%] Built target Ti5_hardware_interface
+[1.998s] Invoked command in '/home/astra/Ti5_controller/build/Ti5_hardware_interface' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/astra/Ti5_controller/build/Ti5_hardware_interface -- -j24 -l24
+[2.038s] Invoking command in '/home/astra/Ti5_controller/build/Ti5_hardware_interface': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --install /home/astra/Ti5_controller/build/Ti5_hardware_interface
+[2.047s] -- Install configuration: ""
+[2.047s] -- Up-to-date: /home/astra/Ti5_controller/install/Ti5_hardware_interface/share/Ti5_hardware_interface/Ti5_hardware_interface.xml
+[2.048s] -- Installing: /home/astra/Ti5_controller/install/Ti5_hardware_interface/lib/libTi5_hardware_interface.a
+[2.049s] -- Up-to-date: /home/astra/Ti5_controller/install/Ti5_hardware_interface/include
+[2.049s] -- Up-to-date: /home/astra/Ti5_controller/install/Ti5_hardware_interface/include/Ti5_hardware_interface
+[2.049s] -- Installing: /home/astra/Ti5_controller/install/Ti5_hardware_interface/include/Ti5_hardware_interface/hardware.hpp
+[2.049s] -- Up-to-date: /home/astra/Ti5_controller/install/Ti5_hardware_interface/include/Ti5_hardware_interface/visibility_control.h
+[2.049s] -- Up-to-date: /home/astra/Ti5_controller/install/Ti5_hardware_interface/share/Ti5_hardware_interface/Ti5_hardware_interface.xml
+[2.050s] -- Up-to-date: /home/astra/Ti5_controller/install/Ti5_hardware_interface/share/Ti5_hardware_interface/environment/library_path.sh
+[2.050s] -- Up-to-date: /home/astra/Ti5_controller/install/Ti5_hardware_interface/share/Ti5_hardware_interface/environment/library_path.dsv
+[2.050s] -- Up-to-date: /home/astra/Ti5_controller/install/Ti5_hardware_interface/share/ament_index/resource_index/package_run_dependencies/Ti5_hardware_interface
+[2.050s] -- Up-to-date: /home/astra/Ti5_controller/install/Ti5_hardware_interface/share/ament_index/resource_index/parent_prefix_path/Ti5_hardware_interface
+[2.050s] -- Up-to-date: /home/astra/Ti5_controller/install/Ti5_hardware_interface/share/Ti5_hardware_interface/environment/ament_prefix_path.sh
+[2.050s] -- Up-to-date: /home/astra/Ti5_controller/install/Ti5_hardware_interface/share/Ti5_hardware_interface/environment/ament_prefix_path.dsv
+[2.050s] -- Up-to-date: /home/astra/Ti5_controller/install/Ti5_hardware_interface/share/Ti5_hardware_interface/environment/path.sh
+[2.050s] -- Up-to-date: /home/astra/Ti5_controller/install/Ti5_hardware_interface/share/Ti5_hardware_interface/environment/path.dsv
+[2.050s] -- Up-to-date: /home/astra/Ti5_controller/install/Ti5_hardware_interface/share/Ti5_hardware_interface/local_setup.bash
+[2.050s] -- Up-to-date: /home/astra/Ti5_controller/install/Ti5_hardware_interface/share/Ti5_hardware_interface/local_setup.sh
+[2.051s] -- Up-to-date: /home/astra/Ti5_controller/install/Ti5_hardware_interface/share/Ti5_hardware_interface/local_setup.zsh
+[2.051s] -- Up-to-date: /home/astra/Ti5_controller/install/Ti5_hardware_interface/share/Ti5_hardware_interface/local_setup.dsv
+[2.051s] -- Installing: /home/astra/Ti5_controller/install/Ti5_hardware_interface/share/Ti5_hardware_interface/package.dsv
+[2.051s] -- Up-to-date: /home/astra/Ti5_controller/install/Ti5_hardware_interface/share/ament_index/resource_index/packages/Ti5_hardware_interface
+[2.051s] -- Up-to-date: /home/astra/Ti5_controller/install/Ti5_hardware_interface/share/ament_index/resource_index/hardware_interface__pluginlib__plugin/Ti5_hardware_interface
+[2.051s] -- Up-to-date: /home/astra/Ti5_controller/install/Ti5_hardware_interface/share/Ti5_hardware_interface/cmake/ament_cmake_export_dependencies-extras.cmake
+[2.051s] -- Up-to-date: /home/astra/Ti5_controller/install/Ti5_hardware_interface/share/Ti5_hardware_interface/cmake/ament_cmake_export_include_directories-extras.cmake
+[2.051s] -- Up-to-date: /home/astra/Ti5_controller/install/Ti5_hardware_interface/share/Ti5_hardware_interface/cmake/ament_cmake_export_libraries-extras.cmake
+[2.051s] -- Up-to-date: /home/astra/Ti5_controller/install/Ti5_hardware_interface/share/Ti5_hardware_interface/cmake/Ti5_hardware_interfaceConfig.cmake
+[2.051s] -- Up-to-date: /home/astra/Ti5_controller/install/Ti5_hardware_interface/share/Ti5_hardware_interface/cmake/Ti5_hardware_interfaceConfig-version.cmake
+[2.051s] -- Up-to-date: /home/astra/Ti5_controller/install/Ti5_hardware_interface/share/Ti5_hardware_interface/package.xml
+[2.053s] Invoked command in '/home/astra/Ti5_controller/build/Ti5_hardware_interface' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --install /home/astra/Ti5_controller/build/Ti5_hardware_interface

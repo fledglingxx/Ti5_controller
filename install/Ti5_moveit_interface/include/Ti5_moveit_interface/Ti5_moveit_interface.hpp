@@ -12,7 +12,8 @@ namespace Ti5_moveit_interface
     class MoveItInterface
     {
         public:
-            MoveItInterface(const rclcpp::Node::SharedPtr &node,const std::string &planning_group_left,const std::string &planning_group_right);
+            MoveItInterface(const rclcpp::Node::SharedPtr &node,
+                const std::string &planning_group_left,const std::string &planning_group_right);
             bool L_move_j(const std::vector<double> &joint_positions);
             bool L_move_p(const geometry_msgs::msg::Pose &pose);
             bool R_move_j(const std::vector<double> &joint_positions);

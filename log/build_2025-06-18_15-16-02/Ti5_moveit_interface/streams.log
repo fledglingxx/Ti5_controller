@@ -1,0 +1,117 @@
+[0.007s] Invoking command in '/home/astra/Ti5_controller/build/Ti5_moveit_interface': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake /home/astra/Ti5_controller/src/Ti5_moveit_interface -DCMAKE_INSTALL_PREFIX=/home/astra/Ti5_controller/install/Ti5_moveit_interface
+[0.045s] -- The C compiler identification is GNU 11.4.0
+[0.083s] -- The CXX compiler identification is GNU 11.4.0
+[0.088s] -- Detecting C compiler ABI info
+[0.136s] -- Detecting C compiler ABI info - done
+[0.141s] -- Check for working C compiler: /usr/bin/cc - skipped
+[0.141s] -- Detecting C compile features
+[0.142s] -- Detecting C compile features - done
+[0.144s] -- Detecting CXX compiler ABI info
+[0.197s] -- Detecting CXX compiler ABI info - done
+[0.202s] -- Check for working CXX compiler: /usr/bin/c++ - skipped
+[0.202s] -- Detecting CXX compile features
+[0.202s] -- Detecting CXX compile features - done
+[0.204s] -- Found ament_cmake: 1.3.11 (/opt/ros/humble/share/ament_cmake/cmake)
+[0.302s] -- Found Python3: /usr/bin/python3 (found version "3.10.12") found components: Interpreter 
+[0.357s] -- Found moveit_ros_planning_interface: 2.5.9 (/opt/ros/humble/share/moveit_ros_planning_interface/cmake)
+[0.463s] -- Found Boost: /usr/lib/x86_64-linux-gnu/cmake/Boost-1.74.0/BoostConfig.cmake (found version "1.74.0") found components: date_time filesystem program_options system thread 
+[0.489s] -- Found rosidl_generator_c: 3.1.6 (/opt/ros/humble/share/rosidl_generator_c/cmake)
+[0.492s] -- Found rosidl_adapter: 3.1.6 (/opt/ros/humble/share/rosidl_adapter/cmake)
+[0.497s] -- Found rosidl_generator_cpp: 3.1.6 (/opt/ros/humble/share/rosidl_generator_cpp/cmake)
+[0.504s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[0.514s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[0.639s] -- Found Boost: /usr/lib/x86_64-linux-gnu/cmake/Boost-1.74.0/BoostConfig.cmake (found version "1.74.0") found components: chrono date_time filesystem iostreams program_options regex serialization system thread 
+[0.666s] -- Found parameter_traits: 0.4.0 (/opt/ros/humble/share/parameter_traits/cmake)
+[0.690s] -- Found rmw_implementation_cmake: 6.1.2 (/opt/ros/humble/share/rmw_implementation_cmake/cmake)
+[0.692s] -- Found rmw_cyclonedds_cpp: 1.3.4 (/opt/ros/humble/share/rmw_cyclonedds_cpp/cmake)
+[0.705s] -- Using RMW implementation 'rmw_cyclonedds_cpp' as default
+[0.710s] -- Found Threads: TRUE  
+[0.738s] -- Found Eigen3: TRUE (found version "3.4.0") 
+[0.740s] -- Found rclcpp_lifecycle: 16.0.12 (/opt/ros/humble/share/rclcpp_lifecycle/cmake)
+[0.755s] -- Found Boost: /usr/lib/x86_64-linux-gnu/cmake/Boost-1.74.0/BoostConfig.cmake (found version "1.74.0") found components: filesystem 
+[0.811s] -- library: /usr/lib/x86_64-linux-gnu/libcurl.so
+[0.832s] -- Ensuring Eigen3 include directory is part of orocos-kdl CMake target
+[0.916s] -- Found Boost: /usr/lib/x86_64-linux-gnu/cmake/Boost-1.74.0/BoostConfig.cmake (found version "1.74.0") found components: system filesystem date_time program_options thread chrono 
+[0.936s] -- Found Boost: /usr/lib/x86_64-linux-gnu/cmake/Boost-1.74.0/BoostConfig.cmake (found version "1.74.0") found components: thread system filesystem regex date_time program_options 
+[0.987s] -- Found Boost: /usr/lib/x86_64-linux-gnu/cmake/Boost-1.74.0/BoostConfig.cmake (found version "1.74.0") found components: system filesystem date_time program_options thread 
+[1.011s] -- Found ament_lint_auto: 0.12.12 (/opt/ros/humble/share/ament_lint_auto/cmake)
+[1.045s] WARNING: Package name "Ti5_moveit_interface" does not follow the naming conventions. It should start with a lower case letter and only contain lower case letters, digits, underscores, and dashes.
+[1.060s] -- Added test 'cppcheck' to perform static code analysis on C / C++ code
+[1.061s] -- Configured cppcheck include dirs: /home/astra/Ti5_controller/src/Ti5_moveit_interface/include;$<BUILD_INTERFACE:/home/astra/Ti5_controller/src/Ti5_moveit_interface/include>
+[1.061s] -- Configured cppcheck exclude dirs and/or files: 
+[1.061s] -- Added test 'lint_cmake' to check CMake code style
+[1.061s] -- Added test 'uncrustify' to check C / C++ code style
+[1.061s] -- Configured uncrustify additional arguments: 
+[1.062s] -- Added test 'xmllint' to check XML markup files
+[1.062s] -- Configuring done
+[1.082s] -- Generating done
+[1.083s] -- Build files have been written to: /home/astra/Ti5_controller/build/Ti5_moveit_interface
+[1.091s] Invoked command in '/home/astra/Ti5_controller/build/Ti5_moveit_interface' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake /home/astra/Ti5_controller/src/Ti5_moveit_interface -DCMAKE_INSTALL_PREFIX=/home/astra/Ti5_controller/install/Ti5_moveit_interface
+[1.092s] Invoking command in '/home/astra/Ti5_controller/build/Ti5_moveit_interface': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/astra/Ti5_controller/build/Ti5_moveit_interface -- -j24 -l24
+[1.127s] [ 25%] [32mBuilding CXX object CMakeFiles/Ti5_moveit_interface_lib.dir/src/Ti5_moveit_interface.cpp.o[0m
+[3.697s] [01m[K/home/astra/Ti5_controller/src/Ti5_moveit_interface/src/Ti5_moveit_interface.cpp:[m[K In member function ‘[01m[Kbool Ti5_moveit_interface::MoveItInterface::L_move_j(const std::vector<double, std::allocator<double> >&)[m[K’:
+[3.697s] [01m[K/home/astra/Ti5_controller/src/Ti5_moveit_interface/src/Ti5_moveit_interface.cpp:29:99:[m[K [01;35m[Kwarning: [m[K‘[01m[Kusing MoveItErrorCode = class moveit::core::MoveItErrorCode[m[K’ is deprecated: Use moveit::core::MoveItErrorCode [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wdeprecated-declarations-Wdeprecated-declarations]8;;[m[K]
+[3.697s]    29 |         bool success = (L_move_group_->plan(plan) == moveit::planning_interface::MoveItErrorCode::[01;35m[KSUCCESS[m[K);
+[3.698s]       |                                                                                                   [01;35m[K^~~~~~~[m[K
+[3.698s] In file included from [01m[K/home/astra/Ti5_controller/src/Ti5_moveit_interface/include/Ti5_moveit_interface/Ti5_moveit_interface.hpp:4[m[K,
+[3.698s]                  from [01m[K/home/astra/Ti5_controller/src/Ti5_moveit_interface/src/Ti5_moveit_interface.cpp:1[m[K:
+[3.698s] [01m[K/opt/ros/humble/include/moveit/move_group_interface/move_group_interface.h:71:7:[m[K [01;36m[Knote: [m[Kdeclared here
+[3.698s]    71 | using [01;36m[KMoveItErrorCode[m[K [[deprecated("Use moveit::core::MoveItErrorCode")]] = moveit::core::MoveItErrorCode;
+[3.698s]       |       [01;36m[K^~~~~~~~~~~~~~~[m[K
+[3.698s] [01m[K/home/astra/Ti5_controller/src/Ti5_moveit_interface/src/Ti5_moveit_interface.cpp:[m[K In member function ‘[01m[Kbool Ti5_moveit_interface::MoveItInterface::L_move_p(const Pose&)[m[K’:
+[3.698s] [01m[K/home/astra/Ti5_controller/src/Ti5_moveit_interface/src/Ti5_moveit_interface.cpp:39:99:[m[K [01;35m[Kwarning: [m[K‘[01m[Kusing MoveItErrorCode = class moveit::core::MoveItErrorCode[m[K’ is deprecated: Use moveit::core::MoveItErrorCode [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wdeprecated-declarations-Wdeprecated-declarations]8;;[m[K]
+[3.698s]    39 |         bool success = (L_move_group_->plan(plan) == moveit::planning_interface::MoveItErrorCode::[01;35m[KSUCCESS[m[K);
+[3.698s]       |                                                                                                   [01;35m[K^~~~~~~[m[K
+[3.698s] In file included from [01m[K/home/astra/Ti5_controller/src/Ti5_moveit_interface/include/Ti5_moveit_interface/Ti5_moveit_interface.hpp:4[m[K,
+[3.698s]                  from [01m[K/home/astra/Ti5_controller/src/Ti5_moveit_interface/src/Ti5_moveit_interface.cpp:1[m[K:
+[3.698s] [01m[K/opt/ros/humble/include/moveit/move_group_interface/move_group_interface.h:71:7:[m[K [01;36m[Knote: [m[Kdeclared here
+[3.698s]    71 | using [01;36m[KMoveItErrorCode[m[K [[deprecated("Use moveit::core::MoveItErrorCode")]] = moveit::core::MoveItErrorCode;
+[3.698s]       |       [01;36m[K^~~~~~~~~~~~~~~[m[K
+[3.698s] [01m[K/home/astra/Ti5_controller/src/Ti5_moveit_interface/src/Ti5_moveit_interface.cpp:[m[K In member function ‘[01m[Kbool Ti5_moveit_interface::MoveItInterface::R_move_j(const std::vector<double, std::allocator<double> >&)[m[K’:
+[3.698s] [01m[K/home/astra/Ti5_controller/src/Ti5_moveit_interface/src/Ti5_moveit_interface.cpp:49:99:[m[K [01;35m[Kwarning: [m[K‘[01m[Kusing MoveItErrorCode = class moveit::core::MoveItErrorCode[m[K’ is deprecated: Use moveit::core::MoveItErrorCode [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wdeprecated-declarations-Wdeprecated-declarations]8;;[m[K]
+[3.698s]    49 |         bool success = (R_move_group_->plan(plan) == moveit::planning_interface::MoveItErrorCode::[01;35m[KSUCCESS[m[K);
+[3.698s]       |                                                                                                   [01;35m[K^~~~~~~[m[K
+[3.698s] In file included from [01m[K/home/astra/Ti5_controller/src/Ti5_moveit_interface/include/Ti5_moveit_interface/Ti5_moveit_interface.hpp:4[m[K,
+[3.698s]                  from [01m[K/home/astra/Ti5_controller/src/Ti5_moveit_interface/src/Ti5_moveit_interface.cpp:1[m[K:
+[3.698s] [01m[K/opt/ros/humble/include/moveit/move_group_interface/move_group_interface.h:71:7:[m[K [01;36m[Knote: [m[Kdeclared here
+[3.698s]    71 | using [01;36m[KMoveItErrorCode[m[K [[deprecated("Use moveit::core::MoveItErrorCode")]] = moveit::core::MoveItErrorCode;
+[3.698s]       |       [01;36m[K^~~~~~~~~~~~~~~[m[K
+[3.698s] [01m[K/home/astra/Ti5_controller/src/Ti5_moveit_interface/src/Ti5_moveit_interface.cpp:[m[K In member function ‘[01m[Kbool Ti5_moveit_interface::MoveItInterface::R_move_p(const Pose&)[m[K’:
+[3.698s] [01m[K/home/astra/Ti5_controller/src/Ti5_moveit_interface/src/Ti5_moveit_interface.cpp:59:99:[m[K [01;35m[Kwarning: [m[K‘[01m[Kusing MoveItErrorCode = class moveit::core::MoveItErrorCode[m[K’ is deprecated: Use moveit::core::MoveItErrorCode [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wdeprecated-declarations-Wdeprecated-declarations]8;;[m[K]
+[3.698s]    59 |         bool success = (R_move_group_->plan(plan) == moveit::planning_interface::MoveItErrorCode::[01;35m[KSUCCESS[m[K);
+[3.698s]       |                                                                                                   [01;35m[K^~~~~~~[m[K
+[3.698s] In file included from [01m[K/home/astra/Ti5_controller/src/Ti5_moveit_interface/include/Ti5_moveit_interface/Ti5_moveit_interface.hpp:4[m[K,
+[3.698s]                  from [01m[K/home/astra/Ti5_controller/src/Ti5_moveit_interface/src/Ti5_moveit_interface.cpp:1[m[K:
+[3.698s] [01m[K/opt/ros/humble/include/moveit/move_group_interface/move_group_interface.h:71:7:[m[K [01;36m[Knote: [m[Kdeclared here
+[3.699s]    71 | using [01;36m[KMoveItErrorCode[m[K [[deprecated("Use moveit::core::MoveItErrorCode")]] = moveit::core::MoveItErrorCode;
+[3.699s]       |       [01;36m[K^~~~~~~~~~~~~~~[m[K
+[5.206s] [ 50%] [32m[1mLinking CXX static library libTi5_moveit_interface_lib.a[0m
+[5.232s] [ 50%] Built target Ti5_moveit_interface_lib
+[5.258s] [ 75%] [32mBuilding CXX object CMakeFiles/Ti5_node.dir/src/Ti5_node.cpp.o[0m
+[9.221s] [100%] [32m[1mLinking CXX executable Ti5_node[0m
+[9.410s] [100%] Built target Ti5_node
+[9.417s] Invoked command in '/home/astra/Ti5_controller/build/Ti5_moveit_interface' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/astra/Ti5_controller/build/Ti5_moveit_interface -- -j24 -l24
+[9.449s] Invoking command in '/home/astra/Ti5_controller/build/Ti5_moveit_interface': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --install /home/astra/Ti5_controller/build/Ti5_moveit_interface
+[9.455s] -- Install configuration: ""
+[9.455s] -- Installing: /home/astra/Ti5_controller/install/Ti5_moveit_interface/include/
+[9.455s] -- Installing: /home/astra/Ti5_controller/install/Ti5_moveit_interface/include//Ti5_moveit_interface
+[9.456s] -- Installing: /home/astra/Ti5_controller/install/Ti5_moveit_interface/include//Ti5_moveit_interface/Ti5_moveit_interface.hpp
+[9.456s] -- Installing: /home/astra/Ti5_controller/install/Ti5_moveit_interface/lib/Ti5_moveit_interface/libTi5_moveit_interface_lib.a
+[9.456s] -- Installing: /home/astra/Ti5_controller/install/Ti5_moveit_interface/lib/Ti5_moveit_interface/Ti5_node
+[9.456s] -- Set runtime path of "/home/astra/Ti5_controller/install/Ti5_moveit_interface/lib/Ti5_moveit_interface/Ti5_node" to ""
+[9.457s] -- Installing: /home/astra/Ti5_controller/install/Ti5_moveit_interface/share/ament_index/resource_index/package_run_dependencies/Ti5_moveit_interface
+[9.457s] -- Installing: /home/astra/Ti5_controller/install/Ti5_moveit_interface/share/ament_index/resource_index/parent_prefix_path/Ti5_moveit_interface
+[9.457s] -- Installing: /home/astra/Ti5_controller/install/Ti5_moveit_interface/share/Ti5_moveit_interface/environment/ament_prefix_path.sh
+[9.457s] -- Installing: /home/astra/Ti5_controller/install/Ti5_moveit_interface/share/Ti5_moveit_interface/environment/ament_prefix_path.dsv
+[9.457s] -- Installing: /home/astra/Ti5_controller/install/Ti5_moveit_interface/share/Ti5_moveit_interface/environment/path.sh
+[9.457s] -- Installing: /home/astra/Ti5_controller/install/Ti5_moveit_interface/share/Ti5_moveit_interface/environment/path.dsv
+[9.457s] -- Installing: /home/astra/Ti5_controller/install/Ti5_moveit_interface/share/Ti5_moveit_interface/local_setup.bash
+[9.458s] -- Installing: /home/astra/Ti5_controller/install/Ti5_moveit_interface/share/Ti5_moveit_interface/local_setup.sh
+[9.458s] -- Installing: /home/astra/Ti5_controller/install/Ti5_moveit_interface/share/Ti5_moveit_interface/local_setup.zsh
+[9.458s] -- Installing: /home/astra/Ti5_controller/install/Ti5_moveit_interface/share/Ti5_moveit_interface/local_setup.dsv
+[9.458s] -- Installing: /home/astra/Ti5_controller/install/Ti5_moveit_interface/share/Ti5_moveit_interface/package.dsv
+[9.458s] -- Installing: /home/astra/Ti5_controller/install/Ti5_moveit_interface/share/ament_index/resource_index/packages/Ti5_moveit_interface
+[9.458s] -- Installing: /home/astra/Ti5_controller/install/Ti5_moveit_interface/share/Ti5_moveit_interface/cmake/Ti5_moveit_interfaceConfig.cmake
+[9.458s] -- Installing: /home/astra/Ti5_controller/install/Ti5_moveit_interface/share/Ti5_moveit_interface/cmake/Ti5_moveit_interfaceConfig-version.cmake
+[9.458s] -- Installing: /home/astra/Ti5_controller/install/Ti5_moveit_interface/share/Ti5_moveit_interface/package.xml
+[9.459s] Invoked command in '/home/astra/Ti5_controller/build/Ti5_moveit_interface' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --install /home/astra/Ti5_controller/build/Ti5_moveit_interface

@@ -36,7 +36,7 @@ endif()
 set(Ti5_hardware_interface_FOUND_AMENT_PACKAGE TRUE)
 
 # include all config extra files
-set(_extras "ament_cmake_export_include_directories-extras.cmake;ament_cmake_export_libraries-extras.cmake;ament_cmake_export_dependencies-extras.cmake")
+set(_extras "ament_cmake_export_dependencies-extras.cmake;ament_cmake_export_include_directories-extras.cmake;ament_cmake_export_libraries-extras.cmake")
 foreach(_extra ${_extras})
   include("${Ti5_hardware_interface_DIR}/${_extra}")
 endforeach()

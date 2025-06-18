@@ -15,21 +15,24 @@
 #ifndef TI5_HARDWARE_INTERFACE__HARDWARE_HPP_
 #define TI5_HARDWARE_INTERFACE__HARDWARE_HPP_
 
-#include <string>
 #include <vector>
-#include <Eigen/Dense>
-#include "Ti5_hardware_interface/visibility_control.h"
-#include "hardware_interface/system_interface.hpp"
-#include "hardware_interface/handle.hpp"
-#include "hardware_interface/hardware_info.hpp"
-#include "hardware_interface/types/hardware_interface_return_values.hpp"
+#include <cstring>
+
+
 #include "rclcpp/macros.hpp"
-#include "rclcpp_lifecycle/state.hpp"
+// #include "rclcpp_lifecycle/state.hpp"
 #include "std_msgs/msg/float64_multi_array.hpp"
 
 #include <rclcpp/rclcpp.hpp>
 
-#include "can_hw.h"
+#include "hardware_interface/system_interface.hpp"
+#include "hardware_interface/types/hardware_interface_type_values.hpp"
+#include "rclcpp_lifecycle/state.hpp"
+#include "rclcpp/time.hpp"
+#include "rclcpp/duration.hpp"
+
+
+#include "../../can_control/include/can_hw.h"
 
 
 
@@ -39,34 +42,34 @@ namespace Ti5_hardware_interface
   class hardware : public hardware_interface::SystemInterface
   {
   public:
-    TEMPLATES__ROS2_CONTROL__VISIBILITY_PUBLIC
+    // TEMPLATES__ROS2_CONTROL__VISIBILITY_PUBLIC
     hardware_interface::CallbackReturn on_init(const hardware_interface::HardwareInfo &info) override;
 
-    TEMPLATES__ROS2_CONTROL__VISIBILITY_PUBLIC
+    // TEMPLATES__ROS2_CONTROL__VISIBILITY_PUBLIC
     hardware_interface::CallbackReturn on_configure(const rclcpp_lifecycle::State &previous_state) override;
 
-    TEMPLATES__ROS2_CONTROL__VISIBILITY_PUBLIC
+    // TEMPLATES__ROS2_CONTROL__VISIBILITY_PUBLIC
     std::vector<hardware_interface::StateInterface> export_state_interfaces() override;
 
-    TEMPLATES__ROS2_CONTROL__VISIBILITY_PUBLIC
+    // TEMPLATES__ROS2_CONTROL__VISIBILITY_PUBLIC
     std::vector<hardware_interface::CommandInterface> export_command_interfaces() override;
 
-    TEMPLATES__ROS2_CONTROL__VISIBILITY_PUBLIC
+    // TEMPLATES__ROS2_CONTROL__VISIBILITY_PUBLIC
     hardware_interface::CallbackReturn on_activate(const rclcpp_lifecycle::State &previous_state) override;
 
-    TEMPLATES__ROS2_CONTROL__VISIBILITY_PUBLIC
+    // TEMPLATES__ROS2_CONTROL__VISIBILITY_PUBLIC
     hardware_interface::CallbackReturn on_deactivate(const rclcpp_lifecycle::State &previous_state) override;
 
-    TEMPLATES__ROS2_CONTROL__VISIBILITY_PUBLIC
+    // TEMPLATES__ROS2_CONTROL__VISIBILITY_PUBLIC
     hardware_interface::return_type read(const rclcpp::Time &time, const rclcpp::Duration &period) override;
 
-    TEMPLATES__ROS2_CONTROL__VISIBILITY_PUBLIC
+    // TEMPLATES__ROS2_CONTROL__VISIBILITY_PUBLIC
     hardware_interface::return_type write(const rclcpp::Time &time, const rclcpp::Duration &period) override;
 
   private:
 
     std::shared_ptr<CANMotorInterface> can_motor_interface;
-    size_t num_joints_;
+    int num_joints_;
     std::vector<std::string> joint_names_;
     std::vector<double> pos_cmd_, vel_cmd_, eff_cmd_;
     std::vector<double> pos_state_, vel_state_, eff_state_;

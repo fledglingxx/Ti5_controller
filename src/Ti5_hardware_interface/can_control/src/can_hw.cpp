@@ -1,12 +1,12 @@
 #include "can_hw.h"
 
 #include <iostream>
-#include <string>
+#include <cstring>
 
 
-CANMotorInerface::CANMotorInerface() {}
+CANMotorInterface::CANMotorInterface() {}
 
-CANMotorInerface::~CANMotorInerface() {
+CANMotorInterface::~CANMotorInterface() {
     VCI_CloseDevice(DeviceType, DeviceIndex);
     std::cout << "CANMotorInerface destructor called" << std::endl;
 }
@@ -36,7 +36,7 @@ void CANMotorInterface::toIntArray(int number, int *res, int size)
 }
 
 
-bool CANMotorInerface::initCAN() 
+bool CANMotorInterface::initCAN() 
 {
     VCI_INIT_CONFIG vic;
     vic.AccCode = 0x80000008;

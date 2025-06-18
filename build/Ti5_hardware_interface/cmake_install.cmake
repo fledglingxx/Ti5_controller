@@ -47,30 +47,15 @@ if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  if(EXISTS "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/libTi5_hardware_interface.so" AND
-     NOT IS_SYMLINK "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/libTi5_hardware_interface.so")
-    file(RPATH_CHECK
-         FILE "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/libTi5_hardware_interface.so"
-         RPATH "")
-  endif()
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib" TYPE SHARED_LIBRARY FILES "/home/astra/Ti5_controller/build/Ti5_hardware_interface/libTi5_hardware_interface.so")
-  if(EXISTS "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/libTi5_hardware_interface.so" AND
-     NOT IS_SYMLINK "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/libTi5_hardware_interface.so")
-    file(RPATH_CHANGE
-         FILE "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/libTi5_hardware_interface.so"
-         OLD_RPATH "/opt/ros/humble/lib:"
-         NEW_RPATH "")
-    if(CMAKE_INSTALL_DO_STRIP)
-      execute_process(COMMAND "/usr/bin/strip" "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/libTi5_hardware_interface.so")
-    endif()
-  endif()
-endif()
-
-if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib" TYPE STATIC_LIBRARY FILES "/home/astra/Ti5_controller/build/Ti5_hardware_interface/libTi5_hardware_interface.a")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/include" TYPE DIRECTORY FILES "/home/astra/Ti5_controller/src/Ti5_hardware_interface/include/")
+endif()
+
+if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/Ti5_hardware_interface" TYPE FILE FILES "/home/astra/Ti5_controller/src/Ti5_hardware_interface/Ti5_hardware_interface.xml")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
@@ -134,15 +119,15 @@ if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/Ti5_hardware_interface/cmake" TYPE FILE FILES "/home/astra/Ti5_controller/build/Ti5_hardware_interface/ament_cmake_export_dependencies/ament_cmake_export_dependencies-extras.cmake")
+endif()
+
+if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/Ti5_hardware_interface/cmake" TYPE FILE FILES "/home/astra/Ti5_controller/build/Ti5_hardware_interface/ament_cmake_export_include_directories/ament_cmake_export_include_directories-extras.cmake")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/Ti5_hardware_interface/cmake" TYPE FILE FILES "/home/astra/Ti5_controller/build/Ti5_hardware_interface/ament_cmake_export_libraries/ament_cmake_export_libraries-extras.cmake")
-endif()
-
-if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/Ti5_hardware_interface/cmake" TYPE FILE FILES "/home/astra/Ti5_controller/build/Ti5_hardware_interface/ament_cmake_export_dependencies/ament_cmake_export_dependencies-extras.cmake")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
@@ -154,13 +139,6 @@ endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/Ti5_hardware_interface" TYPE FILE FILES "/home/astra/Ti5_controller/src/Ti5_hardware_interface/package.xml")
-endif()
-
-if(NOT CMAKE_INSTALL_LOCAL_ONLY)
-  # Include the install script for each subdirectory.
-  include("/home/astra/Ti5_controller/build/Ti5_hardware_interface/gmock/cmake_install.cmake")
-  include("/home/astra/Ti5_controller/build/Ti5_hardware_interface/gtest/cmake_install.cmake")
-
 endif()
 
 if(CMAKE_INSTALL_COMPONENT)

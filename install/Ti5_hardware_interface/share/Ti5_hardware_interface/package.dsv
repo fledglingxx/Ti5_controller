@@ -1,9 +1,6 @@
 source;share/Ti5_hardware_interface/hook/cmake_prefix_path.ps1
 source;share/Ti5_hardware_interface/hook/cmake_prefix_path.dsv
 source;share/Ti5_hardware_interface/hook/cmake_prefix_path.sh
-source;share/Ti5_hardware_interface/hook/ld_library_path_lib.ps1
-source;share/Ti5_hardware_interface/hook/ld_library_path_lib.dsv
-source;share/Ti5_hardware_interface/hook/ld_library_path_lib.sh
 source;share/Ti5_hardware_interface/local_setup.bash
 source;share/Ti5_hardware_interface/local_setup.dsv
 source;share/Ti5_hardware_interface/local_setup.ps1

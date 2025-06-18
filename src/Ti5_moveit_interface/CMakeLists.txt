@@ -10,15 +10,20 @@ find_package(ament_cmake REQUIRED)
 find_package(moveit_ros_planning_interface REQUIRED)
 find_package(moveit_core REQUIRED)
 find_package(rclcpp REQUIRED)
+#find_package(rcutils REQUIRED)
+find_package(pluginlib REQUIRED)
 find_package(geometry_msgs REQUIRED)
 
 
 include_directories(include)
 
-add_library(Ti5_moveit_interface_lib src/Ti5_moveit_interface.cpp) 
+add_library(Ti5_moveit_interface_lib 
+  src/Ti5_moveit_interface.cpp) 
 
 ament_target_dependencies(Ti5_moveit_interface_lib
   rclcpp
+  # rcutils
+  pluginlib
   geometry_msgs
   moveit_ros_planning_interface
   moveit_core
@@ -37,12 +42,12 @@ target_link_libraries(Ti5_node Ti5_moveit_interface_lib)
 
 ament_target_dependencies(Ti5_node
 rclcpp
+# rcutils
+pluginlib
 geometry_msgs
 moveit_ros_planning_interface
 moveit_core
 )
-
-
 install(DIRECTORY include/
   DESTINATION include/
 )

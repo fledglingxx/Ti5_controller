@@ -1,10 +1,17 @@
 #ifndef CAN_HW_H
 #define CAN_HW_H
 
-#include <cstring>
 #include <iostream>
+#include <cstring>
+#include <cstdint>
+#include <cmath>
 
-#include  "controlcan.h"
+#include "controlcan.h"  
+
+ 
+
+
+
 
 class CANMotorInterface
 {
