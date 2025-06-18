@@ -5,8 +5,10 @@ int main(int argc, char **argv)
 {
   rclcpp::init(argc, argv);
   auto node = rclcpp::Node::make_shared("Ti5_moveit_interface_node");
+
+  std::cout<<"hhhhhhhh!!!!!!! Ti5_moveit_interfa999999ce_node initialized"<<std::endl;
   
-  Ti5_moveit_interface::MoveItInterface Ti5(node, "left_arm", "right_arm");
+  Ti5_moveit_interface::MoveItInterface Ti5(node, "L_group", "R_group");
 
   std::cout<<"hhhhhhhh!!!!!!! Ti5_moveit_interface_node initialized"<<std::endl;
 

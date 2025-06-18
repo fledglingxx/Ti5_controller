@@ -32,7 +32,7 @@ add_library(${PROJECT_NAME}
 
 
 target_link_libraries(${PROJECT_NAME}
-  ${CMAKE_CURRENT_SOURCE_DIR}/can_control/libcontrolcan.so
+  ${CMAKE_CURRENT_SOURCE_DIR}/can_control/lib/libcontrolcan.so
 )
 
 
