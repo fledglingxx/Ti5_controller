@@ -1,6 +1,4 @@
-/home/astra/Ti5_controller/install/bringup/share/bringup/launch/Ti5.launch.py
 /home/astra/Ti5_controller/install/bringup/share/bringup/launch/Ti5_test.launch.py
-/home/astra/Ti5_controller/install/bringup/share/bringup/config/Ti5_controller.yaml
 /home/astra/Ti5_controller/install/bringup/share/ament_index/resource_index/package_run_dependencies/bringup
 /home/astra/Ti5_controller/install/bringup/share/ament_index/resource_index/parent_prefix_path/bringup
 /home/astra/Ti5_controller/install/bringup/share/bringup/environment/ament_prefix_path.sh

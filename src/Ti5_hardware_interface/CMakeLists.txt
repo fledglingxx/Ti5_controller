@@ -25,7 +25,7 @@ include_directories(
 )
 
 
-add_library(${PROJECT_NAME}
+add_library(${PROJECT_NAME} SHARED
   src/hardware.cpp
   can_control/src/can_hw.cpp
 )

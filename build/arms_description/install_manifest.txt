@@ -1,6 +1,4 @@
-/home/astra/Ti5_controller/install/arms_description/share/arms_description/launch/display.launch.py
 /home/astra/Ti5_controller/install/arms_description/share/arms_description/urdf/T170_ARMS.urdf
-/home/astra/Ti5_controller/install/arms_description/share/arms_description/urdf/T170_ARMS_control.xacro
 /home/astra/Ti5_controller/install/arms_description/share/arms_description/urdf/T170_ARMS.csv
 /home/astra/Ti5_controller/install/arms_description/share/arms_description/meshes/L_ELBOW_R_S.STL
 /home/astra/Ti5_controller/install/arms_description/share/arms_description/meshes/NECK_R_S.STL

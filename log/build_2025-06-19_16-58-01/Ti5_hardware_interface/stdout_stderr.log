@@ -1,0 +1,70 @@
+-- The C compiler identification is GNU 11.4.0
+-- The CXX compiler identification is GNU 11.4.0
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Check for working C compiler: /usr/bin/cc - skipped
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Check for working CXX compiler: /usr/bin/c++ - skipped
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- Found ament_cmake: 1.3.11 (/opt/ros/humble/share/ament_cmake/cmake)
+-- Found Python3: /usr/bin/python3 (found version "3.10.12") found components: Interpreter 
+-- Found hardware_interface: 2.51.0 (/opt/ros/humble/share/hardware_interface/cmake)
+-- Found rosidl_generator_c: 3.1.6 (/opt/ros/humble/share/rosidl_generator_c/cmake)
+-- Found rosidl_adapter: 3.1.6 (/opt/ros/humble/share/rosidl_adapter/cmake)
+-- Found rosidl_generator_cpp: 3.1.6 (/opt/ros/humble/share/rosidl_generator_cpp/cmake)
+-- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+-- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+-- Found rmw_implementation_cmake: 6.1.2 (/opt/ros/humble/share/rmw_implementation_cmake/cmake)
+-- Found rmw_cyclonedds_cpp: 1.3.4 (/opt/ros/humble/share/rmw_cyclonedds_cpp/cmake)
+-- Using RMW implementation 'rmw_cyclonedds_cpp' as default
+-- Looking for pthread.h
+-- Looking for pthread.h - found
+-- Performing Test CMAKE_HAVE_LIBC_PTHREAD
+-- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Success
+-- Found Threads: TRUE  
+WARNING: Package name "Ti5_hardware_interface" does not follow the naming conventions. It should start with a lower case letter and only contain lower case letters, digits, underscores, and dashes.
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /home/astra/Ti5_controller/build/Ti5_hardware_interface
+[ 66%] [32mBuilding CXX object CMakeFiles/Ti5_hardware_interface.dir/can_control/src/can_hw.cpp.o[0m
+[ 66%] [32mBuilding CXX object CMakeFiles/Ti5_hardware_interface.dir/src/hardware.cpp.o[0m
+[01m[K/home/astra/Ti5_controller/src/Ti5_hardware_interface/can_control/src/can_hw.cpp:[m[K In member function ‘[01m[Kvoid CANMotorInterface::sendCanCommand(uint8_t, uint8_t, uint32_t)[m[K’:
+[01m[K/home/astra/Ti5_controller/src/Ti5_hardware_interface/can_control/src/can_hw.cpp:126:26:[m[K [01;35m[Kwarning: [m[Kunused variable ‘[01m[Kreclen[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-variable-Wunused-variable]8;;[m[K]
+  126 |     int res[4], cnt = 2, [01;35m[Kreclen[m[K = 0;
+      |                          [01;35m[K^~~~~~[m[K
+[100%] [32m[1mLinking CXX shared library libTi5_hardware_interface.so[0m
+[100%] Built target Ti5_hardware_interface
+-- Install configuration: ""
+-- Installing: /home/astra/Ti5_controller/install/Ti5_hardware_interface/share/Ti5_hardware_interface/Ti5_hardware_interface.xml
+-- Installing: /home/astra/Ti5_controller/install/Ti5_hardware_interface/lib/libTi5_hardware_interface.so
+-- Set runtime path of "/home/astra/Ti5_controller/install/Ti5_hardware_interface/lib/libTi5_hardware_interface.so" to ""
+-- Installing: /home/astra/Ti5_controller/install/Ti5_hardware_interface/include
+-- Installing: /home/astra/Ti5_controller/install/Ti5_hardware_interface/include/Ti5_hardware_interface
+-- Installing: /home/astra/Ti5_controller/install/Ti5_hardware_interface/include/Ti5_hardware_interface/hardware.hpp
+-- Installing: /home/astra/Ti5_controller/install/Ti5_hardware_interface/include/Ti5_hardware_interface/visibility_control.h
+-- Up-to-date: /home/astra/Ti5_controller/install/Ti5_hardware_interface/share/Ti5_hardware_interface/Ti5_hardware_interface.xml
+-- Installing: /home/astra/Ti5_controller/install/Ti5_hardware_interface/share/Ti5_hardware_interface/environment/library_path.sh
+-- Installing: /home/astra/Ti5_controller/install/Ti5_hardware_interface/share/Ti5_hardware_interface/environment/library_path.dsv
+-- Installing: /home/astra/Ti5_controller/install/Ti5_hardware_interface/share/ament_index/resource_index/package_run_dependencies/Ti5_hardware_interface
+-- Installing: /home/astra/Ti5_controller/install/Ti5_hardware_interface/share/ament_index/resource_index/parent_prefix_path/Ti5_hardware_interface
+-- Installing: /home/astra/Ti5_controller/install/Ti5_hardware_interface/share/Ti5_hardware_interface/environment/ament_prefix_path.sh
+-- Installing: /home/astra/Ti5_controller/install/Ti5_hardware_interface/share/Ti5_hardware_interface/environment/ament_prefix_path.dsv
+-- Installing: /home/astra/Ti5_controller/install/Ti5_hardware_interface/share/Ti5_hardware_interface/environment/path.sh
+-- Installing: /home/astra/Ti5_controller/install/Ti5_hardware_interface/share/Ti5_hardware_interface/environment/path.dsv
+-- Installing: /home/astra/Ti5_controller/install/Ti5_hardware_interface/share/Ti5_hardware_interface/local_setup.bash
+-- Installing: /home/astra/Ti5_controller/install/Ti5_hardware_interface/share/Ti5_hardware_interface/local_setup.sh
+-- Installing: /home/astra/Ti5_controller/install/Ti5_hardware_interface/share/Ti5_hardware_interface/local_setup.zsh
+-- Installing: /home/astra/Ti5_controller/install/Ti5_hardware_interface/share/Ti5_hardware_interface/local_setup.dsv
+-- Installing: /home/astra/Ti5_controller/install/Ti5_hardware_interface/share/Ti5_hardware_interface/package.dsv
+-- Installing: /home/astra/Ti5_controller/install/Ti5_hardware_interface/share/ament_index/resource_index/packages/Ti5_hardware_interface
+-- Installing: /home/astra/Ti5_controller/install/Ti5_hardware_interface/share/ament_index/resource_index/hardware_interface__pluginlib__plugin/Ti5_hardware_interface
+-- Installing: /home/astra/Ti5_controller/install/Ti5_hardware_interface/share/Ti5_hardware_interface/cmake/ament_cmake_export_dependencies-extras.cmake
+-- Installing: /home/astra/Ti5_controller/install/Ti5_hardware_interface/share/Ti5_hardware_interface/cmake/ament_cmake_export_include_directories-extras.cmake
+-- Installing: /home/astra/Ti5_controller/install/Ti5_hardware_interface/share/Ti5_hardware_interface/cmake/ament_cmake_export_libraries-extras.cmake
+-- Installing: /home/astra/Ti5_controller/install/Ti5_hardware_interface/share/Ti5_hardware_interface/cmake/Ti5_hardware_interfaceConfig.cmake
+-- Installing: /home/astra/Ti5_controller/install/Ti5_hardware_interface/share/Ti5_hardware_interface/cmake/Ti5_hardware_interfaceConfig-version.cmake
+-- Installing: /home/astra/Ti5_controller/install/Ti5_hardware_interface/share/Ti5_hardware_interface/package.xml

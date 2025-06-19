@@ -43,10 +43,7 @@ if(NOT DEFINED CMAKE_OBJDUMP)
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/bringup" TYPE DIRECTORY FILES
-    "/home/astra/Ti5_controller/src/bringup/launch"
-    "/home/astra/Ti5_controller/src/bringup/config"
-    )
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/bringup" TYPE DIRECTORY FILES "/home/astra/Ti5_controller/src/bringup/launch")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)

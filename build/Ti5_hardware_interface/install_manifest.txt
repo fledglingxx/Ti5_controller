@@ -1,5 +1,5 @@
 /home/astra/Ti5_controller/install/Ti5_hardware_interface/share/Ti5_hardware_interface/Ti5_hardware_interface.xml
-/home/astra/Ti5_controller/install/Ti5_hardware_interface/lib/libTi5_hardware_interface.a
+/home/astra/Ti5_controller/install/Ti5_hardware_interface/lib/libTi5_hardware_interface.so
 /home/astra/Ti5_controller/install/Ti5_hardware_interface/include/Ti5_hardware_interface/hardware.hpp
 /home/astra/Ti5_controller/install/Ti5_hardware_interface/include/Ti5_hardware_interface/visibility_control.h
 /home/astra/Ti5_controller/install/Ti5_hardware_interface/share/Ti5_hardware_interface/Ti5_hardware_interface.xml
