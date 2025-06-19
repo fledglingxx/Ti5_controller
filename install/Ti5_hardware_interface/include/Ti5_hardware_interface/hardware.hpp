@@ -71,9 +71,7 @@ namespace Ti5_hardware_interface
     std::shared_ptr<CANMotorInterface> can_motor_interface;
     int num_joints_;
     std::vector<std::string> joint_names_;
-    std::vector<double> pos_cmd_, vel_cmd_, eff_cmd_;
-    std::vector<double> pos_state_, vel_state_, eff_state_;
-
+    std::vector<double> hw_commands_,hw_positions_,hw_velocities;
   };
 
 } // namespace Ti5_hardware_interface

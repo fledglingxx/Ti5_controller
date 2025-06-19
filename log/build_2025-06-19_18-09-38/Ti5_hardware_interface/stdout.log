@@ -1,0 +1,34 @@
+[35m[1mConsolidate compiler generated dependencies of target Ti5_hardware_interface[0m
+[ 33%] [32mBuilding CXX object CMakeFiles/Ti5_hardware_interface.dir/src/hardware.cpp.o[0m
+[ 66%] [32m[1mLinking CXX shared library libTi5_hardware_interface.so[0m
+[100%] Built target Ti5_hardware_interface
+-- Install configuration: ""
+-- Installing: /home/astra/Ti5_controller/install/Ti5_hardware_interface/share/Ti5_hardware_interface/Ti5_hardware_interface.xml
+-- Installing: /home/astra/Ti5_controller/install/Ti5_hardware_interface/lib/libTi5_hardware_interface.so
+-- Set runtime path of "/home/astra/Ti5_controller/install/Ti5_hardware_interface/lib/libTi5_hardware_interface.so" to ""
+-- Installing: /home/astra/Ti5_controller/install/Ti5_hardware_interface/include
+-- Installing: /home/astra/Ti5_controller/install/Ti5_hardware_interface/include/Ti5_hardware_interface
+-- Installing: /home/astra/Ti5_controller/install/Ti5_hardware_interface/include/Ti5_hardware_interface/hardware.hpp
+-- Installing: /home/astra/Ti5_controller/install/Ti5_hardware_interface/include/Ti5_hardware_interface/visibility_control.h
+-- Up-to-date: /home/astra/Ti5_controller/install/Ti5_hardware_interface/share/Ti5_hardware_interface/Ti5_hardware_interface.xml
+-- Installing: /home/astra/Ti5_controller/install/Ti5_hardware_interface/share/Ti5_hardware_interface/environment/library_path.sh
+-- Installing: /home/astra/Ti5_controller/install/Ti5_hardware_interface/share/Ti5_hardware_interface/environment/library_path.dsv
+-- Installing: /home/astra/Ti5_controller/install/Ti5_hardware_interface/share/ament_index/resource_index/package_run_dependencies/Ti5_hardware_interface
+-- Installing: /home/astra/Ti5_controller/install/Ti5_hardware_interface/share/ament_index/resource_index/parent_prefix_path/Ti5_hardware_interface
+-- Installing: /home/astra/Ti5_controller/install/Ti5_hardware_interface/share/Ti5_hardware_interface/environment/ament_prefix_path.sh
+-- Installing: /home/astra/Ti5_controller/install/Ti5_hardware_interface/share/Ti5_hardware_interface/environment/ament_prefix_path.dsv
+-- Installing: /home/astra/Ti5_controller/install/Ti5_hardware_interface/share/Ti5_hardware_interface/environment/path.sh
+-- Installing: /home/astra/Ti5_controller/install/Ti5_hardware_interface/share/Ti5_hardware_interface/environment/path.dsv
+-- Installing: /home/astra/Ti5_controller/install/Ti5_hardware_interface/share/Ti5_hardware_interface/local_setup.bash
+-- Installing: /home/astra/Ti5_controller/install/Ti5_hardware_interface/share/Ti5_hardware_interface/local_setup.sh
+-- Installing: /home/astra/Ti5_controller/install/Ti5_hardware_interface/share/Ti5_hardware_interface/local_setup.zsh
+-- Installing: /home/astra/Ti5_controller/install/Ti5_hardware_interface/share/Ti5_hardware_interface/local_setup.dsv
+-- Installing: /home/astra/Ti5_controller/install/Ti5_hardware_interface/share/Ti5_hardware_interface/package.dsv
+-- Installing: /home/astra/Ti5_controller/install/Ti5_hardware_interface/share/ament_index/resource_index/packages/Ti5_hardware_interface
+-- Installing: /home/astra/Ti5_controller/install/Ti5_hardware_interface/share/ament_index/resource_index/hardware_interface__pluginlib__plugin/Ti5_hardware_interface
+-- Installing: /home/astra/Ti5_controller/install/Ti5_hardware_interface/share/Ti5_hardware_interface/cmake/ament_cmake_export_dependencies-extras.cmake
+-- Installing: /home/astra/Ti5_controller/install/Ti5_hardware_interface/share/Ti5_hardware_interface/cmake/ament_cmake_export_include_directories-extras.cmake
+-- Installing: /home/astra/Ti5_controller/install/Ti5_hardware_interface/share/Ti5_hardware_interface/cmake/ament_cmake_export_libraries-extras.cmake
+-- Installing: /home/astra/Ti5_controller/install/Ti5_hardware_interface/share/Ti5_hardware_interface/cmake/Ti5_hardware_interfaceConfig.cmake
+-- Installing: /home/astra/Ti5_controller/install/Ti5_hardware_interface/share/Ti5_hardware_interface/cmake/Ti5_hardware_interfaceConfig-version.cmake
+-- Installing: /home/astra/Ti5_controller/install/Ti5_hardware_interface/share/Ti5_hardware_interface/package.xml

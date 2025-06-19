@@ -30,19 +30,15 @@ namespace Ti5_hardware_interface
 
     num_joints_ = info.joints.size();
 
-    joint_names_.resize(num_joints_);
-    pos_cmd_.resize(num_joints_, 0.0);
-    vel_cmd_.resize(num_joints_, 0.0);
-    eff_cmd_.resize(num_joints_, 0.0);
+    hw_commands_.resize(num_joints_,0);
+    hw_positions_.resize(num_joints_,0);
+    hw_velocities.resize(num_joints_,0);
+    joint_names_.clear();
 
-    pos_state_.resize(num_joints_, 0.0);
-    vel_state_.resize(num_joints_, 0.0);
-    eff_state_.resize(num_joints_, 0.0);
-
-    for(int i = 0; i < num_joints_; i++)
-      joint_names_[i] = info.joints[i].name;  
-
-    // RCLCPP_INFO(rclcpp::get_logger("Ti5_hardware_interface"), "Hardware interface initialized successfully");
+    for(const auto &joint : info.joints)
+      joint_names_.push_back(joint.name);
+    
+    RCLCPP_INFO(rclcpp::get_logger("Ti5_hardware_interface"), "Hardware interface initialized successfully");
     return CallbackReturn::SUCCESS;
   }
 
@@ -55,13 +51,13 @@ namespace Ti5_hardware_interface
     {
       if (can_motor_interface->initCAN())
       {
-        // RCLCPP_INFO(rclcpp::get_logger("Ti5_hardware_interface"), "CAN initialized successfully");
+        RCLCPP_INFO(rclcpp::get_logger("Ti5_hardware_interface"), "CAN initialized successfully");
         break;
       }
     }
     if (cnt == 0)
     {
-      // RCLCPP_ERROR(rclcpp::get_logger("Ti5_hardware_interface"), "CAN initialization failed");
+      RCLCPP_ERROR(rclcpp::get_logger("Ti5_hardware_interface"), "CAN initialization failed");
       return CallbackReturn::ERROR;
     }
 
@@ -76,8 +72,8 @@ namespace Ti5_hardware_interface
     std::vector<hardware_interface::StateInterface> state_interfaces;
     for (int i = 0; i < num_joints_; ++i)
     {
-      state_interfaces.emplace_back(joint_names_[i], hardware_interface::HW_IF_POSITION, &pos_state_[i]);
-      state_interfaces.emplace_back(joint_names_[i], hardware_interface::HW_IF_VELOCITY, &vel_state_[i]);
+      state_interfaces.emplace_back(joint_names_[i], hardware_interface::HW_IF_POSITION, &hw_positions_[i]);
+      state_interfaces.emplace_back(joint_names_[i], hardware_interface::HW_IF_VELOCITY, &hw_velocities[i]);
     }
 
     return state_interfaces;
@@ -88,7 +84,7 @@ namespace Ti5_hardware_interface
   {
     std::vector<hardware_interface::CommandInterface> command_interfaces;
     for (int i = 0; i < num_joints_; ++i)
-      command_interfaces.emplace_back(joint_names_[i], hardware_interface::HW_IF_POSITION, &pos_cmd_[i]);
+      command_interfaces.emplace_back(joint_names_[i], hardware_interface::HW_IF_POSITION, &hw_commands_[i]);
 
     return command_interfaces;
   }
@@ -96,17 +92,13 @@ namespace Ti5_hardware_interface
 
   hardware_interface::CallbackReturn hardware::on_activate(const rclcpp_lifecycle::State &)
   {
-    // RCLCPP_INFO(rclcpp::get_logger("Ti5_hardware_interface"), "Activating hardware interface");
+    RCLCPP_INFO(rclcpp::get_logger("Ti5_hardware_interface"), "Activating hardware interface");
 
     for(int i = 0; i < num_joints_; i++)
     {
-      pos_state_[i] = 0.0;
-      vel_state_[i] = 0.0;
-      eff_state_[i] = 0.0;
-
-      pos_cmd_[i] = pos_state_[i];
-      vel_cmd_[i] = 0.0;
-      eff_cmd_[i] = 0.0;
+      hw_positions_[i] = 0.0;
+      hw_velocities[i] = 0.0;
+      hw_commands_[i] = 0.0;
     }
 
     return CallbackReturn::SUCCESS;
@@ -115,7 +107,7 @@ namespace Ti5_hardware_interface
 
   hardware_interface::CallbackReturn hardware::on_deactivate(const rclcpp_lifecycle::State &)
   {
-    // RCLCPP_INFO(rclcpp::get_logger("Ti5_hardware_interface"), "Deactivating hardware interface");
+    RCLCPP_INFO(rclcpp::get_logger("Ti5_hardware_interface"), "Deactivating hardware interface");
 
     return CallbackReturn::SUCCESS;
   }
@@ -125,9 +117,8 @@ namespace Ti5_hardware_interface
   {
     for(int i = 0; i < num_joints_; i++)
     {
-      pos_state_[i] = can_motor_interface->sendSimpleCanCommand(i,8);
-      vel_state_[i] = can_motor_interface->sendSimpleCanCommand(i,10);
-      eff_state_[i] = can_motor_interface->sendSimpleCanCommand(i,12);
+      hw_positions_[i] = can_motor_interface->sendSimpleCanCommand(i,8);
+      hw_velocities[i] = can_motor_interface->sendSimpleCanCommand(i,10);
     }
 
     return hardware_interface::return_type::OK;
@@ -141,7 +132,7 @@ namespace Ti5_hardware_interface
     for(int i=0; i<num_joints_; i++)
     {
 
-      can_motor_interface->sendCanCommand(i, 30, pos_cmd_[i]);
+      //can_motor_interface->sendCanCommand(i, 30, pos_cmd_[i]);
 
       // RCLCPP_DEBUG(rclcpp::get_logger("Ti5_hardware_interface"), "Writing position command for joint %s: %f", 
       //         joint_names_[i].c_str(), pos_cmd_[i]);

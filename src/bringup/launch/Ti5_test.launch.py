@@ -105,5 +105,5 @@ def generate_launch_description():
         controller_spawner_handler,  # 保证 controller_manager 启动后再加载控制器
         move_group_launch,
         rviz_launch,
-        TimerAction(period=3.0, actions=[ti5_node])  # 接口节点延迟启动
+        # TimerAction(period=3.0, actions=[ti5_node])  # 接口节点延迟启动
     ])

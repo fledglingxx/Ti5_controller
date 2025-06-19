@@ -9,10 +9,6 @@
 #include "controlcan.h"  
 
  
-
-
-
-
 class CANMotorInterface
 {
 public:
