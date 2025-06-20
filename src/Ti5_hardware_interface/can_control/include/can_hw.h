@@ -8,7 +8,9 @@
 
 #include "controlcan.h"  
 
- 
+#define ratio 262144
+
+
 class CANMotorInterface
 {
 public:
@@ -20,7 +22,7 @@ public:
 
     bool initCAN();
     int32_t sendSimpleCanCommand(uint8_t motor_id, uint8_t command);
-    void sendCanCommand(uint8_t motor_id, uint8_t command, uint32_t parameter);
+    void sendCanCommand(uint8_t motor_id, uint8_t command, float parameter);
 
 
 private:

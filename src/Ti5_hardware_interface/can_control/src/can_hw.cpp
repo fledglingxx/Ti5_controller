@@ -113,7 +113,7 @@ int32_t CANMotorInterface::sendSimpleCanCommand(uint8_t motor_id, uint8_t comman
     
 }
 
-void CANMotorInterface::sendCanCommand(uint8_t motor_id, uint8_t command, uint32_t parameter)
+void CANMotorInterface::sendCanCommand(uint8_t motor_id, uint8_t command, float parameter)
 {
     VCI_CAN_OBJ send;
     send.SendType = 0;
@@ -124,7 +124,11 @@ void CANMotorInterface::sendCanCommand(uint8_t motor_id, uint8_t command, uint32
     send.ID = motor_id;
     send.Data[0] = command;
     int res[4], cnt = 2, reclen = 0;
-    toIntArray(parameter, res, 4);
+
+    uint32_t parameter_int = static_cast<uint32_t>(parameter / 2 / 3.14 * ratio);
+
+
+    toIntArray(parameter_int, res, 4);
 
     for (int j = 1; j < 5; j++)
         send.Data[j] = res[j - 1];
@@ -133,13 +137,13 @@ void CANMotorInterface::sendCanCommand(uint8_t motor_id, uint8_t command, uint32
         cnt--;
     if (cnt == 0)   
             std::cout << "aaaaaa!!!  ID " << send.ID << " transmit failed!" << std::endl;
-    // else
-    // {
-    //     //std::cout << "ID: " << send.ID << std::endl;
-        //for (int c = 0; c < send.DataLen; c++)
-            //printf("  %02X ", send.Data[c]);
-        // //std::cout << std::endl;   
-        // }
+    else
+    {
+        std::cout << "ID: " << send.ID << std::endl;
+        for (int c = 0; c < send.DataLen; c++)
+            printf("  %02X ", send.Data[c]);
+        std::cout << std::endl;   
+    }
 }
 
 

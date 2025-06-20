@@ -37,6 +37,14 @@ namespace Ti5_hardware_interface
 
     for(const auto &joint : info.joints)
       joint_names_.push_back(joint.name);
+
+
+
+    node_ = rclcpp::Node::make_shared("hardware_interface_ahhhhhh");
+    position_publisher = node_->create_publisher<std_msgs::msg::Float64MultiArray>("joint_positions_states", 10);
+    velocity_publisher = node_->create_publisher<std_msgs::msg::Float64MultiArray>("joint_velocities_states", 10);
+
+
     
     RCLCPP_INFO(rclcpp::get_logger("Ti5_hardware_interface"), "Hardware interface initialized successfully");
     return CallbackReturn::SUCCESS;
@@ -118,8 +126,21 @@ namespace Ti5_hardware_interface
     for(int i = 0; i < num_joints_; i++)
     {
       hw_positions_[i] = can_motor_interface->sendSimpleCanCommand(i,8);
-      hw_velocities[i] = can_motor_interface->sendSimpleCanCommand(i,10);
+      hw_velocities[i] = can_motor_interface->sendSimpleCanCommand(i,6);
+
+      ///////////////////
+      // position_feedback[i] = hw_positions_[i];
+      // velocity_feedback[i] = hw_velocities_[i];
     }
+
+    std_msgs::msg::Float64MultiArray pos_msg;
+    pos_msg.data = hw_positions_;
+    position_publisher->publish(pos_msg);
+
+    std_msgs::msg::Float64MultiArray vel_msg;
+    vel_msg.data = hw_velocities;
+    velocity_publisher->publish(vel_msg);
+
 
     return hardware_interface::return_type::OK;
   }
@@ -132,10 +153,10 @@ namespace Ti5_hardware_interface
     for(int i=0; i<num_joints_; i++)
     {
 
-      //can_motor_interface->sendCanCommand(i, 30, pos_cmd_[i]);
+      can_motor_interface->sendCanCommand(i, 30, hw_commands_[i]);
 
-      // RCLCPP_DEBUG(rclcpp::get_logger("Ti5_hardware_interface"), "Writing position command for joint %s: %f", 
-      //         joint_names_[i].c_str(), pos_cmd_[i]);
+      RCLCPP_DEBUG(rclcpp::get_logger("Ti5_hardware_interface"), "Writing position command for joint %s: %f", 
+               joint_names_[i].c_str(), hw_commands_[i]);
 
     }
     return hardware_interface::return_type::OK;

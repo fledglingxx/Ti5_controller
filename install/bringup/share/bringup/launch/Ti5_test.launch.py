@@ -9,6 +9,7 @@ from launch_ros.substitutions import FindPackageShare
 def generate_launch_description():
     moveit_config_pkg = FindPackageShare('T170_ARMS_moveit_config')
     ti5_interface_pkg = FindPackageShare('Ti5_moveit_interface')
+    # ti5_hw_pkg = FindPackageShare('Ti5_hardware_interface')
 
     controllers_yaml = PathJoinSubstitution([
         moveit_config_pkg, 'config', 'ros2_controllers.yaml'
@@ -25,6 +26,28 @@ def generate_launch_description():
         ])
     ])
     robot_description = {'robot_description': robot_description_content}
+
+
+
+
+    # left_arm_hw_node = Node(
+    #     package='Ti5_hardware_interface',
+    #     executable='hardware_node',
+    #     name='left_arm',
+    #     parameters=[robot_description],
+    #     output='screen'
+    # )
+
+    # right_arm_hw_node = Node(
+    #     package='Ti5_hardware_interface',
+    #     executable='hardware_node',
+    #     name='right_arm',
+    #     parameters=[robot_description],
+    #     output='screen'
+    # )
+
+
+
 
     rsp_launch = IncludeLaunchDescription(
         PythonLaunchDescriptionSource(
@@ -101,6 +124,8 @@ def generate_launch_description():
 
     return LaunchDescription([
         rsp_launch,
+        # left_arm_hw_node,
+        # right_arm_hw_node,
         controller_manager_node,
         controller_spawner_handler,  # 保证 controller_manager 启动后再加载控制器
         move_group_launch,

@@ -1,0 +1,37 @@
+WARNING: Package name "Ti5_moveit_interface" does not follow the naming conventions. It should start with a lower case letter and only contain lower case letters, digits, underscores, and dashes.
+[01m[K/home/astra/Ti5_controller/src/Ti5_moveit_interface/src/Ti5_moveit_interface.cpp:[m[K In member function ‘[01m[Kbool Ti5_moveit_interface::MoveItInterface::L_move_j(const std::vector<double, std::allocator<double> >&)[m[K’:
+[01m[K/home/astra/Ti5_controller/src/Ti5_moveit_interface/src/Ti5_moveit_interface.cpp:31:99:[m[K [01;35m[Kwarning: [m[K‘[01m[Kusing MoveItErrorCode = class moveit::core::MoveItErrorCode[m[K’ is deprecated: Use moveit::core::MoveItErrorCode [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wdeprecated-declarations-Wdeprecated-declarations]8;;[m[K]
+   31 |         bool success = (L_move_group_->plan(plan) == moveit::planning_interface::MoveItErrorCode::[01;35m[KSUCCESS[m[K);
+      |                                                                                                   [01;35m[K^~~~~~~[m[K
+In file included from [01m[K/home/astra/Ti5_controller/src/Ti5_moveit_interface/include/Ti5_moveit_interface/Ti5_moveit_interface.hpp:4[m[K,
+                 from [01m[K/home/astra/Ti5_controller/src/Ti5_moveit_interface/src/Ti5_moveit_interface.cpp:1[m[K:
+[01m[K/opt/ros/humble/include/moveit/move_group_interface/move_group_interface.h:71:7:[m[K [01;36m[Knote: [m[Kdeclared here
+   71 | using [01;36m[KMoveItErrorCode[m[K [[deprecated("Use moveit::core::MoveItErrorCode")]] = moveit::core::MoveItErrorCode;
+      |       [01;36m[K^~~~~~~~~~~~~~~[m[K
+[01m[K/home/astra/Ti5_controller/src/Ti5_moveit_interface/src/Ti5_moveit_interface.cpp:[m[K In member function ‘[01m[Kbool Ti5_moveit_interface::MoveItInterface::L_move_p(const Pose&)[m[K’:
+[01m[K/home/astra/Ti5_controller/src/Ti5_moveit_interface/src/Ti5_moveit_interface.cpp:41:99:[m[K [01;35m[Kwarning: [m[K‘[01m[Kusing MoveItErrorCode = class moveit::core::MoveItErrorCode[m[K’ is deprecated: Use moveit::core::MoveItErrorCode [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wdeprecated-declarations-Wdeprecated-declarations]8;;[m[K]
+   41 |         bool success = (L_move_group_->plan(plan) == moveit::planning_interface::MoveItErrorCode::[01;35m[KSUCCESS[m[K);
+      |                                                                                                   [01;35m[K^~~~~~~[m[K
+In file included from [01m[K/home/astra/Ti5_controller/src/Ti5_moveit_interface/include/Ti5_moveit_interface/Ti5_moveit_interface.hpp:4[m[K,
+                 from [01m[K/home/astra/Ti5_controller/src/Ti5_moveit_interface/src/Ti5_moveit_interface.cpp:1[m[K:
+[01m[K/opt/ros/humble/include/moveit/move_group_interface/move_group_interface.h:71:7:[m[K [01;36m[Knote: [m[Kdeclared here
+   71 | using [01;36m[KMoveItErrorCode[m[K [[deprecated("Use moveit::core::MoveItErrorCode")]] = moveit::core::MoveItErrorCode;
+      |       [01;36m[K^~~~~~~~~~~~~~~[m[K
+[01m[K/home/astra/Ti5_controller/src/Ti5_moveit_interface/src/Ti5_moveit_interface.cpp:[m[K In member function ‘[01m[Kbool Ti5_moveit_interface::MoveItInterface::R_move_j(const std::vector<double, std::allocator<double> >&)[m[K’:
+[01m[K/home/astra/Ti5_controller/src/Ti5_moveit_interface/src/Ti5_moveit_interface.cpp:51:99:[m[K [01;35m[Kwarning: [m[K‘[01m[Kusing MoveItErrorCode = class moveit::core::MoveItErrorCode[m[K’ is deprecated: Use moveit::core::MoveItErrorCode [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wdeprecated-declarations-Wdeprecated-declarations]8;;[m[K]
+   51 |         bool success = (R_move_group_->plan(plan) == moveit::planning_interface::MoveItErrorCode::[01;35m[KSUCCESS[m[K);
+      |                                                                                                   [01;35m[K^~~~~~~[m[K
+In file included from [01m[K/home/astra/Ti5_controller/src/Ti5_moveit_interface/include/Ti5_moveit_interface/Ti5_moveit_interface.hpp:4[m[K,
+                 from [01m[K/home/astra/Ti5_controller/src/Ti5_moveit_interface/src/Ti5_moveit_interface.cpp:1[m[K:
+[01m[K/opt/ros/humble/include/moveit/move_group_interface/move_group_interface.h:71:7:[m[K [01;36m[Knote: [m[Kdeclared here
+   71 | using [01;36m[KMoveItErrorCode[m[K [[deprecated("Use moveit::core::MoveItErrorCode")]] = moveit::core::MoveItErrorCode;
+      |       [01;36m[K^~~~~~~~~~~~~~~[m[K
+[01m[K/home/astra/Ti5_controller/src/Ti5_moveit_interface/src/Ti5_moveit_interface.cpp:[m[K In member function ‘[01m[Kbool Ti5_moveit_interface::MoveItInterface::R_move_p(const Pose&)[m[K’:
+[01m[K/home/astra/Ti5_controller/src/Ti5_moveit_interface/src/Ti5_moveit_interface.cpp:62:99:[m[K [01;35m[Kwarning: [m[K‘[01m[Kusing MoveItErrorCode = class moveit::core::MoveItErrorCode[m[K’ is deprecated: Use moveit::core::MoveItErrorCode [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wdeprecated-declarations-Wdeprecated-declarations]8;;[m[K]
+   62 |         bool success = (R_move_group_->plan(plan) == moveit::planning_interface::MoveItErrorCode::[01;35m[KSUCCESS[m[K);
+      |                                                                                                   [01;35m[K^~~~~~~[m[K
+In file included from [01m[K/home/astra/Ti5_controller/src/Ti5_moveit_interface/include/Ti5_moveit_interface/Ti5_moveit_interface.hpp:4[m[K,
+                 from [01m[K/home/astra/Ti5_controller/src/Ti5_moveit_interface/src/Ti5_moveit_interface.cpp:1[m[K:
+[01m[K/opt/ros/humble/include/moveit/move_group_interface/move_group_interface.h:71:7:[m[K [01;36m[Knote: [m[Kdeclared here
+   71 | using [01;36m[KMoveItErrorCode[m[K [[deprecated("Use moveit::core::MoveItErrorCode")]] = moveit::core::MoveItErrorCode;
+      |       [01;36m[K^~~~~~~~~~~~~~~[m[K
