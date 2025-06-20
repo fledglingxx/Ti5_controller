@@ -29,7 +29,7 @@
 -- Configuring done
 -- Generating done
 -- Build files have been written to: /home/astra/Ti5_controller/build/Ti5_hardware_interface
-[ 66%] [32mBuilding CXX object CMakeFiles/Ti5_hardware_interface.dir/src/hardware.cpp.o[0m
+[ 33%] [32mBuilding CXX object CMakeFiles/Ti5_hardware_interface.dir/src/hardware.cpp.o[0m
 [ 66%] [32mBuilding CXX object CMakeFiles/Ti5_hardware_interface.dir/can_control/src/can_hw.cpp.o[0m
 [100%] [32m[1mLinking CXX shared library libTi5_hardware_interface.so[0m
 [100%] Built target Ti5_hardware_interface

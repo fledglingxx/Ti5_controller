@@ -73,12 +73,6 @@ namespace Ti5_hardware_interface
     std::vector<std::string> joint_names_;
     std::vector<double> hw_commands_,hw_positions_,hw_velocities;
 
-
-    rclcpp::Node::SharedPtr node_;
-    std::vector<double> position_feedback;
-    std::vector<double> velocity_feedback;
-    rclcpp::Publisher<std_msgs::msg::Float64MultiArray>::SharedPtr position_publisher;
-    rclcpp::Publisher<std_msgs::msg::Float64MultiArray>::SharedPtr velocity_publisher;
   };
 
 } // namespace Ti5_hardware_interface
