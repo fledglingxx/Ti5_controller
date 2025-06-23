@@ -23,6 +23,7 @@ public:
     bool initCAN();
     int32_t sendSimpleCanCommand(uint8_t motor_id, uint8_t command);
     void sendCanCommand(uint8_t motor_id, uint8_t command, float parameter);
+    void set_vel(uint8_t motor_id, uint8_t command, uint32_t velocity);
 
 
 private:

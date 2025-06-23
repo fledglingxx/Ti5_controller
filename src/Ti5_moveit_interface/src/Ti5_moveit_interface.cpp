@@ -19,7 +19,7 @@ namespace Ti5_moveit_interface
 
     }
     
-
+/*
     bool MoveItInterface::L_move_j(const std::vector<double> &joint_positions)
     {
 
@@ -43,6 +43,51 @@ namespace Ti5_moveit_interface
             L_move_group_->execute(plan);
         return success;
     }
+
+*/
+
+    bool MoveItInterface::L_move_j(const std::vector<double> &joint_positions)
+    {
+
+        std::cout<<"hhhhhhhhhhh!!!!!!!   L_move_j"<<std::endl;
+
+
+        L_move_group_->setJointValueTarget(joint_positions);
+        L_move_group_->move();
+        return true;
+    }
+
+    bool MoveItInterface::L_move_p(const std::vector<double> &pose)
+    {
+        geometry_msgs::msg::Pose target_pose;
+        target_pose.position.x = pose[0];
+        target_pose.position.y = pose[1];
+        target_pose.position.z = pose[2];
+
+        tf2::Quaternion q;
+        q.setRPY(pose[3], pose[4], pose[5]);
+        target_pose.orientation.x = q.x();
+        target_pose.orientation.y = q.y();
+        target_pose.orientation.z = q.z();
+        target_pose.orientation.w = q.w();
+
+        L_move_group_->setStartStateToCurrentState();
+        L_move_group_->setPoseTarget(target_pose);
+
+        moveit::planning_interface::MoveGroupInterface::Plan plan;
+        moveit::planning_interface::MoveItErrorCode success = L_move_group_->plan(plan);
+        RCLCPP_INFO(rclcpp::get_logger("Ti5_moveit_interface"), "Plan %s", success? "successful" : "failed");
+
+        if(success)
+        {
+            L_move_group_->execute(plan);
+            return true;
+        }
+        return false;
+
+    }
+
+
 
     bool MoveItInterface::R_move_j(const std::vector<double> &joint_positions)  
     {

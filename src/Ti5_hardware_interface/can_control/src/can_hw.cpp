@@ -3,6 +3,7 @@
 #include <iostream>
 #include <cstring>
 
+int can_id[14]={16,17,18,19,20,21,22,  23,24,25,26,27,28,29};
 
 CANMotorInterface::CANMotorInterface() {}
 
@@ -87,7 +88,7 @@ int32_t CANMotorInterface::sendSimpleCanCommand(uint8_t motor_id, uint8_t comman
     send.ExternFlag = 0;
     send.DataLen = 1;
 
-    send.ID = motor_id;
+    send.ID = can_id[motor_id];
     send.Data[0] = command;
 
     if (VCI_Transmit(DeviceType, 0, CANInd, &send, 1) == 1)
@@ -97,18 +98,18 @@ int32_t CANMotorInterface::sendSimpleCanCommand(uint8_t motor_id, uint8_t comman
 
         while (VCI_Receive(DeviceType, 0, CANInd, rec, 3000, 100) <= 0 && cnt)
             cnt--;
-        if (cnt == 0)
-            std::cout << "aaaaaa!!! ops! ID " << send.ID << " receive failed!" << std::endl;
-        else
-        {
-            std::uint8_t hexArray[4] = {rec[0].Data[4], rec[0].Data[3], rec[0].Data[2], rec[0].Data[1]};
-            std::int32_t decimal = convertHexArrayToDecimal(hexArray);
-            return decimal;
-            //std::cout << "ID: " << send.ID << " Data: " << decimal << std::endl;
-        }
+        // if (cnt == 0)
+        //     std::cout << "aaaaaa!!! ops! ID " << send.ID << " receive failed!" << std::endl;
+        // else
+        // {
+        //     std::uint8_t hexArray[4] = {rec[0].Data[4], rec[0].Data[3], rec[0].Data[2], rec[0].Data[1]};
+        //     std::int32_t decimal = convertHexArrayToDecimal(hexArray);
+        //     return decimal;
+        //     //std::cout << "ID: " << send.ID << " Data: " << decimal << std::endl;
+        // }
     }
-    else
-        std::cout << "aaaaaa!!! ops! ID " << send.ID << " transmit failed!" << std::endl;
+    // else
+    //     std::cout << "aaaaaa!!! ops! ID " << send.ID << " transmit failed!" << std::endl;
     return 0;
     
 }
@@ -121,7 +122,7 @@ void CANMotorInterface::sendCanCommand(uint8_t motor_id, uint8_t command, float 
     send.ExternFlag = 0;
     send.DataLen = 5;
 
-    send.ID = motor_id;
+    send.ID = can_id[motor_id];
     send.Data[0] = command;
     int res[4], cnt = 2, reclen = 0;
 
@@ -146,7 +147,35 @@ void CANMotorInterface::sendCanCommand(uint8_t motor_id, uint8_t command, float 
     }
 }
 
+void CANMotorInterface::set_vel(uint8_t motor_id, uint8_t command, uint32_t velocity)
+{
+    VCI_CAN_OBJ send;
+    send.SendType = 0;
+    send.RemoteFlag = 0;
+    send.ExternFlag = 0;    
+    send.DataLen = 5;
 
+    send.ID = can_id[motor_id];
+    send.Data[0] = command;
+    int res[4], cnt = 4, reclen = 0;
+
+    toIntArray(velocity, res, 4);
+
+    for (int j = 1; j < 5; j++)
+        send.Data[j] = res[j - 1];
+
+    while (VCI_Transmit(DeviceType, 0, CANInd, &send, 1) <= 0 && cnt)
+        cnt--;
+    if (cnt == 0)
+        std::cout << "aaaaaa!!!  ID " << send.ID << " transmit failed!" << std::endl;
+    else
+    {
+        std::cout << "ID: " << send.ID << std::endl;
+        for (int c = 0; c < send.DataLen; c++)
+            printf("  %02X ", send.Data[c]);
+        std::cout << std::endl;
+    }
+}
 
 
 

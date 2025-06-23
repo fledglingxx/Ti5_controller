@@ -36,7 +36,10 @@ namespace Ti5_hardware_interface
     joint_names_.clear();
 
     for(const auto &joint : info.joints)
-      joint_names_.push_back(joint.name);
+      {
+        joint_names_.push_back(joint.name);
+        std::cout<<"Joint name: "<<joint.name<<std::endl;
+      }
     
     RCLCPP_INFO(rclcpp::get_logger("Ti5_hardware_interface"), "Hardware interface initialized successfully");
     return CallbackReturn::SUCCESS;
@@ -92,15 +95,15 @@ namespace Ti5_hardware_interface
 
   hardware_interface::CallbackReturn hardware::on_activate(const rclcpp_lifecycle::State &)
   {
-    RCLCPP_INFO(rclcpp::get_logger("Ti5_hardware_interface"), "Activating hardware interface");
 
     for(int i = 0; i < num_joints_; i++)
     {
-      hw_positions_[i] = 0.0;
-      hw_velocities[i] = 0.0;
-      hw_commands_[i] = 0.0;
+      std::cout<<"hhhhhhhhhhhhhhhhhhh!!!!!!!!!!! Activating joint: "<<i<<std::endl;
+      can_motor_interface->set_vel(i, 36, 1000);
+      can_motor_interface->set_vel(i, 37, -1000);
     }
 
+    RCLCPP_INFO(rclcpp::get_logger("Ti5_hardware_interface"), "Activating hardware interface");
     return CallbackReturn::SUCCESS;
   }
 

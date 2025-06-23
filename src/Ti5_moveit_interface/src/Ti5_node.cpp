@@ -12,17 +12,21 @@ int main(int argc, char **argv)
 
   std::cout<<"hhhhhhhh!!!!!!! Ti5_moveit_interface_node initialized"<<std::endl;
 
-  std::vector<double> left_joints = {0.0, -0.5, 1.0, 0.0, 0.7, 0.0, 0.0};
+  std::vector<double> left_joints = {0.0, 0.0, 0.0, 0.0, 0.0, 0.3, 0.0};
   Ti5.L_move_j(left_joints);
 
-  geometry_msgs::msg::Pose pose;
-  pose.position.x = 0.5;
-  pose.position.y = 0.0;
-  pose.position.z = 0.2;
-  pose.orientation.w = 0.0;
-  Ti5.R_move_p(pose);
+  // geometry_msgs::msg::Pose pose;
+  // pose.position.x = 0.5;
+  // pose.position.y = 0.0;
+  // pose.position.z = 0.2;
+  // pose.orientation.w = 0.0;
+  // Ti5.R_move_p(pose);
 
+  while(rclcpp::ok())
+  { 
+    rclcpp::spin(node);
+  }
 
-  rclcpp::shutdown();
+  // rclcpp::shutdown();
   return 0;
 }
