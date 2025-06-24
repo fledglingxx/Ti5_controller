@@ -21,7 +21,8 @@ public:
     void toIntArray(int number, int *res, int size);
 
     bool initCAN();
-    int32_t sendSimpleCanCommand(uint8_t motor_id, uint8_t command);
+    uint32_t receive_vel(uint8_t motor_id, uint8_t command);
+    float receive_angle(uint8_t motor_id, uint8_t command);
     void sendCanCommand(uint8_t motor_id, uint8_t command, float parameter);
     void set_vel(uint8_t motor_id, uint8_t command, uint32_t velocity);
 

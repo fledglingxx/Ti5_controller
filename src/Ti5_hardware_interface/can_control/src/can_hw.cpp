@@ -80,7 +80,7 @@ bool CANMotorInterface::initCAN()
 
 
 
-int32_t CANMotorInterface::sendSimpleCanCommand(uint8_t motor_id, uint8_t command)
+float CANMotorInterface::receive_angle(uint8_t motor_id, uint8_t command)
 {
     VCI_CAN_OBJ send;
     send.SendType = 0;
@@ -98,21 +98,58 @@ int32_t CANMotorInterface::sendSimpleCanCommand(uint8_t motor_id, uint8_t comman
 
         while (VCI_Receive(DeviceType, 0, CANInd, rec, 3000, 100) <= 0 && cnt)
             cnt--;
-        // if (cnt == 0)
-        //     std::cout << "aaaaaa!!! ops! ID " << send.ID << " receive failed!" << std::endl;
-        // else
-        // {
-        //     std::uint8_t hexArray[4] = {rec[0].Data[4], rec[0].Data[3], rec[0].Data[2], rec[0].Data[1]};
-        //     std::int32_t decimal = convertHexArrayToDecimal(hexArray);
-        //     return decimal;
-        //     //std::cout << "ID: " << send.ID << " Data: " << decimal << std::endl;
-        // }
+        if (cnt == 0)
+            std::cout << "aaaaaa!!! ops! ID " << send.ID << " receive failed!  command  " << command<< std::endl;
+        else
+        {
+            std::uint8_t hexArray[4] = {rec[0].Data[4], rec[0].Data[3], rec[0].Data[2], rec[0].Data[1]};
+            std::int32_t decimal = convertHexArrayToDecimal(hexArray);
+            float res = decimal * 1.0/ ratio * 2 * 3.14;
+            // std::cout << "ID: " << send.ID <<"  decimal: " << decimal <<" res: " << res << std::endl;
+            return res;
+        }
     }
-    // else
-    //     std::cout << "aaaaaa!!! ops! ID " << send.ID << " transmit failed!" << std::endl;
+    else
+        std::cout << "aaaaaa!!! ops! ID " << send.ID << " transmit failed!" << std::endl;
     return 0;
     
 }
+
+uint32_t CANMotorInterface::receive_vel(uint8_t motor_id, uint8_t command)
+{
+    VCI_CAN_OBJ send;
+    send.SendType = 0;
+    send.RemoteFlag = 0;
+    send.ExternFlag = 0;
+    send.DataLen = 1;
+
+    send.ID = can_id[motor_id];
+    send.Data[0] = command;
+
+    if (VCI_Transmit(DeviceType, 0, CANInd, &send, 1) == 1)
+    {
+        VCI_CAN_OBJ rec[3000];
+        int cnt = 2;
+
+        while (VCI_Receive(DeviceType, 0, CANInd, rec, 3000, 100) <= 0 && cnt)
+            cnt--;
+        if (cnt == 0)
+            std::cout << "aaaaaa!!! ops! ID " << send.ID << " receive failed!  command  " << command<< std::endl;
+        else
+        {
+            std::uint8_t hexArray[4] = {rec[0].Data[4], rec[0].Data[3], rec[0].Data[2], rec[0].Data[1]};
+            std::int32_t decimal = convertHexArrayToDecimal(hexArray);
+            // std::cout << "ID: " << send.ID <<"  decimal: " << decimal << std::endl;
+            return decimal;
+        }
+    }
+    else
+        std::cout << "aaaaaa!!! ops! ID " << send.ID << " transmit failed!" << std::endl;
+    return 0;
+    
+}
+
+
 
 void CANMotorInterface::sendCanCommand(uint8_t motor_id, uint8_t command, float parameter)
 {
@@ -137,14 +174,14 @@ void CANMotorInterface::sendCanCommand(uint8_t motor_id, uint8_t command, float 
     while (VCI_Transmit(DeviceType, 0, CANInd, &send, 1) <= 0 && cnt)
         cnt--;
     if (cnt == 0)   
-            std::cout << "aaaaaa!!!  ID " << send.ID << " transmit failed!" << std::endl;
-    else
-    {
-        std::cout << "ID: " << send.ID << std::endl;
-        for (int c = 0; c < send.DataLen; c++)
-            printf("  %02X ", send.Data[c]);
-        std::cout << std::endl;   
-    }
+            std::cout << "aaaaaa!!! sendCanCommand ID " << send.ID << " transmit failed!" << std::endl;
+    // else
+    // {
+    //     std::cout << "ID: " << send.ID << std::endl;
+    //     for (int c = 0; c < send.DataLen; c++)
+    //         printf("  %02X ", send.Data[c]);
+    //     std::cout << std::endl;   
+    // }
 }
 
 void CANMotorInterface::set_vel(uint8_t motor_id, uint8_t command, uint32_t velocity)
@@ -167,14 +204,14 @@ void CANMotorInterface::set_vel(uint8_t motor_id, uint8_t command, uint32_t velo
     while (VCI_Transmit(DeviceType, 0, CANInd, &send, 1) <= 0 && cnt)
         cnt--;
     if (cnt == 0)
-        std::cout << "aaaaaa!!!  ID " << send.ID << " transmit failed!" << std::endl;
-    else
-    {
-        std::cout << "ID: " << send.ID << std::endl;
-        for (int c = 0; c < send.DataLen; c++)
-            printf("  %02X ", send.Data[c]);
-        std::cout << std::endl;
-    }
+        std::cout << "aaaaaa!!! set_vel ID " << send.ID << " transmit failed!" << std::endl;
+    // else
+    // {
+    //     std::cout << "ID: " << send.ID << std::endl;
+    //     for (int c = 0; c < send.DataLen; c++)
+    //         printf("  %02X ", send.Data[c]);
+    //     std::cout << std::endl;
+    // }
 }
 
 

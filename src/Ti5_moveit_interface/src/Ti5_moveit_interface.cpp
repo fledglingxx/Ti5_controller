@@ -44,6 +44,28 @@ namespace Ti5_moveit_interface
         return success;
     }
 
+    bool MoveItInterface::R_move_j(const std::vector<double> &joint_positions)  
+    {
+        R_move_group_->setJointValueTarget(joint_positions);
+        moveit::planning_interface::MoveGroupInterface::Plan plan;
+        bool success = (R_move_group_->plan(plan) == moveit::planning_interface::MoveItErrorCode::SUCCESS);
+        if(success)
+            R_move_group_->execute(plan);
+        return success;
+    }
+
+    bool MoveItInterface::R_move_p(const geometry_msgs::msg::Pose &pose)
+    {
+        std::cout<<"h!!!!!!!   R_move_p"<<std::endl;
+        R_move_group_->setPoseTarget(pose);
+        moveit::planning_interface::MoveGroupInterface::Plan plan;
+        bool success = (R_move_group_->plan(plan) == moveit::planning_interface::MoveItErrorCode::SUCCESS);
+        if(success)
+            R_move_group_->execute(plan);
+        return success;
+    }
+
+
 */
 
     bool MoveItInterface::L_move_j(const std::vector<double> &joint_positions)
@@ -51,7 +73,7 @@ namespace Ti5_moveit_interface
 
         std::cout<<"hhhhhhhhhhh!!!!!!!   L_move_j"<<std::endl;
 
-
+        L_move_group_->setStartStateToCurrentState();
         L_move_group_->setJointValueTarget(joint_positions);
         L_move_group_->move();
         return true;
@@ -88,25 +110,45 @@ namespace Ti5_moveit_interface
     }
 
 
-
-    bool MoveItInterface::R_move_j(const std::vector<double> &joint_positions)  
+    bool MoveItInterface::R_move_j(const std::vector<double> &joint_positions)
     {
+
+        std::cout<<"hhhhhhhhhhh!!!!!!!   R_move_j"<<std::endl;
+
+        R_move_group_->setStartStateToCurrentState();
         R_move_group_->setJointValueTarget(joint_positions);
-        moveit::planning_interface::MoveGroupInterface::Plan plan;
-        bool success = (R_move_group_->plan(plan) == moveit::planning_interface::MoveItErrorCode::SUCCESS);
-        if(success)
-            R_move_group_->execute(plan);
-        return success;
+        R_move_group_->move();
+        return true;
     }
 
-    bool MoveItInterface::R_move_p(const geometry_msgs::msg::Pose &pose)
+    bool MoveItInterface::R_move_p(const std::vector<double> &pose)
     {
-        std::cout<<"h!!!!!!!   R_move_p"<<std::endl;
-        R_move_group_->setPoseTarget(pose);
+        geometry_msgs::msg::Pose target_pose;
+        target_pose.position.x = pose[0];
+        target_pose.position.y = pose[1];
+        target_pose.position.z = pose[2];
+
+        tf2::Quaternion q;
+        q.setRPY(pose[3], pose[4], pose[5]);
+        target_pose.orientation.x = q.x();
+        target_pose.orientation.y = q.y();
+        target_pose.orientation.z = q.z();
+        target_pose.orientation.w = q.w();
+
+        R_move_group_->setStartStateToCurrentState();
+        R_move_group_->setPoseTarget(target_pose);
+
         moveit::planning_interface::MoveGroupInterface::Plan plan;
-        bool success = (R_move_group_->plan(plan) == moveit::planning_interface::MoveItErrorCode::SUCCESS);
+        moveit::planning_interface::MoveItErrorCode success = R_move_group_->plan(plan);
+        RCLCPP_INFO(rclcpp::get_logger("Ti5_moveit_interface"), "Plan %s", success ? "successful" : "failed");
+
         if(success)
+        {
             R_move_group_->execute(plan);
-        return success;
+            return true;
+        }
+        return false;
+
     }
+
 }

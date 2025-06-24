@@ -120,8 +120,8 @@ namespace Ti5_hardware_interface
   {
     for(int i = 0; i < num_joints_; i++)
     {
-      hw_positions_[i] = can_motor_interface->sendSimpleCanCommand(i,8);
-      hw_velocities[i] = can_motor_interface->sendSimpleCanCommand(i,6);
+      hw_positions_[i] = can_motor_interface->receive_angle(i,8);
+      hw_velocities[i] = can_motor_interface->receive_vel(i,6);
 
     }
 
@@ -135,7 +135,6 @@ namespace Ti5_hardware_interface
 
     for(int i=0; i<num_joints_; i++)
     {
-
       can_motor_interface->sendCanCommand(i, 30, hw_commands_[i]);
 
       RCLCPP_DEBUG(rclcpp::get_logger("Ti5_hardware_interface"), "Writing position command for joint %s: %f", 
