@@ -1,4 +1,0 @@
-Invoking command in '/home/astra/Ti5_controller/build/arms_description': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /home/astra/Ti5_controller/build/arms_description -- -j24 -l24
-Invoked command in '/home/astra/Ti5_controller/build/arms_description' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /home/astra/Ti5_controller/build/arms_description -- -j24 -l24
-Invoking command in '/home/astra/Ti5_controller/build/arms_description': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --install /home/astra/Ti5_controller/build/arms_description
-Invoked command in '/home/astra/Ti5_controller/build/arms_description' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --install /home/astra/Ti5_controller/build/arms_description

@@ -39,6 +39,9 @@ void CANMotorInterface::toIntArray(int number, int *res, int size)
 
 bool CANMotorInterface::initCAN() 
 {
+    //VCI_CloseDevice(DeviceType, DeviceIndex);
+
+
     VCI_INIT_CONFIG vic;
     vic.AccCode = 0x80000008;
     vic.AccMask = 0xFFFFFFFF;

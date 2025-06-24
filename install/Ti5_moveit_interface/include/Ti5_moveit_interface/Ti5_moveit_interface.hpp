@@ -14,6 +14,8 @@ namespace Ti5_moveit_interface
         public:
             MoveItInterface(const rclcpp::Node::SharedPtr &node,
                 const std::string &planning_group_left,const std::string &planning_group_right);
+            ~MoveItInterface();
+            
             bool L_move_j(const std::vector<double> &joint_positions);
             bool L_move_p(const std::vector<double> &pose);
             bool R_move_j(const std::vector<double> &joint_positions);
@@ -28,6 +30,10 @@ namespace Ti5_moveit_interface
 
             std::string L_end_effector_link_;
             std::string R_end_effector_link_;
+
+            std::shared_ptr<rclcpp::executors::SingleThreadedExecutor> executor_;
+            std::thread executor_thread_;
+
 
 
     };
