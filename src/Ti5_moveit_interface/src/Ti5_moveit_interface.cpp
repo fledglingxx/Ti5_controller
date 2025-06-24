@@ -9,64 +9,18 @@ namespace Ti5_moveit_interface
         L_move_group_ = std::make_shared<moveit::planning_interface::MoveGroupInterface>(node_, left_group);
         R_move_group_ = std::make_shared<moveit::planning_interface::MoveGroupInterface>(node_, right_group);
 
+        L_end_effector_link_ = L_move_group_->getEndEffectorLink();
         L_move_group_->setPlanningTime(5.0);
         L_move_group_->setMaxVelocityScalingFactor(0.5);
         L_move_group_->setMaxAccelerationScalingFactor(0.5);
 
+        R_end_effector_link_ = R_move_group_->getEndEffectorLink();
         R_move_group_->setPlanningTime(5.0);
         R_move_group_->setMaxVelocityScalingFactor(0.5);
         R_move_group_->setMaxAccelerationScalingFactor(0.5);
 
     }
     
-/*
-    bool MoveItInterface::L_move_j(const std::vector<double> &joint_positions)
-    {
-
-        std::cout<<"hhhhhhhhhhh!!!!!!!   L_move_j"<<std::endl;
-
-
-        L_move_group_->setJointValueTarget(joint_positions);
-        moveit::planning_interface::MoveGroupInterface::Plan plan;
-        bool success = (L_move_group_->plan(plan) == moveit::planning_interface::MoveItErrorCode::SUCCESS);
-        if(success)
-            L_move_group_->execute(plan);
-        return success;
-    }
-
-    bool MoveItInterface::L_move_p(const geometry_msgs::msg::Pose &pose)
-    {
-        L_move_group_->setPoseTarget(pose);
-        moveit::planning_interface::MoveGroupInterface::Plan plan;
-        bool success = (L_move_group_->plan(plan) == moveit::planning_interface::MoveItErrorCode::SUCCESS);
-        if(success)
-            L_move_group_->execute(plan);
-        return success;
-    }
-
-    bool MoveItInterface::R_move_j(const std::vector<double> &joint_positions)  
-    {
-        R_move_group_->setJointValueTarget(joint_positions);
-        moveit::planning_interface::MoveGroupInterface::Plan plan;
-        bool success = (R_move_group_->plan(plan) == moveit::planning_interface::MoveItErrorCode::SUCCESS);
-        if(success)
-            R_move_group_->execute(plan);
-        return success;
-    }
-
-    bool MoveItInterface::R_move_p(const geometry_msgs::msg::Pose &pose)
-    {
-        std::cout<<"h!!!!!!!   R_move_p"<<std::endl;
-        R_move_group_->setPoseTarget(pose);
-        moveit::planning_interface::MoveGroupInterface::Plan plan;
-        bool success = (R_move_group_->plan(plan) == moveit::planning_interface::MoveItErrorCode::SUCCESS);
-        if(success)
-            R_move_group_->execute(plan);
-        return success;
-    }
-
-
-*/
 
     bool MoveItInterface::L_move_j(const std::vector<double> &joint_positions)
     {
@@ -151,4 +105,33 @@ namespace Ti5_moveit_interface
 
     }
 
+
+    void MoveItInterface::get_L_pos()
+    {
+        geometry_msgs::msg::PoseStamped current_pose = L_move_group_->getCurrentPose(L_end_effector_link_);
+        if (current_pose.header.stamp.sec == 0 && current_pose.header.stamp.nanosec == 0) 
+        {
+            RCLCPP_WARN(rclcpp::get_logger("Ti5_moveit_interface"), "L pose not available, timestamp invalid.");
+            return;
+        }
+
+        std::vector<double> rpy = L_move_group_->getCurrentRPY(L_end_effector_link_);
+        RCLCPP_INFO(rclcpp::get_logger("Ti5_moveit_interface"),"L pose: x=%.3f, y=%.3f, z=%.3f | roll=%.3f, pitch=%.3f, yaw=%.3f",
+                current_pose.pose.position.x,current_pose.pose.position.y,current_pose.pose.position.z,rpy[0], rpy[1], rpy[2]);
+    }
+
+
+    void MoveItInterface::get_R_pos()
+    {
+        geometry_msgs::msg::PoseStamped current_pose = R_move_group_->getCurrentPose(R_end_effector_link_);
+        if (current_pose.header.stamp.sec == 0 && current_pose.header.stamp.nanosec == 0) 
+        {
+            RCLCPP_WARN(rclcpp::get_logger("Ti5_moveit_interface"), "R pose not available, timestamp invalid.");
+            return;
+        }
+
+        std::vector<double> rpy = R_move_group_->getCurrentRPY(R_end_effector_link_);
+        RCLCPP_INFO(rclcpp::get_logger("Ti5_moveit_interface"),"R pose: x=%.3f, y=%.3f, z=%.3f | roll=%.3f, pitch=%.3f, yaw=%.3f",
+                current_pose.pose.position.x,current_pose.pose.position.y,current_pose.pose.position.z,rpy[0], rpy[1], rpy[2]);
+    }   
 }

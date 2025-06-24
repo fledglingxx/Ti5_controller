@@ -18,10 +18,17 @@ namespace Ti5_moveit_interface
             bool L_move_p(const std::vector<double> &pose);
             bool R_move_j(const std::vector<double> &joint_positions);
             bool R_move_p(const std::vector<double> &pose);
+
+            void get_L_pos();
+            void get_R_pos();
         private:
             rclcpp::Node::SharedPtr node_;
             std::shared_ptr<moveit::planning_interface::MoveGroupInterface> L_move_group_;
             std::shared_ptr<moveit::planning_interface::MoveGroupInterface> R_move_group_;
+
+            std::string L_end_effector_link_;
+            std::string R_end_effector_link_;
+
 
     };
 }     // namespace Ti5_moveit_interface

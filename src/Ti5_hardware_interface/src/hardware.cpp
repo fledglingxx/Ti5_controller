@@ -98,7 +98,6 @@ namespace Ti5_hardware_interface
 
     for(int i = 0; i < num_joints_; i++)
     {
-      std::cout<<"hhhhhhhhhhhhhhhhhhh!!!!!!!!!!! Activating joint: "<<i<<std::endl;
       can_motor_interface->set_vel(i, 36, 1000);
       can_motor_interface->set_vel(i, 37, -1000);
     }
@@ -110,8 +109,9 @@ namespace Ti5_hardware_interface
 
   hardware_interface::CallbackReturn hardware::on_deactivate(const rclcpp_lifecycle::State &)
   {
-    RCLCPP_INFO(rclcpp::get_logger("Ti5_hardware_interface"), "Deactivating hardware interface");
 
+    can_motor_interface->closeCAN();
+    RCLCPP_INFO(rclcpp::get_logger("Ti5_hardware_interface"), "Deactivating hardware interface");
     return CallbackReturn::SUCCESS;
   }
 

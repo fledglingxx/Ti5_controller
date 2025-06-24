@@ -216,3 +216,9 @@ void CANMotorInterface::set_vel(uint8_t motor_id, uint8_t command, uint32_t velo
 
 
 
+bool CANMotorInterface::closeCAN()
+{
+    VCI_CloseDevice(DeviceType, DeviceIndex);
+}
+
+
