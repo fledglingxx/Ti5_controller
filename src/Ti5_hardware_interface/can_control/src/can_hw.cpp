@@ -107,7 +107,8 @@ float CANMotorInterface::receive_angle(uint8_t motor_id, uint8_t command)
         {
             std::uint8_t hexArray[4] = {rec[0].Data[4], rec[0].Data[3], rec[0].Data[2], rec[0].Data[1]};
             std::int32_t decimal = convertHexArrayToDecimal(hexArray);
-            float res = decimal * 1.0/ ratio * 2 * 3.14;
+            //float res = decimal * 1.0/ ratio * 2 * 3.14; // 双编电机
+            float res = decimal * 1.0 / 65536 / 101 * 2 * 3.14; // 单编电机
             // std::cout << "ID: " << send.ID <<"  decimal: " << decimal <<" res: " << res << std::endl;
             return res;
         }
@@ -166,7 +167,8 @@ void CANMotorInterface::sendCanCommand(uint8_t motor_id, uint8_t command, float 
     send.Data[0] = command;
     int res[4], cnt = 2, reclen = 0;
 
-    uint32_t parameter_int = static_cast<uint32_t>(parameter / 2 / 3.14 * ratio);
+    // uint32_t parameter_int = static_cast<uint32_t>(parameter / 2 / 3.14 * ratio); // 双编电机
+    uint32_t parameter_int = static_cast<uint32_t>(parameter / 2 / 3.14 * 65535 * 101); // 单编电机
 
 
     toIntArray(parameter_int, res, 4);
